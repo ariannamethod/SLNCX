@@ -18,6 +18,15 @@ The script loads the checkpoint and samples from the model on a test input.
 Due to the large size of the model (314B parameters), a machine with enough GPU memory is required to test the model with the example code.
 The implementation of the MoE layer in this repository is not efficient. The implementation was chosen to avoid the need for custom kernels to validate the correctness of the model.
 
+
+observation: the NVIDIA CUDA dependencies are only for linux:
+
+```
+jax[cuda12-pip]==0.4.25 -f https://.../jax-releases/jax_cuda_releases.html
+```
+
+Please check which hardware is compatible with: [Link]([URL](https://docs.nvidia.com/deploy/cuda-compatibility/index.html))
+
 # Model Specifications
 
 Grok-1 is currently designed with the following specifications:
