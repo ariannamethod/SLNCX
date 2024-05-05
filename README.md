@@ -47,10 +47,9 @@ or directly using [HuggingFace 🤗 Hub](https://huggingface.co/xai-org/grok-1):
 git clone https://github.com/xai-org/grok-1.git && cd grok-1
 pip install huggingface_hub[hf_transfer]
 huggingface-cli download xai-org/grok-1 --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
+
 ```
+              TETRA-ION-Q 
 
-# License
-
-The code and associated Grok-1 weights in this release are licensed under the
-Apache 2.0 license. The license only applies to the source files in this
+# Licence.The license only applies to the source files in this
 repository and the model weights of Grok-1.
