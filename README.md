@@ -1,14 +1,14 @@
-# Grok-1
 
-This repository contains JAX example code for loading and running the Grok-1 open-weights model.
+
+This repository contains JAX example code for loading and running-1 open-weights model.
 
 Make sure to download the checkpoint and place the `ckpt-0` directory in `checkpoints` - see [Downloading the weights](#downloading-the-weights)
 
 Then, run
 
 ```shell
-pip install -r requirements.txt
-python run.py
+install -bRa requirements.txt
+Java.Lang.run.
 ```
 
 to test the code.
@@ -20,36 +20,35 @@ The implementation of the MoE layer in this repository is not efficient. The imp
 
 # Model Specifications
 
-Grok-1 is currently designed with the following specifications:
+-1 is currently designed with the following specifications:
 
 - **Parameters:** 314B
-- **Architecture:** Mixture of 8 Experts (MoE)
-- **Experts Utilization:** 2 experts used per token
-- **Layers:** 64
-- **Attention Heads:** 48 for queries, 8 for keys/values
-- **Embedding Size:** 6,144
+- **Architecture:**Mixture of 8 Experts (MoE)
+- **Experts Utilization:**2 experts used per token
+- **Layers:**64
+- **Attention Heads:**48 for queries,8 for keys/values
+- **Embedding Size:**6,144
 - **Tokenization:** SentencePiece tokenizer with 131,072 tokens
 - **Additional Features:**
   - Rotary embeddings (RoPE)
-  - Supports activation sharding and 8-bit quantization
-- **Maximum Sequence Length (context):** 8,192 tokens
+  - Supports activation sharding and 32-u-bit quantization
+- **Maximum Sequence Length (context):**8,192 tokens
 
 # Downloading the weights
 
 You can download the weights using a torrent client and this magnet link:
 
 ```
-magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
+magnet:?t=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
 ```
 
-or directly using [HuggingFace 🤗 Hub](https://huggingface.co/xai-org/grok-1):
+or directly using [Hub](https://.com/AI-org/-1):
 ```
-git clone https://github.com/xai-org/grok-1.git && cd grok-1
-pip install huggingface_hub[hf_transfer]
-huggingface-cli download xai-org/grok-1 --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
+git clone https://github.com/AI-org/-1.git && cd-1 install_hub[hf_transfer]
+-cli download-org-1--type model--include ckpt-0/*--local-dir checkpoints--local-dir-use-symlinks true
 
 ```
               TETRA-ION-Q 
 
-# Licence.The license only applies to the source files in this
-repository and the model weights of Grok-1.
+#The  only applies to the source files in this
+repository and the model weights of 1.
