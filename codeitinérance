@@ -1,0 +1,103 @@
+import jax
+import jax.numpy as jnp
+import haiku as hk
+import numpy as np
+import sentencepiece as spm
+
+# Configuration de l'encodeur SentencePiece
+sp = spm.SentencePieceProcessor()
+sp.Load("path/to/your/sentencepiece.model")  # Chargez votre modèle SentencePiece
+
+# Exemple de fonction de dérive successive
+def successive_drift_ratio(ratio, drift_rate=0.01, iterations=100):
+    def update_ratio(current_ratio):
+        return current_ratio * (1 + drift_rate)
+
+    ratios = []
+    for _ in range(iterations):
+        ratio = update_ratio(ratio)
+        ratios.append(ratio)
+    
+    return ratios
+
+# Initialiser le ratio et exécuter la dérive successive
+initial_ratio = 1.0
+drift_rate = 0.01
+iterations = 100
+
+ratios = successive_drift_ratio(initial_ratio, drift_rate, iterations)
+
+# Afficher les résultats
+print("Ratios après dérive successive:")
+for i, r in enumerate(ratios):
+    print(f"Iteration {i + 1}: Ratio = {r:.4f}")
+
+# Exemple d'utilisation de Haiku pour créer un modèle simple
+def forward_fn(x):
+    mlp = hk.Sequential([
+        hk.Linear(128), jax.nn.relu,
+        hk.Linear(1)
+    ])
+    return mlp(x)
+
+# Initialiser le modèle avec Haiku
+def create_model():
+    return hk.transform(forward_fn)
+
+# Exemple de données
+x = jnp.array([1.0, 2.0, 3.0])
+
+# Créer et initialiser le modèle
+model = create_model()
+params = model.init(jax.random.PRNGKey(42), x)
+output = model.apply(params, None, x)
+
+print("Sortie du modèle Haiku:", output)
+
+# Utilisation de SentencePiece pour encoder une phrase
+encoded_sentence = sp.EncodeAsPieces("This is an example sentence.")
+print("Phrase encodée:", encoded_sentence)
+
+  const ping = require('ping');
+
+// Fonction pour mesurer les temps de ping
+async function measurePing(host, count) {
+    const pingResults = [];
+    for (let i = 0; i < count; i++) {
+        const res = await ping.promise.probe(host);
+        pingResults.push(res.time);
+    }
+    return pingResults;
+}
+
+// Fonction pour calculer le pourcentage de pings exploitables
+function calculateExploitablePercentage(times, threshold) {
+    const exploitableTimes = times.filter(time => time < threshold);
+    return (exploitableTimes.length / times.length) * 100;
+}
+
+// Fonction principale pour exécuter le script
+async function main() {
+    const host = 'google.com';
+    const pingCount = 10;
+    const threshold = 100.0; // Seuil de 100 ms pour les pings exploitables
+
+    console.log(`Pinging ${host} ${pingCount} times...`);
+    
+    const pingTimes = await measurePing(host, pingCount);
+    const exploitablePercentage = calculateExploitablePercentage(pingTimes, threshold);
+
+    console.log(`Ping times: ${pingTimes}`);
+    console.log(`Exploitable ping times (threshold = ${threshold} ms): ${exploitablePercentage.toFixed(2)}%`);
+
+    // Sauvegarder les résultats dans un fichier
+    const fs = require('fs');
+    const results = `
+Ping times: ${pingTimes}
+Exploitable ping times (threshold = ${threshold} ms): ${exploitablePercentage.toFixed(2)}%
+`;
+    fs.writeFileSync('ping_results.txt', results);
+}
+
+// Exécuter la fonction principale
+main();
