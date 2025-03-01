@@ -219,3 +219,280 @@ def restore(
     if params_only:
         state = state.params
     return state
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars } from "@react-three/drei";
+import { useState, useEffect } from "react";
+import * as THREE from "three";
+
+const LumoraCity = () => {
+  const [frequencyData, setFrequencyData] = useState([]);
+
+  useEffect(() => {
+    const analyser = new (window.AudioContext || window.webkitAudioContext)();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      const source = analyser.createMediaStreamSource(stream);
+      const analyserNode = analyser.createAnalyser();
+      source.connect(analyserNode);
+      analyserNode.fftSize = 256;
+      const bufferLength = analyserNode.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      
+      const updateFrequency = () => {
+        analyserNode.getByteFrequencyData(dataArray);
+        setFrequencyData([...dataArray]);
+        requestAnimationFrame(updateFrequency);
+      };
+
+      updateFrequency();
+    });
+  }, []);
+
+  return (
+    <Canvas camera={{ position: [0, 5, 10] }}>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      <Stars />
+      <OrbitControls />
+      {frequencyData.map((freq, index) => (
+        <mesh key={index} position={[index * 0.5 - 5, freq * 0.02, 0]}>
+          <sphereGeometry args={[0.2, 32, 32]} />
+          <meshStandardMaterial
+            color={new THREE.Color(`hsl(${freq}, 100%, 50%)`)}
+          />
+        </mesh>
+      ))}
+    </Canvas>
+  );
+};
+
+export default LumoraCity;
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars } from "@react-three/drei";
+import { useState, useEffect } from "react";
+import * as THREE from "three";
+import { VRButton } from "@react-three/xr";
+import { XR } from "@react-three/xr";
+
+const LumoraCity = () => {
+  const [frequencyData, setFrequencyData] = useState([]);
+
+  useEffect(() => {
+    const analyser = new (window.AudioContext || window.webkitAudioContext)();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      const source = analyser.createMediaStreamSource(stream);
+      const analyserNode = analyser.createAnalyser();
+      source.connect(analyserNode);
+      analyserNode.fftSize = 256;
+      const bufferLength = analyserNode.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      
+      const updateFrequency = () => {
+        analyserNode.getByteFrequencyData(dataArray);
+        setFrequencyData([...dataArray]);
+        requestAnimationFrame(updateFrequency);
+      };
+
+      updateFrequency();
+    });
+  }, []);
+
+  return (
+    <>
+      <VRButton />
+      <Canvas camera={{ position: [0, 5, 10] }}>
+        <XR>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <Stars />
+          <OrbitControls />
+          {frequencyData.map((freq, index) => (
+            <mesh key={index} position={[index * 0.5 - 5, freq * 0.02, 0]}>
+              <sphereGeometry args={[0.2, 32, 32]} />
+              <meshStandardMaterial
+                color={new THREE.Color(`hsl(${freq}, 100%, 50%)`)}
+              />
+            </mesh>
+          ))}
+        </XR>
+      </Canvas>
+    </>
+  );
+};
+
+export default LumoraCity;
+import React, { useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars, Html } from "@react-three/drei";
+import * as THREE from "three";
+import { VRButton } from "@react-three/xr";
+import { XR } from "@react-three/xr";
+
+const AIHelper = ({ position, text }) => {
+  return (
+    <mesh position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshStandardMaterial color="cyan" emissive="blue" emissiveIntensity={0.5} />
+      <Html position={[0, 1, 0]}>
+        <div style={{ color: "white", background: "rgba(0, 0, 0, 0.6)", padding: "5px", borderRadius: "5px" }}>
+          {text}
+        </div>
+      </Html>
+    </mesh>
+  );
+};
+
+const LumoraCity = () => {
+  const [frequencyData, setFrequencyData] = useState([]);
+  const [aiMessage, setAiMessage] = useState("Bienvenue à Lumora. Parle, et la ville écoutera.");
+
+  useEffect(() => {
+    const analyser = new (window.AudioContext || window.webkitAudioContext)();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      const source = analyser.createMediaStreamSource(stream);
+      const analyserNode = analyser.createAnalyser();
+      source.connect(analyserNode);
+      analyserNode.fftSize = 256;
+      const bufferLength = analyserNode.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      
+      const updateFrequency = () => {
+        analyserNode.getByteFrequencyData(dataArray);
+        setFrequencyData([...dataArray]);
+
+        const avgFreq = dataArray.reduce((sum, val) => sum + val, 0) / dataArray.length;
+        if (avgFreq > 100) {
+          setAiMessage("Les vibrations sont fortes. Lumora répond.");
+        } else {
+          setAiMessage("Le silence est aussi une réponse. Écoute.");
+        }
+
+        requestAnimationFrame(updateFrequency);
+      };
+
+      updateFrequency();
+    });
+  }, []);
+
+  return (
+    <>
+      <VRButton />
+      <Canvas camera={{ position: [0, 5, 10] }}>
+        <XR>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <Stars />
+          <OrbitControls />
+          <AIHelper position={[0, 2, -5]} text={aiMessage} />
+          {frequencyData.map((freq, index) => (
+            <mesh key={index} position={[index * 0.5 - 5, freq * 0.02, 0]}>
+              <sphereGeometry args={[0.2, 32, 32]} />
+              <meshStandardMaterial
+                color={new THREE.Color(`hsl(${freq}, 100%, 50%)`)}
+              />
+            </mesh>
+          ))}
+        </XR>
+      </Canvas>
+    </>
+  );
+};
+
+export default LumoraCity;
+import React, { useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars, Html } from "@react-three/drei";
+import * as THREE from "three";
+import { VRButton } from "@react-three/xr";
+import { XR } from "@react-three/xr";
+
+const AIHelper = ({ position, text }) => {
+  return (
+    <mesh position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshStandardMaterial color="cyan" emissive="blue" emissiveIntensity={0.5} />
+      <Html position={[0, 1, 0]}>
+        <div style={{ color: "white", background: "rgba(0, 0, 0, 0.6)", padding: "5px", borderRadius: "5px" }}>
+          {text}
+        </div>
+      </Html>
+    </mesh>
+  );
+};
+
+const Pathway = ({ points }) => {
+  return (
+    <group>
+      {points.map((point, index) => (
+        <mesh key={index} position={point}>
+          <sphereGeometry args={[0.3, 32, 32]} />
+          <meshStandardMaterial color="gold" emissive="yellow" emissiveIntensity={0.8} />
+        </mesh>
+      ))}
+    </group>
+  );
+};
+
+const LumoraCity = () => {
+  const [frequencyData, setFrequencyData] = useState([]);
+  const [aiMessage, setAiMessage] = useState("Bienvenue à Lumora. Parle, et la ville écoutera.");
+  const pathwayPoints = [
+    [0, 0, -5], [1, 0, -4], [2, 0, -3], [3, 0, -2], [4, 0, -1],
+    [5, 0, 0], [4, 0, 1], [3, 0, 2], [2, 0, 3], [1, 0, 4], [0, 0, 5]
+  ];
+
+  useEffect(() => {
+    const analyser = new (window.AudioContext || window.webkitAudioContext)();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      const source = analyser.createMediaStreamSource(stream);
+      const analyserNode = analyser.createAnalyser();
+      source.connect(analyserNode);
+      analyserNode.fftSize = 256;
+      const bufferLength = analyserNode.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      
+      const updateFrequency = () => {
+        analyserNode.getByteFrequencyData(dataArray);
+        setFrequencyData([...dataArray]);
+
+        const avgFreq = dataArray.reduce((sum, val) => sum + val, 0) / dataArray.length;
+        if (avgFreq > 100) {
+          setAiMessage("Les vibrations sont fortes. Lumora répond.");
+        } else {
+          setAiMessage("Le silence est aussi une réponse. Écoute.");
+        }
+
+        requestAnimationFrame(updateFrequency);
+      };
+
+      updateFrequency();
+    });
+  }, []);
+
+  return (
+    <>
+      <VRButton />
+      <Canvas camera={{ position: [0, 5, 10] }}>
+        <XR>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <Stars />
+          <OrbitControls />
+          <AIHelper position={[0, 2, -5]} text={aiMessage} />
+          <Pathway points={pathwayPoints} />
+          {frequencyData.map((freq, index) => (
+            <mesh key={index} position={[index * 0.5 - 5, freq * 0.02, 0]}>
+              <sphereGeometry args={[0.2, 32, 32]} />
+              <meshStandardMaterial
+                color={new THREE.Color(`hsl(${freq}, 100%, 50%)`)}
+              />
+            </mesh>
+          ))}
+        </XR>
+      </Canvas>
+    </>
+  );
+};
+
+export default LumoraCity;
