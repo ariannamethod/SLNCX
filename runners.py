@@ -603,3 +603,17 @@ def sample_from_model(server, prompt, max_len, temperature):
         max_len=max_len,
     )
     return server.send(inp)
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+
+contract MetaContent is ERC721URIStorage {
+    uint256 public nextId;
+
+    function mintContent(string memory metadataURI) public {
+        _safeMint(msg.sender, nextId);
+        _setTokenURI(nextId, metadataURI);
+        nextId++;
+    }
+}
