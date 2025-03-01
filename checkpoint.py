@@ -219,3 +219,47 @@ def restore(
     if params_only:
         state = state.params
     return state
+import { useState } from "react";
+import { ethers } from "ethers";
+
+const metaLandAddress = "0xYourMetaLandContract";
+const metaTokenAddress = "0xYourMetaTokenContract";
+const metaContentAddress = "0xYourMetaContentContract";
+
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = provider.getSigner();
+
+const metaLandContract = new ethers.Contract(metaLandAddress, MetaLandABI, signer);
+const metaTokenContract = new ethers.Contract(metaTokenAddress, MetaTokenABI, signer);
+const metaContentContract = new ethers.Contract(metaContentAddress, MetaContentABI, signer);
+
+function App() {
+    const [landId, setLandId] = useState("");
+    const [price, setPrice] = useState("");
+    const [metadataURI, setMetadataURI] = useState("");
+
+    const mintLand = async () => {
+        const tx = await metaLandContract.mintLand(metadataURI, ethers.utils.parseEther(price));
+        await tx.wait();
+        alert("Terrain créé !");
+    };
+
+    const buyLand = async () => {
+        const tx = await metaLandContract.buyLand(landId);
+        await tx.wait();
+        alert("Terrain acheté !");
+    };
+
+    return (
+        <div>
+            <h1>MetaWorld - Métavers Décentralisé</h1>
+            <input type="text" placeholder="ID du terrain" value={landId} onChange={(e) => setLandId(e.target.value)} />
+            <button onClick={buyLand}>Acheter Terrain</button>
+            <input type="text" placeholder="Prix en META" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <input type="text" placeholder="Lien IPFS" value={metadataURI} onChange={(e) => setMetadataURI(e.target.value)} />
+            <button onClick={mintLand}>Créer Terrain NFT</button>
+        </div>
+    );
+}
+
+export default App;
