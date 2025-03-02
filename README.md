@@ -9,6 +9,18 @@ Then, run
 ```shell
 pip install -r requirements.txt
 python run.py
+pip install pandas tensorflow qiskit
+pip install brainflow neurokit2 scipy
+pip install mpi4py tensorflow keras numpy
+pip install sympy scipy qiskit numpy
+pip install tensorflow scipy pandas
+pip install tensorflow numpy scipy qiskit
+pip install qiskit numpy scipy
+pip install docker paramiko tensorflow
+pip install sympy qiskit numpy scipy
+pip install tensorflow numpy qiskit scipy
+pip install sympy qiskit numpy scipy
+pip install tensorflow numpy qiskit scipy
 ```
 
 to test the code.
