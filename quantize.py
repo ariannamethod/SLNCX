@@ -12,10 +12,15 @@ from config import default_config
 
 
 def quantize_tensor(tensor: jax.Array) -> QuantizedWeight8bit:
-    # Symmetric per-tensor quantization to int8.
+    """Symmetric per-tensor quantization to int8."""
     scale = jnp.maximum(jnp.max(jnp.abs(tensor)) / 127.0, 1e-8)
     q_weight = jnp.round(tensor / scale).astype(jnp.int8)
     return QuantizedWeight8bit(weight=q_weight, scales=scale.astype(jnp.float32))
+
+
+def dequantize_tensor(qw: QuantizedWeight8bit) -> jax.Array:
+    """Dequantize a :class:`QuantizedWeight8bit` back to float32."""
+    return qw.weight.astype(jnp.float32) * qw.scales
 
 
 def quantize_params(params):
