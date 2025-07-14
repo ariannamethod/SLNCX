@@ -22,7 +22,7 @@ CKPT_PATH = "./checkpoints/"
 
 
 def main():
-    grok_1_model = LanguageModelConfig(
+    slncx_model = LanguageModelConfig(
         vocab_size=128 * 1024,
         pad_token=0,
         eos_token=2,
@@ -50,7 +50,7 @@ def main():
     inference_runner = InferenceRunner(
         pad_sizes=(1024,),
         runner=ModelRunner(
-            model=grok_1_model,
+            model=slncx_model,
             bs_per_device=0.125,
             checkpoint_path=CKPT_PATH,
         ),
