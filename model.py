@@ -295,12 +295,10 @@ class MoELayer(hk.Module):
         routing_probs, _, _ = self.router.compute_routing_prob(
             inputs, padding_mask, self.num_experts
         )
-        expert_gate, expert_index = jax.lax.top_k(routing_probs, k=self.router.num_selected_experts)
-        tmp = jnp.reshape(inputs, (inputs.shape[0] * inputs.shape[1], inputs.shape[2]))
-        broad_inputs = jnp.tile(tmp[:, jnp.newaxis, :], (1, self.router.num_selected_experts, 1))
-        broad_inputs = jnp.reshape(
-            broad_inputs, (broad_inputs.shape[0] * broad_inputs.shape[1], broad_inputs.shape[2])
+        expert_gate, expert_index = jax.lax.top_k(
+            routing_probs, k=self.router.num_selected_experts
         )
+        tmp = jnp.reshape(inputs, (inputs.shape[0] * inputs.shape[1], inputs.shape[2]))
         init_fn, _ = hk.transform(self.layer_fn)
         vmapped_init_fn = jax.vmap(init_fn, in_axes=0, out_axes=0)
         lifted_init_fn = hk.experimental.transparent_lift(vmapped_init_fn)
@@ -309,90 +307,20 @@ class MoELayer(hk.Module):
             jax.random.split(jax.random.PRNGKey(1), self.num_experts),
             jnp.zeros((self.num_experts, 1, 1, inputs.shape[-1])),
         )
-
-        # Index and prob are in the shape [m, 2] indicating which token assigned to which experts.
-        # b: num_expert
-        # m: token or sequence dim
-        # k: input embed dim
-        # n: output embed dim
-        # e: the number of experts chosen for each token
-        @functools.partial(
-            shard_map,
-            mesh=self.mesh,
-            in_specs=(
-                P(self.data_axis, None),
-                P(None, None, self.model_axis),
-                P(None, None, self.model_axis),
-                P(None),
-                P(None),
-            ),
-            out_specs=P(self.data_axis, self.model_axis),
-            check_rep=False,
-        )
-        def moe_slow_matmul1(input, weight, scales, index, prob):
-            weight = weight * scales
-            one_hot_indices = jax.nn.one_hot(index.reshape(-1), 8, axis=0)
-            all_expert_output = jnp.einsum("mk,bkn->bmn", input, weight)
-            output = jnp.einsum("bm,bmn->mn", one_hot_indices, all_expert_output)
-            return output
-
-        @functools.partial(
-            shard_map,
-            mesh=self.mesh,
-            in_specs=(
-                P(self.data_axis, self.model_axis),
-                P(None, self.model_axis, None),
-                P(None, self.model_axis, None),
-                P(None),
-                P(None),
-            ),
-            out_specs=P(self.data_axis, None),
-            check_rep=False,
-        )
-        def moe_slow_matmul2(input, weight, scales, index, prob):
-            weight = weight * scales
-            one_hot_indices = jax.nn.one_hot(index.reshape(-1), 8, axis=0)
-            all_expert_output = jnp.einsum("mk,bkn->bmn", input, weight)
-            output = jnp.einsum("bm,bmn->mn", one_hot_indices, all_expert_output)
-            return jax.lax.psum(output, axis_name="model")
-
         if hasattr(params["linear"]["w"], "scales"):
-            x = moe_slow_matmul1(
-                broad_inputs,
-                params["linear_v"]["w"].weight,
-                params["linear_v"]["w"].scales,
-                expert_index,
-                expert_gate,
-            )
-            y = moe_slow_matmul1(
-                broad_inputs,
-                params["linear"]["w"].weight,
-                params["linear"]["w"].scales,
-                expert_index,
-                expert_gate,
-            )
-            y = jax.nn.gelu(y)
-            out = moe_slow_matmul2(
-                x * y,
-                params["linear_1"]["w"].weight,
-                params["linear_1"]["w"].scales,
-                expert_index,
-                expert_gate,
-            )
-            out = jnp.reshape(
-                out,
-                [
-                    inputs.shape[0],
-                    inputs.shape[1],
-                    self.router.num_selected_experts,
-                    out.shape[-1],
-                ],
-            )
-            out = expert_gate[:, :, :, None].astype(jnp.bfloat16) * out
-            out = jnp.sum(out, axis=2)
+            w_v = params["linear_v"]["w"].weight * params["linear_v"]["w"].scales
+            w = params["linear"]["w"].weight * params["linear"]["w"].scales
+            w1 = params["linear_1"]["w"].weight * params["linear_1"]["w"].scales
+            sel_w_v = w_v[expert_index]
+            sel_w = w[expert_index]
+            sel_w1 = w1[expert_index]
+            x = jnp.einsum("te,tehd->teh", tmp, sel_w_v)
+            y = jax.nn.gelu(jnp.einsum("te,tehd->teh", tmp, sel_w))
+            out = jnp.einsum("teh,tehd->teh", x * y, sel_w1)
+            out = jnp.sum(out * expert_gate[..., None], axis=1)
+            out = out.reshape(inputs.shape[0], inputs.shape[1], -1)
             out = out.astype(jnp.bfloat16)
         else:
-            # This is only here so that we can construct a valid init_fn with this code.
             return inputs
         return out
 

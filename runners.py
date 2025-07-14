@@ -17,7 +17,9 @@ import bisect
 import functools
 import logging
 import math
+import os
 import re
+import urllib.request
 from dataclasses import dataclass
 from typing import Any, Callable, NamedTuple, Optional, Tuple
 
@@ -285,6 +287,14 @@ class InferenceRunner:
             between_hosts_config=self.between_hosts_config,
         )
 
+        if not os.path.exists(self.tokenizer_path):
+            url = os.environ.get("TOKENIZER_URL")
+            if url:
+                urllib.request.urlretrieve(url, self.tokenizer_path)
+            else:
+                raise FileNotFoundError(
+                    f"Tokenizer file not found at {self.tokenizer_path} and TOKENIZER_URL not set"
+                )
         self.tokenizer = sentencepiece.SentencePieceProcessor(model_file=self.tokenizer_path)
 
         max_len = runner.model.sequence_len
@@ -472,24 +482,7 @@ class InferenceRunner:
             )
             rng_seed = np.uint64(1)
 
-            for size in self.pad_sizes:
-                if size > runner.model.sequence_len:
-                    break
-                logger.info("Precompile {}".format(size))
-                prompt_len = len(prompt)
-                prompt = pad_to_size(prompt, size)
-                rngs, last_output, memory, settings = self.prefill_memory(
-                    params,
-                    rngs,
-                    memory,
-                    settings,
-                    last_output,
-                    prompt,
-                    prompt_len,
-                    rng_seed,
-                    new_settings,
-                    0,
-                )
+            # Skip expensive precompilation loops; compile with a single prompt size.
         with runner.mesh:
             logger.info("Compiling...")
             rngs, last_output, memory = self.sample_step(

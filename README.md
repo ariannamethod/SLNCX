@@ -4,14 +4,9 @@ This repository contains JAX example code for loading and running the SLNCX open
 
 Make sure to download the checkpoint and place the `ckpt-0` directory in `checkpoints` - see [Downloading the weights](#downloading-the-weights)
 
-Then, run
-
-```shell
-pip install -r requirements.txt
-python run.py
-```
-
-to test the code.
+Install requirements and use `runners.py` directly for inference. The tokenizer
+model is downloaded on first use if the `TOKENIZER_URL` environment variable is
+set.
 
 The script loads the checkpoint and samples from the model on a test input.
 
@@ -54,3 +49,8 @@ huggingface-cli download xai-org/slncx --repo-type model --include ckpt-0/* --lo
 The code and associated SLNCX weights in this release are licensed under the
 Apache 2.0 license. The license only applies to the source files in this
 repository and the model weights of SLNCX.
+
+## 8-bit quantization
+
+Use `python quantize.py <checkpoint_dir> <output_path>` to generate a quantized
+checkpoint compatible with the runners.
