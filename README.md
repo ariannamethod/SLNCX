@@ -1,19 +1,22 @@
 # SLNCX
 
-This repository contains JAX example code for loading and running the SLNCX open-weights model.
+The SLNCX repository (internally dubbed **"Вульф"** or sometimes *старина Вульф* after the Pulp Fiction hero) provides example JAX code for loading and running the open-weights model.
 
-Make sure to download the checkpoint and place the `ckpt-0` directory in `checkpoints` - see [Downloading the weights](#downloading-the-weights)
+Make sure to download the checkpoint and place the `ckpt-0` directory in `checkpoints` &ndash; see [Downloading the weights](#downloading-the-weights).
 
-Install requirements and use `runners.py` directly for inference. The tokenizer
-model is downloaded on first use if the `TOKENIZER_URL` environment variable is
-set.
+Install the requirements and use `runners.py` directly for inference. The tokenizer model is downloaded on first use if the `TOKENIZER_URL` environment variable is set.
 
-The script loads the checkpoint and samples from the model on a test input.
+The script loads the checkpoint and samples from the model on a test input. Due to the large size of the model (314B parameters), a machine with enough GPU memory is required to test the model with the example code. The implementation of the MoE layer in this repository is not efficient. The implementation was chosen to avoid the need for custom kernels to validate the correctness of the model.
 
-Due to the large size of the model (314B parameters), a machine with enough GPU memory is required to test the model with the example code.
-The implementation of the MoE layer in this repository is not efficient. The implementation was chosen to avoid the need for custom kernels to validate the correctness of the model.
+## What's new
 
-# Model Specifications
+- Repository cleanup and configuration refactor.
+- Added an 8‑bit quantization tool (`quantize.py`).
+- Basic test suite covering configuration and quantization helpers.
+
+These changes ensure the codebase remains minimal yet functional.
+
+## Model Specifications
 
 SLNCX is currently designed with the following specifications:
 
@@ -29,7 +32,7 @@ SLNCX is currently designed with the following specifications:
   - Supports activation sharding and 8-bit quantization
 - **Maximum Sequence Length (context):** 8,192 tokens
 
-# Downloading the weights
+## Downloading the weights
 
 You can download the weights using a torrent client and this magnet link:
 
@@ -37,20 +40,28 @@ You can download the weights using a torrent client and this magnet link:
 magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
 ```
 
-or directly using [HuggingFace 🤗 Hub](https://huggingface.co/xai-org/slncx):
+or directly using [HuggingFace 🫡 Hub](https://huggingface.co/xai-org/slncx):
+
 ```
 git clone https://github.com/xai-org/slncx.git && cd slncx
 pip install huggingface_hub[hf_transfer]
 huggingface-cli download xai-org/slncx --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
 ```
 
-# License
-
-The code and associated SLNCX weights in this release are licensed under the
-Apache 2.0 license. The license only applies to the source files in this
-repository and the model weights of SLNCX.
-
 ## 8-bit quantization
 
-Use `python quantize.py <checkpoint_dir> <output_path>` to generate a quantized
-checkpoint compatible with the runners.
+Use `python quantize.py <checkpoint_dir> <output_path>` to generate an 8-bit quantized checkpoint compatible with the runners. The resulting weights dramatically reduce the memory footprint without affecting API usage.
+
+## Next steps: fine-tuning
+
+The current repository focuses on loading and running the pretrained weights. The next phase of development will introduce fine-tuning utilities so custom data can be used to adapt SLNCX to specific tasks. Stay tuned!
+
+## Customization ideas
+
+- Experiment with different quantization levels by modifying `quantize.py`.
+- Adjust model hyperparameters in `config.py` to explore smaller or larger variants.
+- Implement your own sampling strategy in `runners.py` for creative generation.
+
+## License
+
+The code and associated SLNCX weights in this release are licensed under the Apache 2.0 license. The license only applies to the source files in this repository and the model weights of SLNCX.
