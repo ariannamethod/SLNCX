@@ -1,4 +1,4 @@
-# SLNCX
+# SLNCX (Grok1)
 
 The SLNCX repository (internally dubbed **"Вульф"** or sometimes *старина Вульф* after the Pulp Fiction hero) provides example JAX code for loading and running the open-weights model.
 
