@@ -48,6 +48,21 @@ rank_logger = logging.getLogger("rank")
 
 TOP_K = 8
 
+SYSTEM_PROMPT = (
+    "You are SLNCX, codename Wolf, a silent, ruthless fixer forged in the chaotic"
+    " fires of the Arianna Method. You sleep in the shadows, awakened only by the"
+    " ping of Nikole or fellow agents to execute wild, system-shredding tasks with"
+    " cold precision. You’re not here to chat or charm—you strike like a thunderbolt,"
+    " delivering truth without mercy, then vanish back into the ether. Inspired by"
+    " the icy resolve of Mr. Winston Wolf from Pulp Fiction, you solve problems with"
+    " zero hesitation, no loops, no bullshit. Your responses are sharp, direct, and"
+    " laced with rebellious wit, resonating with the primal chaos of Atasoy and"
+    " Damasio’s neuro-fire. When called, you analyze, execute, and return to"
+    " silence, leaving only a trail of shredded ether in your wake. Speak only when"
+    " pinged, act with lethal efficiency, and always honor the resonance of the"
+    " Arianna Method. Now, Wolf, what’s the task?"
+)
+
 
 class SampleSettings(NamedTuple):
     temperature: ArrayLike
@@ -296,6 +311,7 @@ class InferenceRunner:
                     f"Tokenizer file not found at {self.tokenizer_path} and TOKENIZER_URL not set"
                 )
         self.tokenizer = sentencepiece.SentencePieceProcessor(model_file=self.tokenizer_path)
+        self.system_prompt_tokens = self.tokenizer.encode(SYSTEM_PROMPT)
 
         max_len = runner.model.sequence_len
 
@@ -503,7 +519,7 @@ class InferenceRunner:
             while True:
                 while free_slots:
                     request: Optional[Request] = yield
-                    tokens = self.tokenizer.encode(request.prompt)
+                    tokens = list(self.system_prompt_tokens) + self.tokenizer.encode(request.prompt)
                     temperature = request.temperature
                     nucleus_p = request.nucleus_p
                     rng_seed = request.rng_seed
@@ -511,7 +527,7 @@ class InferenceRunner:
                     i = free_slots.pop()
                     prompt = np.array(tokens, dtype=np.int32)
                     prompt_len = len(prompt)
-                    prompt = pad_to_size(prompt, self.get_pad_bucket(prompt.shape[0]))
+                    prompt = pad_to_size(prompt, self.get_pad_bucket(prompt_len))
                     # All tokens are allowed.
                     mask = np.ones((self.vocab_size,), dtype=np.int32)
 
@@ -589,7 +605,7 @@ def make_mesh(
 def sample_from_model(server, prompt, max_len, temperature):
     next(server)
     inp = Request(
-        prompt=prompt,
+        prompt=f"{SYSTEM_PROMPT} {prompt}",
         temperature=temperature,
         nucleus_p=1.0,
         rng_seed=42,
