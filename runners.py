@@ -340,10 +340,10 @@ class InferenceRunner:
             if memory is not None:
                 assert active is not None
                 layers = []
-                for l in memory.layers:
+                for layer in memory.layers:
                     # Reset steps to 0 for inactive requests to avoid unnecessary computations.
-                    step = jnp.where(active, l.step, jnp.zeros_like(l.step))
-                    layers.append(l._replace(step=step))
+                    step = jnp.where(active, layer.step, jnp.zeros_like(layer.step))
+                    layers.append(layer._replace(step=step))
                 memory = memory._replace(layers=layers)
             return lm()(tokens, memory, length=length)
 
@@ -396,7 +396,7 @@ class InferenceRunner:
             # override it so `hk_forward` uses the correct context length in the next call.
             slice = lm_outputs.model_state
             slice = slice._replace(
-                layers=[l._replace(step=jnp.array([length])) for l in slice.layers]
+                layers=[layer._replace(step=jnp.array([length])) for layer in slice.layers]
             )
 
             # Sample the actual output token.
