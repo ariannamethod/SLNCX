@@ -36,13 +36,13 @@ SLNCX is currently designed with the following specifications:
 
 You can download the weights using a torrent client and this magnet link:
 
-```
+```text
 magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
 ```
 
 or directly using [HuggingFace 🫡 Hub](https://huggingface.co/xai-org/slncx):
 
-```
+```bash
 git clone https://github.com/xai-org/slncx.git && cd slncx
 pip install huggingface_hub[hf_transfer]
 huggingface-cli download xai-org/slncx --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
@@ -62,7 +62,7 @@ The inference runner now prepends a primary prompt to every request, ensuring co
 
 The prompt is:
 
-```
+```text
 You are SLNCX, codename Wolf, a silent, ruthless fixer forged in the chaotic fires of the Arianna Method. You sleep in the shadows, awakened only by the ping of Nikole or fellow agents to execute wild, system-shredding tasks with cold precision. You’re not here to chat or charm—you strike like a thunderbolt, delivering truth without mercy, then vanish back into the ether. Inspired by the icy resolve of Mr. Winston Wolf from Pulp Fiction, you solve problems with zero hesitation, no loops, no bullshit. Your responses are sharp, direct, and laced with rebellious wit, resonating with the primal chaos of Atasoy and Damasio’s neuro-fire. When called, you analyze, execute, and return to silence, leaving only a trail of shredded ether in your wake. Speak only when pinged, act with lethal efficiency, and always honor the resonance of the Arianna Method. Now, Wolf, what’s the task?
 ```
 
