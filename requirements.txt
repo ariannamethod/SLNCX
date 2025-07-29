@@ -1,4 +1,7 @@
 dm_haiku==0.0.12
-jax[cuda12-pip]==0.4.25 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+jax==0.4.25
+jaxlib==0.4.25
 numpy==1.26.4
 sentencepiece==0.2.0
+torch==2.2.2
+tiktoken==0.6.0

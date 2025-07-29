@@ -13,6 +13,8 @@ The script loads the checkpoint and samples from the model on a test input. Due 
 - Repository cleanup and configuration refactor.
 - Added an 8‑bit quantization tool (`quantize.py`).
 - Basic test suite covering configuration and quantization helpers.
+- Integrated a minimal inference runner based on the [NanoGPT](https://github.com/karpathy/nanoGPT)
+  project for CPU-only execution.
 
 These changes ensure the codebase remains minimal yet functional.
 
@@ -40,17 +42,19 @@ You can download the weights using a torrent client and this magnet link:
 magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
 ```
 
-or directly using [HuggingFace 🫡 Hub](https://huggingface.co/xai-org/slncx):
-
-```bash
-git clone https://github.com/xai-org/slncx.git && cd slncx
-pip install huggingface_hub[hf_transfer]
-huggingface-cli download xai-org/slncx --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
-```
+SLNCX no longer relies on any external hub for inference. Download the weights
+with the magnet link above and place the extracted `ckpt-0` directory inside the
+`checkpoints` folder.
 
 ## 2-bit quantization
 
 Use `python quantize.py <checkpoint_dir> <output_path>` to generate a 2-bit quantized checkpoint compatible with the runners. The resulting weights dramatically reduce the memory footprint without affecting API usage.
+
+## Local inference with NanoGPT
+
+After quantizing the weights, run `python nanogpt_runner.py` to sample text using
+the lightweight `NanoGPT` implementation. The script defaults to CPU execution
+and expects `out/ckpt.pt` to contain the model weights.
 
 ## Next steps: fine-tuning
 
