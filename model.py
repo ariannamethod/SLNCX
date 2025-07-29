@@ -16,7 +16,17 @@ import functools
 import logging
 import re
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, NamedTuple, Optional, Sequence, Tuple, Union
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    List,
+    NamedTuple,
+    Optional,
+    Sequence,
+    Tuple,
+    Union,
+)
 
 import haiku as hk
 import jax
@@ -35,7 +45,7 @@ rank_logger = logging.getLogger("rank")
 
 
 @dataclass
-class QuantizedWeight8bit:
+class QuantizedWeight2bit:
     weight: jnp.array
     scales: jnp.array
 
@@ -45,9 +55,9 @@ class QuantizedWeight8bit:
 
 
 tree_util.register_pytree_node(
-    QuantizedWeight8bit,
+    QuantizedWeight2bit,
     lambda qw: ([qw.weight, qw.scales], ()),
-    lambda _, children: QuantizedWeight8bit(children[0], children[1]),
+    lambda _, children: QuantizedWeight2bit(children[0], children[1]),
 )
 
 
@@ -93,7 +103,9 @@ def apply_rules(rules):
     def _apply_rules(path, value):
         del value  # Unused.
 
-        path_list = [str(i.key).split("/") for i in path if isinstance(i, jax.tree_util.DictKey)]
+        path_list = [
+            str(i.key).split("/") for i in path if isinstance(i, jax.tree_util.DictKey)
+        ]
         flattened_path = jax.tree_util.tree_flatten(path_list)[0]
 
         for rule, replacement in rules:
@@ -101,7 +113,9 @@ def apply_rules(rules):
                 if isinstance(replacement, PartitionSpec):
                     if "layer_stack" in flattened_path:
                         replacement = PartitionSpec(None, *replacement)
-                rank_logger.debug(f"Apply {replacement} to {flattened_path} with rule {rule}")
+                rank_logger.debug(
+                    f"Apply {replacement} to {flattened_path} with rule {rule}"
+                )
                 return replacement
         rank_logger.info(f"{flattened_path} no matching found!")
         return None
@@ -192,8 +206,12 @@ def init_layer_memories(
 ):
     return [
         KVMemory(
-            k=jnp.zeros((batch_size, sequence_len, num_kv_heads, key_size), dtype=dtype),
-            v=jnp.zeros((batch_size, sequence_len, num_kv_heads, key_size), dtype=dtype),
+            k=jnp.zeros(
+                (batch_size, sequence_len, num_kv_heads, key_size), dtype=dtype
+            ),
+            v=jnp.zeros(
+                (batch_size, sequence_len, num_kv_heads, key_size), dtype=dtype
+            ),
             step=step,
         )
         for _ in range(num_layers)
@@ -260,7 +278,10 @@ class Router(hk.Module):
 
         input_size = self.input_size = x.shape[-1]
         w = hk.get_parameter(
-            "w", [input_size, num_experts], jnp.float32, init=hk.initializers.Constant(0)
+            "w",
+            [input_size, num_experts],
+            jnp.float32,
+            init=hk.initializers.Constant(0),
         )
         if sharding:
             w = with_sharding_constraint(w, sharding)
@@ -291,7 +312,9 @@ class MoELayer(hk.Module):
         self.model_axis = model_axis
 
     @hk.transparent
-    def _inference_call(self, inputs: jax.Array, padding_mask: Optional[jax.Array] = None):
+    def _inference_call(
+        self, inputs: jax.Array, padding_mask: Optional[jax.Array] = None
+    ):
         routing_probs, _, _ = self.router.compute_routing_prob(
             inputs, padding_mask, self.num_experts
         )
@@ -380,9 +403,15 @@ class TransformerConfig:
         return TRANSFORMER_PARTITION_RULES
 
     def make(self, mesh=None) -> "Transformer":
-        data_axis = tuple(self.data_axis) if isinstance(self.data_axis, list) else self.data_axis
+        data_axis = (
+            tuple(self.data_axis)
+            if isinstance(self.data_axis, list)
+            else self.data_axis
+        )
         model_axis = (
-            tuple(self.model_axis) if isinstance(self.model_axis, list) else self.model_axis
+            tuple(self.model_axis)
+            if isinstance(self.model_axis, list)
+            else self.model_axis
         )
 
         return Transformer(
@@ -445,7 +474,9 @@ def make_attention_mask(
     Returns:
       A `[batch..., 1, len_q, len_kv]` shaped mask for 1d attention.
     """
-    mask = pairwise_fn(jnp.expand_dims(query_input, axis=-1), jnp.expand_dims(key_input, axis=-2))
+    mask = pairwise_fn(
+        jnp.expand_dims(query_input, axis=-1), jnp.expand_dims(key_input, axis=-2)
+    )
     mask = jnp.expand_dims(mask, axis=-3)
     return mask.astype(dtype)
 
@@ -483,7 +514,10 @@ class Linear(hk.Linear):
         output_size = self.output_size
 
         w = hk.get_parameter(
-            "w", [input_size, output_size], jnp.float32, init=hk.initializers.Constant(0)
+            "w",
+            [input_size, output_size],
+            jnp.float32,
+            init=hk.initializers.Constant(0),
         )
 
         if hasattr(w, "scales"):
@@ -609,7 +643,9 @@ class RotaryEmbedding(hk.Module):
                 dtype=jnp.float32,
             )
         elif t is None:
-            t = jnp.arange(x.shape[seq_dim], dtype=jnp.float32) + jnp.expand_dims(offset, -1)
+            t = jnp.arange(x.shape[seq_dim], dtype=jnp.float32) + jnp.expand_dims(
+                offset, -1
+            )
         phase = jnp.einsum("bi,j->bij", t, inv_freq)
         phase = jnp.tile(phase, reps=(1, 2))[:, :, None, :]
 
@@ -673,7 +709,9 @@ class MultiHeadAttention(hk.Module):
 
         # Check that the keys and values have consistent batch size and sequence length.
         if not use_memory:
-            assert key.shape[:2] == value.shape[:2], f"key/value shape: {key.shape}/{value.shape}"
+            assert (
+                key.shape[:2] == value.shape[:2]
+            ), f"key/value shape: {key.shape}/{value.shape}"
 
         if mask is not None:
             assert mask.ndim == 4
@@ -727,8 +765,12 @@ class MultiHeadAttention(hk.Module):
         )  # [B, T, H, V]
 
         rotate = RotaryEmbedding(dim=self.key_size, base_exponent=int(1e4))
-        key_heads = rotate(key_heads, seq_dim=1, offset=(kv_memory.step if kv_memory else 0))
-        query_heads = rotate(query_heads, seq_dim=1, offset=(kv_memory.step if kv_memory else 0))
+        key_heads = rotate(
+            key_heads, seq_dim=1, offset=(kv_memory.step if kv_memory else 0)
+        )
+        query_heads = rotate(
+            query_heads, seq_dim=1, offset=(kv_memory.step if kv_memory else 0)
+        )
 
         @functools.partial(jax.vmap)
         def update_into(mem, start, update):
@@ -752,7 +794,9 @@ class MultiHeadAttention(hk.Module):
                     return update_into(mems, starts, updates)
 
                 key_heads = update_into_shmap(kv_memory.k, kv_memory.step, key_heads)
-                value_heads = update_into_shmap(kv_memory.v, kv_memory.step, value_heads)
+                value_heads = update_into_shmap(
+                    kv_memory.v, kv_memory.step, value_heads
+                )
             else:
                 key_heads = update_into(kv_memory.k, kv_memory.step, key_heads)
                 value_heads = update_into(kv_memory.v, kv_memory.step, value_heads)
@@ -771,9 +815,15 @@ class MultiHeadAttention(hk.Module):
                 step=new_step,
             )
         # Add separate dimension for grouped query heads.
-        query_heads = with_sharding_constraint(query_heads, P(self.data_axis, None, "model", None))
-        key_heads = with_sharding_constraint(key_heads, P(self.data_axis, None, "model", None))
-        value_heads = with_sharding_constraint(value_heads, P(self.data_axis, None, "model", None))
+        query_heads = with_sharding_constraint(
+            query_heads, P(self.data_axis, None, "model", None)
+        )
+        key_heads = with_sharding_constraint(
+            key_heads, P(self.data_axis, None, "model", None)
+        )
+        value_heads = with_sharding_constraint(
+            value_heads, P(self.data_axis, None, "model", None)
+        )
         b, t, h, d = query_heads.shape
         _, _, kv_h, _ = key_heads.shape
         assert h % kv_h == 0, f"query_heads {h} must be a multiple of kv_heads {kv_h}"
@@ -785,9 +835,9 @@ class MultiHeadAttention(hk.Module):
 
         # Compute attention weights.
         # Attention softmax is always carried out in fp32.
-        attn_logits = jnp.einsum("...thHd,...Thd->...hHtT", query_heads, key_heads).astype(
-            jnp.float32
-        )
+        attn_logits = jnp.einsum(
+            "...thHd,...Thd->...hHtT", query_heads, key_heads
+        ).astype(jnp.float32)
         attn_logits *= self.attn_output_multiplier
         max_attn_val = jnp.array(30.0, dtype=attn_logits.dtype)
         attn_logits = max_attn_val * jnp.tanh(attn_logits / max_attn_val)
@@ -805,7 +855,9 @@ class MultiHeadAttention(hk.Module):
 
         # Weight the values by the attention and flatten the head vectors.
         attn = jnp.einsum("...hHtT,...Thd->...thHd", attn_weights, value_heads)
-        attn = with_sharding_constraint(attn, P(self.data_axis, None, "model", None, None))
+        attn = with_sharding_constraint(
+            attn, P(self.data_axis, None, "model", None, None)
+        )
         leading_dims = attn.shape[:2]
         attn = jnp.reshape(attn, (*leading_dims, -1))  # [T', H*V]
         attn = with_sharding_constraint(attn, P(self.data_axis, None, "model"))
@@ -1095,9 +1147,9 @@ class LanguageModelConfig:
     def initialize(self):
         # We cannot specify [] as a default value (it is mutable), hence None.
         model_config = self.model
-        assert self.init_scale_override is None, (
-            "Overriding model initialize scale is supported only for predefined models."
-        )
+        assert (
+            self.init_scale_override is None
+        ), "Overriding model initialize scale is supported only for predefined models."
         if self.model_size == 0:
             self.model_size = model_config.emb_size
         assert self.model is not None, "Model could not be initialized."
@@ -1181,13 +1233,19 @@ class LanguageModel(hk.Module):
         assert embeddings.dtype == self.fprop_dtype
 
         if last_hid_only:
-            last_step = jnp.maximum(jnp.sum(input_mask.astype(jnp.int32), axis=1) - 1, 0)
-            last_hid = jax.vmap(lambda x, i: x[i], in_axes=0, out_axes=0)(embeddings, last_step)
+            last_step = jnp.maximum(
+                jnp.sum(input_mask.astype(jnp.int32), axis=1) - 1, 0
+            )
+            last_hid = jax.vmap(lambda x, i: x[i], in_axes=0, out_axes=0)(
+                embeddings, last_step
+            )
             return last_hid
 
         if length is not None:
             last_step = jnp.maximum(length.astype(jnp.int32) - 1, 0)
-            embeddings = jax.vmap(lambda x, i: x[i], in_axes=0, out_axes=0)(embeddings, last_step)
+            embeddings = jax.vmap(lambda x, i: x[i], in_axes=0, out_axes=0)(
+                embeddings, last_step
+            )
             embeddings = jnp.expand_dims(embeddings, axis=1)
 
         # Decode the embeddings (here, we use tied weights).
@@ -1207,7 +1265,9 @@ class LanguageModel(hk.Module):
         )
 
     def init_memory(self, batch_size: int, seq_len: int, dtype=jnp.bfloat16):
-        return self.model.init_memory(batch_size=batch_size, sequence_len=seq_len, dtype=dtype)
+        return self.model.init_memory(
+            batch_size=batch_size, sequence_len=seq_len, dtype=dtype
+        )
 
     def prefill_memory(self, prompts, memory):
         # Pad to the left and right align?
