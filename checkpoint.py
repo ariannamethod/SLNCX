@@ -30,13 +30,13 @@ import jax
 import numpy as np
 from jax.experimental import multihost_utils
 
-from model import QuantizedWeight8bit
+from model import QuantizedWeight2bit
 
 logger = logging.getLogger(__name__)
 rank_logger = logging.getLogger("rank")
 
 # Needed for loading the checkpoint with pickle.
-sys.modules['__main__'].QuantizedWeight8bit = QuantizedWeight8bit
+sys.modules["__main__"].QuantizedWeight2bit = QuantizedWeight2bit
 
 
 @contextlib.contextmanager
@@ -92,13 +92,19 @@ def load_tensors(shaped_arrays, directory, mesh_config, tensor_indices=None):
     else:
         iterator = zip(tensor_indices, shaped_arrays)
     for i, t in iterator:
-        if (i % num_replicas) == ((jax.process_index() // data_model_shards) % num_replicas):
+        if (i % num_replicas) == (
+            (jax.process_index() // data_model_shards) % num_replicas
+        ):
             idx = (
-                jax.process_index() // (num_replicas * data_model_shards) * data_model_shards
+                jax.process_index()
+                // (num_replicas * data_model_shards)
+                * data_model_shards
                 + jax.process_index() % data_model_shards
             )
             fs.append(
-                pool.submit(fast_unpickle, os.path.join(directory, f"tensor{i:05d}_{idx:03d}"))
+                pool.submit(
+                    fast_unpickle, os.path.join(directory, f"tensor{i:05d}_{idx:03d}")
+                )
             )
             num_tensors += 1
         else:
@@ -115,7 +121,9 @@ def path_tuple_to_string(path: tuple) -> str:
         elif isinstance(elem, jax.tree_util.GetAttrKey):
             pieces.append(elem.name)
         else:
-            assert isinstance(elem, (jax.tree_util.FlattenedIndexKey, jax.tree_util.SequenceKey))
+            assert isinstance(
+                elem, (jax.tree_util.FlattenedIndexKey, jax.tree_util.SequenceKey)
+            )
     return "/".join(pieces)
 
 
@@ -135,7 +143,9 @@ def get_load_path_str(
     if load_rename_rules is not None:
         for search_pattern, replacement_pattern in load_rename_rules:
             if re.search(search_pattern, load_path_str):
-                load_path_str = re.sub(search_pattern, replacement_pattern, load_path_str)
+                load_path_str = re.sub(
+                    search_pattern, replacement_pattern, load_path_str
+                )
                 break
 
     return load_path_str
@@ -157,7 +167,9 @@ def replace_with_load_state(
     data_model_shards = math.prod(mesh_config)
     for i, (init_path, tensor) in enumerate(flatten_init):
         init_path_str = path_tuple_to_string(init_path)
-        load_path_str = get_load_path_str(init_path_str, load_rename_rules, load_exclude_rules)
+        load_path_str = get_load_path_str(
+            init_path_str, load_rename_rules, load_exclude_rules
+        )
         if load_path_str is None:
             rank_logger.info(f"Excluded from restore: {init_path_str}.")
             replaced.append(tensor)
@@ -165,11 +177,15 @@ def replace_with_load_state(
             if load_path_str == init_path_str:
                 rank_logger.info(f"Restored from ckpt: {init_path_str}.")
             else:
-                rank_logger.info(f"Restored from ckpt: {init_path_str} <-- {load_path_str}.")
+                rank_logger.info(
+                    f"Restored from ckpt: {init_path_str} <-- {load_path_str}."
+                )
             replaced.append(load_map[load_path_str])
         else:
             rank_logger.info(f"Not found in ckpt: {init_path_str}.")
-            if (i % num_replicas) == ((jax.process_index() // data_model_shards) % num_replicas):
+            if (i % num_replicas) == (
+                (jax.process_index() // data_model_shards) % num_replicas
+            ):
                 replaced.append(tensor)
             else:
                 replaced.append(np.zeros_like(tensor))
@@ -215,7 +231,9 @@ def restore(
         state_sharding,
         is_leaf=lambda x: x is None,
     )
-    state = multihost_utils.host_local_array_to_global_array(state, mesh, state_sharding)
+    state = multihost_utils.host_local_array_to_global_array(
+        state, mesh, state_sharding
+    )
     if params_only:
         state = state.params
     return state

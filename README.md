@@ -29,7 +29,7 @@ SLNCX is currently designed with the following specifications:
 - **Tokenization:** SentencePiece tokenizer with 131,072 tokens
 - **Additional Features:**
   - Rotary embeddings (RoPE)
-  - Supports activation sharding and 8-bit quantization
+  - Supports activation sharding and 2-bit quantization
 - **Maximum Sequence Length (context):** 8,192 tokens
 
 ## Downloading the weights
@@ -48,9 +48,9 @@ pip install huggingface_hub[hf_transfer]
 huggingface-cli download xai-org/slncx --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
 ```
 
-## 8-bit quantization
+## 2-bit quantization
 
-Use `python quantize.py <checkpoint_dir> <output_path>` to generate an 8-bit quantized checkpoint compatible with the runners. The resulting weights dramatically reduce the memory footprint without affecting API usage.
+Use `python quantize.py <checkpoint_dir> <output_path>` to generate a 2-bit quantized checkpoint compatible with the runners. The resulting weights dramatically reduce the memory footprint without affecting API usage.
 
 ## Next steps: fine-tuning
 
