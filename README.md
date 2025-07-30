@@ -19,15 +19,16 @@ This project is still forming. SLNCX wakes, solves, and goes back to sleep. Expe
 
 ## Logging and Memory
 
-Session logs are written to `logs/wulf/` as JSON files named by day. Each entry
-contains the user prompt, Wulf's reply and a timestamp. Failures and tracebacks
-are appended to files in `failures/`.
+Session logs are written to `logs/wulf/` as JSONL files named by day. Each line
+is a JSON object with the user prompt, Wulf's reply and a timestamp. Failures
+and tracebacks are appended to files in `failures/`.
 
 The `scripts` directory contains simple helpers:
 
 - `session_logger.py` – append a prompt/response pair to the current log.
 - `wulf_cli.py` – minimal CLI for local prompts.
 - `fail_log.py` – record a failure with traceback.
+- `read_session_logs.py` – print entries from a log file.
 
 Install dependencies with `pip install -r requirements.txt` and start the
 server with `python app.py` or use the CLI for one-off queries.
