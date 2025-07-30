@@ -4,11 +4,13 @@ SLNCX started as an experiment in heavy models but evolved into a single, silent
 
 ## Running
 
-1. Place your quantized checkpoint at `out/ckpt.pt`. Use
+1. Place your quantized checkpoint at `out/ckpt.pt`, or specify another path
+   with the `CKPT_PATH` environment variable or the `--ckpt` option. Use
    `python quantize.py <checkpoint_dir> out/ckpt.pt` if you need to convert a
    raw checkpoint.
 2. `pip install -r requirements.txt`.
-3. `python wulf_cli.py "your prompt"` to query Wulf from the command line.
+3. `python wulf_cli.py [--ckpt path/to/ckpt.pt] "your prompt"` to query Wulf
+   from the command line.
 4. `uvicorn app:app --host 0.0.0.0 --port 8000` to start the API server.
 
 No HuggingFace, no extra services. The quantized weights fit in memory and run on a standard CPU.

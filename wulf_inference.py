@@ -1,4 +1,5 @@
 import argparse
+import os
 from pathlib import Path
 
 import torch
@@ -10,12 +11,16 @@ from scripts.fail_log import log_failure
 
 MODEL: GPT | None = None
 
-CKPT_PATH = Path('out/ckpt.pt')
+# Default checkpoint location can be overridden via the CKPT_PATH
+# environment variable.
+CKPT_PATH = Path(os.getenv('CKPT_PATH', 'out/ckpt.pt'))
 
 
-def load_model() -> GPT:
+def load_model(ckpt_path: str | Path | None = None) -> GPT:
     """Return the cached GPT model, loading it if necessary."""
-    global MODEL
+    global MODEL, CKPT_PATH
+    if ckpt_path is not None:
+        CKPT_PATH = Path(ckpt_path)
     if MODEL is not None:
         return MODEL
     if not CKPT_PATH.exists():
@@ -53,8 +58,12 @@ except FileNotFoundError:
     pass
 
 
-def main(prompt: str, user: str | None = None) -> None:
+def main(prompt: str, user: str | None = None, ckpt: str | None = None) -> None:
     try:
+        if ckpt:
+            os.environ["CKPT_PATH"] = ckpt
+            global CKPT_PATH
+            CKPT_PATH = Path(ckpt)
         response = generate(prompt)
         log_session(prompt, response, user=user)
         print(response)
@@ -67,5 +76,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run Wulf inference')
     parser.add_argument('prompt', help='prompt text')
     parser.add_argument('--user')
+    parser.add_argument('--ckpt', help='path to checkpoint file')
     args = parser.parse_args()
-    main(args.prompt, user=args.user)
+    main(args.prompt, user=args.user, ckpt=args.ckpt)
