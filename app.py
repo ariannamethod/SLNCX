@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import logging
+import asyncio
 
 from wulf_inference import generate
 from scripts.session_logger import log_session
@@ -11,14 +12,16 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
+
 class Query(BaseModel):
     prompt: str
     user: str | None = None
 
+
 @app.post("/generate")
-def run_generation(query: Query):
+async def run_generation(query: Query):
     try:
-        response = generate(query.prompt)
+        response = await asyncio.to_thread(generate, query.prompt)
         log_session(query.prompt, response, user=query.user)
         return {"response": response}
     except Exception as exc:
