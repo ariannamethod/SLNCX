@@ -1,2 +1,11 @@
 checkpoints/*
 !checkpoints/README.md
+__pycache__/
+logs/
+failures/
+*.bin
+# other temporary files
+*.py[cod]
+*.tmp
+*.log
+.DS_Store
