@@ -1,4 +1,4 @@
-# SLNCX (Wulf1)
+# SLNCX (Wulf)
 
 SLNCX is built to solve problems quietly, guided by the persona of Wulf. When called, it answers with focus and then returns to stillness.
 
