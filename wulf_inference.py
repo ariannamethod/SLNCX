@@ -10,7 +10,8 @@ from scripts.session_logger import log_session
 from scripts.fail_log import log_failure
 
 MODEL: GPT | None = None
-ENCODER: tiktoken.Encoding | None = None
+# Initialize the encoder at import time so it is available immediately.
+ENCODER: tiktoken.Encoding = tiktoken.get_encoding("gpt2")
 
 # Default checkpoint location can be overridden via the CKPT_PATH
 # environment variable.
@@ -44,9 +45,6 @@ def load_model(ckpt_path: str | Path | None = None) -> GPT:
 def generate(prompt: str, max_new_tokens: int = 100) -> str:
     """Generate a response using the cached model."""
     model = load_model()
-    global ENCODER
-    if ENCODER is None:
-        ENCODER = tiktoken.get_encoding("gpt2")
     enc = ENCODER
     idx = torch.tensor(enc.encode(prompt), dtype=torch.long)[None, ...]
     with torch.no_grad():
