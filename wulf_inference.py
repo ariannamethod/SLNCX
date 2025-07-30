@@ -4,12 +4,14 @@ from pathlib import Path
 
 import torch
 import tiktoken
+import threading
 
 from nanogpt_model import GPTConfig, GPT
 from scripts.session_logger import log_session
 from scripts.fail_log import log_failure
 
 MODEL: GPT | None = None
+MODEL_LOCK = threading.Lock()
 
 # Default checkpoint location can be overridden via the CKPT_PATH
 # environment variable.
@@ -26,17 +28,20 @@ def load_model(ckpt_path: str | Path | None = None) -> GPT:
     if not CKPT_PATH.exists():
         raise FileNotFoundError(f"checkpoint not found at {CKPT_PATH}")
 
-    checkpoint = torch.load(CKPT_PATH, map_location="cpu")
-    gptconf = GPTConfig(**checkpoint["model_args"])
-    model = GPT(gptconf)
-    state_dict = checkpoint["model"]
-    unwanted_prefix = "_orig_mod."
-    for k in list(state_dict.keys()):
-        if k.startswith(unwanted_prefix):
-            state_dict[k[len(unwanted_prefix) :]] = state_dict.pop(k)
-    model.load_state_dict(state_dict)
-    model.eval()
-    MODEL = model
+    with MODEL_LOCK:
+        if MODEL is not None:
+            return MODEL
+        checkpoint = torch.load(CKPT_PATH, map_location="cpu")
+        gptconf = GPTConfig(**checkpoint["model_args"])
+        model = GPT(gptconf)
+        state_dict = checkpoint["model"]
+        unwanted_prefix = "_orig_mod."
+        for k in list(state_dict.keys()):
+            if k.startswith(unwanted_prefix):
+                state_dict[k[len(unwanted_prefix) :]] = state_dict.pop(k)
+        model.load_state_dict(state_dict)
+        model.eval()
+        MODEL = model
     return MODEL
 
 
