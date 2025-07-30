@@ -34,6 +34,13 @@ The `scripts` directory contains simple helpers:
 
 Install dependencies with `pip install -r requirements.txt` and start the
 server with `python app.py` or use the CLI for one-off queries.
+## Model Components
+
+The `models/` package groups reusable parts of the network:
+- **layers** – dense and decoder blocks.
+- **attention** – multi-head attention with rotary embeddings.
+- **moe** – routing logic for mixture-of-experts layers.
+
 
 ## Deployment on Railway
 
