@@ -2,3 +2,8 @@ fastapi==0.110.0
 uvicorn==0.29.0
 torch==2.2.2
 tiktoken==0.6.0
+
+jax==0.7.0
+jaxlib==0.7.0
+dm-haiku==0.0.14
+sentencepiece==0.2.0
