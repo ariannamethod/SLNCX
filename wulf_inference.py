@@ -34,10 +34,10 @@ def generate(prompt: str, max_new_tokens: int = 100) -> str:
     return enc.decode(y[0].tolist())
 
 
-def main(prompt: str) -> None:
+def main(prompt: str, user: str | None = None) -> None:
     try:
         response = generate(prompt)
-        log_session(prompt, response)
+        log_session(prompt, response, user=user)
         print(response)
     except Exception as e:
         log_failure(prompt, e)
@@ -47,5 +47,6 @@ def main(prompt: str) -> None:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run Wulf inference')
     parser.add_argument('prompt', help='prompt text')
+    parser.add_argument('--user')
     args = parser.parse_args()
-    main(args.prompt)
+    main(args.prompt, user=args.user)
