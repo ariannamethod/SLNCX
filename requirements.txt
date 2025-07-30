@@ -1,8 +1,5 @@
-dm_haiku==0.0.12
-jax==0.4.25
-jaxlib==0.4.25
-numpy==1.26.4
-sentencepiece==0.2.0
+fastapi==0.110.0
+uvicorn==0.29.0
 torch==2.2.2
 tiktoken==0.6.0
-scikit-learn==1.4.2
+numpy==1.26.4

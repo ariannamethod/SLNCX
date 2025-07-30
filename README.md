@@ -1,38 +1,33 @@
-# SLNCX (Wulf1)
+# Wulf1
 
-SLNCX started as an experiment in heavy models but evolved into a single, silent core. It runs as part of the Arianna Method and answers only when called. Forget Grok1 or any other open clone—the code here is lean and private.
+Wulf1 is a lean local language model. It runs entirely offline and wakes only when called.
 
-## Running
+## Local setup
 
-1. Put your checkpoint into `checkpoints/ckpt-0`.
-2. `pip install -r requirements.txt`.
-3. `python quantize.py checkpoints/ckpt-0 out/ckpt.pt` for a 2‑bit build.
-4. `python wulf_cli.py "your prompt"` to query Wulf.
-5. `python watch_datasets.py` to pull in new local datasets.
-6. `python wulf_train.py` for a lightweight self‑training pass.
+1. Place your quantized checkpoint at `out/ckpt.pt`.
+2. Install dependencies with `pip install -r requirements.txt`.
+3. Start the API with `python app.py`.
+4. POST to `http://localhost:8000/generate` with JSON:
 
-No HuggingFace, no extra services. The quantized weights fit in memory and run on a standard CPU.
+```bash
+curl -X POST http://localhost:8000/generate \
+  -H 'Content-Type: application/json' \
+  -d '{"user": "alice", "prompt": "Hello"}'
+```
 
-## State
+You can also test quickly with `python wulf_cli.py "your prompt"`.
 
-This project is still forming. SLNCX wakes, solves, and goes back to sleep. Expect only what you see here.
+### Maintenance tools
 
-## Logging and Memory
-
-Session logs are written to `logs/wulf/` as JSON files named by day. Each entry
-contains the user prompt, Wulf's reply and a timestamp. Failures and tracebacks
-are appended to files in `failures/`.
-
-The `scripts` directory provides maintenance utilities:
-
-- `session_logger.py` – append a prompt/response pair to the current log.
-- `wulf_cli.py` – simple CLI to query the model.
-- `fail_log.py` – record a failure with traceback.
-- `entropy_prune.py` – remove low-entropy sessions from the logs.
-- `memory_vector.py` – build `mem/wulf_vector.json` from past responses.
-- `daily_routine.sh` – run pruning and memory updates (for cron).
 - `watch_datasets.py` – copy new datasets into `logs/wulf/`.
-- `wulf_train.py` – perform a quick self‑training cycle.
+- `wulf_train.py` – run a lightweight self‑training pass.
+- `entropy_prune.py` and `memory_vector.py` help clean logs and update memory.
 
-Install dependencies with `pip install -r requirements.txt` which now includes
-`scikit-learn` for the vector utilities.
+## Deploying on Railway
+
+1. Create a Railway project from this repo.
+2. Set the service command to `python app.py`.
+3. Upload your `out/ckpt.pt` checkpoint to the project.
+4. Deploy. Railway will expose the API on its assigned port.
+
+Logs are stored in `logs/wulf/` and failures in `failures/`.
