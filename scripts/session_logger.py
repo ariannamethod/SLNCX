@@ -11,7 +11,7 @@ LOG_DIR.mkdir(parents=True, exist_ok=True)
 def log_session(prompt: str, response: str, user: str | None = None) -> None:
     """Append a single session entry to today's log."""
     day = datetime.utcnow().strftime('%Y-%m-%d')
-    log_file = LOG_DIR / f"{day}.json"
+    log_file = LOG_DIR / f"{day}.jsonl"
     entry = {
         "timestamp": datetime.utcnow().isoformat(),
         "prompt": prompt,
@@ -19,17 +19,8 @@ def log_session(prompt: str, response: str, user: str | None = None) -> None:
     }
     if user:
         entry["user"] = user
-    data = []
-    if log_file.exists():
-        try:
-            data = json.loads(log_file.read_text(encoding='utf-8'))
-        except json.JSONDecodeError:
-            data = []
-    data.append(entry)
-    log_file.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2),
-        encoding='utf-8',
-    )
+    with log_file.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
 if __name__ == "__main__":
