@@ -37,6 +37,7 @@ from jax.experimental.shard_map import shard_map
 from jax.lax import with_sharding_constraint as pjit_sharding_constraint
 from jax.sharding import PartitionSpec
 from jax.sharding import PartitionSpec as P
+from models import DenseBlock, DecoderLayer, DecoderOutput, MHABlock, MultiHeadAttention, RotaryEmbedding, rotate_half, MoELayer, Router
 
 config.update("jax_spmd_mode", "allow_all")
 
