@@ -1,5 +1,13 @@
 # SLNCX (Wulf1)
 
+SLNCX is built to solve problems quietly, guided by the persona of Wulf. When called, it answers with focus and then returns to stillness.
+
+The Arianna Method shapes each exchange. Wulf listens first, then speaks with clarity and restraint.
+
+Silence is part of the design. The minimalist core runs on modest hardware with no excess services.
+
+Take care with the included dataset. It is small, purpose-driven, and not intended for large-scale training.
+
 SLNCX started as an experiment in heavy models but evolved into a single, silent core. It runs as part of the Arianna Method and answers only when called. Forget Grok1 or any other open clone—the code here is lean and private.
 
 ## Running
