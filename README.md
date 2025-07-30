@@ -35,6 +35,10 @@ The `scripts` directory contains simple helpers:
 Install dependencies with `pip install -r requirements.txt` and start the
 server with `python app.py` or use the CLI for one-off queries.
 
+## Development
+
+Run `pytest` to execute the test suite. Run `ruff .` to lint the code.
+
 ## Deployment on Railway
 
 1. Create a new Railway project and point it at this repository.
