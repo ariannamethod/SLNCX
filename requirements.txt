@@ -2,3 +2,5 @@ fastapi==0.110.0
 uvicorn==0.29.0
 torch==2.2.2
 tiktoken==0.6.0
+pytest==8.1.1
+ruff==0.3.4
