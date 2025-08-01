@@ -6,7 +6,7 @@ The Arianna Method shapes each exchange. Wulf listens first, then answers with r
 
 ## Architecture
 
-The model borrows from Grok1 but runs trimmed down:
+The model borrows from Grok1 but runs trimmed down. Grok1's use of experts is a small revolution: each token consults multiple specialized networks, so quality doesn't depend on one giant block. Running that MoE stack entirely on a CPU proves how far optimization has come. Heavy weights aren't the only way to get powerful responses; lean routing and quantization pick up the slack. As the design evolves, lighter models feel natural, not limited. It's an evolutionary path that balances efficiency with capability:
 
 - **Mixture of Experts (MoE)** with eight experts per layer, two chosen per token.
 - **Large Context Window** up to 8,192 tokens.
