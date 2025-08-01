@@ -1,0 +1,1185 @@
+Line number,Character (in script),Character (actual),Off screen,Voice-over,Place,Time,Line,Word count
+1,Young man,Pumpkin,False,False,int. coffee shop,morning,"No, forget it, it's too risky. I'm through doin' that shit.",11
+2,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"You always say that, the same thing every time: never again, I'm through, too dangerous.",15
+3,Young man,Pumpkin,False,False,int. coffee shop,morning,"I know that's what I always say. I'm always right too, but –",12
+4,Young woman,Honey Bunny,False,False,int. coffee shop,morning,– but you forget about it in a day or two -,10
+5,Young man,Pumpkin,False,False,int. coffee shop,morning,"– yeah, well, the days of me forgittin' are over, and the days of me rememberin' have just begun.",18
+6,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"When you go on like this, you know what you sound like?",12
+7,Young man,Pumpkin,False,False,int. coffee shop,morning,"I sound like a sensible fucking man, is what I sound like.",12
+8,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"You sound like a duck. Quack, quack, quack, quack, quack, quack, quack...",12
+9,Young man,Pumpkin,False,False,int. coffee shop,morning,"Well take heart, 'cause you're never gonna hafta hear it again. Because since I'm never gonna do it again, you're never gonna hafta hear me quack about how I'm never gonna do it again.",34
+10,Young woman,Honey Bunny,False,False,int. coffee shop,morning,After tonight.,2
+11,Young man,Pumpkin,False,False,int. coffee shop,morning,Correct. I got all tonight to quack.,7
+12,Waitress,Waitress,False,False,int. coffee shop,morning,Can I get anybody anymore coffee?,6
+13,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"Oh yes, thank you.",4
+14,Young man,Pumpkin,False,False,int. coffee shop,morning,I'm doin' fine.,3
+15,Young man,Pumpkin,False,False,int. coffee shop,morning,"I mean the way it is now, you're takin' the same fuckin' risk as when you rob a bank. You take more of a risk. Banks are easier! Federal banks aren't supposed to stop you anyway, during a robbery. They're insured, why should they care? You don't even need a gun in a federal bank. I heard about this guy, walked into a federal bank with a portable phone, handed the phone to the teller, the guy on the other end of the phone said: ""We got this guy's little girl, and if you don't give him all your money, we're gonna kill 'er.""",104
+16,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Did it work?,3
+17,Young man,Pumpkin,False,False,int. coffee shop,morning,"Fuckin' A it worked, that's what I'm talkin' about! Knucklehead walks in a bank with a telephone, not a pistol, not a shotgun, but a fuckin' phone, cleans the place out, and they don't lift a fuckin' finger.",38
+18,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Did they hurt the little girl?,6
+19,Young man,Pumpkin,False,False,int. coffee shop,morning,I don't know. There probably never was a little girl – the point of the story isn't the little girl. The point of the story is they robbed the bank with a telephone.,32
+20,Young woman,Honey Bunny,False,False,int. coffee shop,morning,You wanna rob banks?,4
+21,Young man,Pumpkin,False,False,int. coffee shop,morning,"I'm not sayin' I wanna rob banks, I'm just illustrating that if we did, it would be easier than what we been doin'.",23
+22,Young woman,Honey Bunny,False,False,int. coffee shop,morning,So you don't want to be a bank robber?,9
+23,Young man,Pumpkin,False,False,int. coffee shop,morning,"Naw, all those guys are goin' down the same road, either dead or servin' twenty.",15
+24,Young woman,Honey Bunny,False,False,int. coffee shop,morning,And no more liquor stores?,5
+25,Young man,Pumpkin,False,False,int. coffee shop,morning,"What have we been talking about? Yeah, no more-liquor-stores. Besides, it ain't the giggle it usta be. Too many foreigners own liquor stores. Vietnamese, Koreans, they can't fuckin' speak English. You tell 'em: ""Empty out the register,"" and they don't know what it fuckin' means. They make it too personal. We keep on, one of those gook motherfuckers' gonna make us kill 'em.",63
+26,Young woman,Honey Bunny,False,False,int. coffee shop,morning,I'm not gonna kill anybody.,5
+27,Young man,Pumpkin,False,False,int. coffee shop,morning,"I don't wanna kill anybody either. But they'll probably put us in a situation where it's us of them. And if it's not the gooks, it these old Jews who've owned the store for fifteen fuckin' generations. Ya got Grandpa Irving sittin' behind the counter with a fuckin' Magnum. Try walkin' into one of those stores with nothin' but a telephone, see how far it gets you. Fuck it, forget it, we're out of it.",75
+28,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"Well, what else is there, day jobs?",7
+29,Young man,Pumpkin,False,False,int. coffee shop,morning,Not this life.,3
+30,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Well what then?,3
+31,Young man,Pumpkin,False,False,int. coffee shop,morning,Garcon! Coffee!,2
+32,Young man,Pumpkin,False,False,int. coffee shop,morning,This place.,2
+33,Waitress,Waitress,False,False,int. coffee shop,morning,"""Garcon"" means boy.",3
+34,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Here? It's a coffee shop.,5
+35,Young man,Pumpkin,False,False,int. coffee shop,morning,"What's wrong with that? People never rob restaurants, why not? Bars, liquor stores, gas stations, you get your head blown off stickin' up one of them. Restaurants, on the other hand, you catch with their pants down. They're not expecting to get robbed, or not as expecting.",47
+36,Young woman,Honey Bunny,False,False,int. coffee shop,morning,I bet in places like this you could cut down on the hero factor.,14
+37,Young man,Pumpkin,False,False,int. coffee shop,morning,"Correct. Just like banks, these places are insured. The managers don't give a fuck, they're just tryin' to get ya out the door before you start pluggin' diners. Waitresses, forget it, they ain't takin' a bullet for the register. Busboys, some wetback gettin' paid a dollar fifty a hour gonna really give a fuck you're stealin' from the owner. Customers are sittin' there with food in their mouths, they don't know what's goin' on. One minute they're havin' a Denver omelet, next minute somebody's stickin' a gun in their face.",90
+38,Young man,Pumpkin,False,False,int. coffee shop,morning,"See, I got the idea last liquor store we stuck up. 'Member all those customers kept comin' in?",18
+39,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Yeah.,1
+40,Young man,Pumpkin,False,False,int. coffee shop,morning,Then you got the idea to take everybody's wallet.,9
+41,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Uh-huh.,1
+42,Young man,Pumpkin,False,False,int. coffee shop,morning,That was a good idea.,5
+43,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Thanks.,1
+44,Young man,Pumpkin,False,False,int. coffee shop,morning,We made more from the wallets then we did the register.,11
+45,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Yes we did.,3
+46,Young man,Pumpkin,False,False,int. coffee shop,morning,A lot of people go to restaurants.,7
+47,Young woman,Honey Bunny,False,False,int. coffee shop,morning,A lot of wallets.,4
+48,Young man,Pumpkin,False,False,int. coffee shop,morning,"Pretty smart, huh?",3
+49,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"Pretty smart. I'm ready, let's go, right here, right now.",10
+50,Young man,Pumpkin,False,False,int. coffee shop,morning,"Remember, same as before, you're crowd control, I handle the employees.",11
+51,Young woman,Honey Bunny,False,False,int. coffee shop,morning,Got it.,2
+52,Young woman,Honey Bunny,False,False,int. coffee shop,morning,"I love you, Pumpkin.",4
+53,Young man,Pumpkin,False,False,int. coffee shop,morning,"I love you, Honey Bunny.",5
+54,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Everybody be cool this is a robbery!,7
+55,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,Any of you fuckin' pricks move and I'll execute every one of you motherfuckers! Got that?,16
+56,Jules,Jules,False,False,int. '74 Chevy (moving),morning,"– Okay now, tell me about the hash bars?",8
+57,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,What so you want to know?,6
+58,Jules,Jules,False,False,int. '74 Chevy (moving),morning,"Well, hash is legal there, right?",6
+59,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"Yeah, it's legal, but is ain't a hundred percent legal. I mean you can't walk into a restaurant, roll a joint, and start puffin' away. You're only supposed to smoke in your home or certain designated places.",37
+60,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Those are hash bars?,4
+61,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"Yeah, it breaks down like this: it's legal to buy it, it's legal to own it and, if you're the proprietor of a hash bar, it's legal to sell it. It's legal to carry it, which doesn't really matter 'cause – get a load of this – if the cops stop you, it's illegal for this to search you. Searching you is a right that the cops in Amsterdam don't have.",69
+62,Jules,Jules,False,False,int. '74 Chevy (moving),morning,"That did it, man – I'm fuckin' goin', that's all there is to it.",13
+63,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,You'll dig it the most. But you know what the funniest thing about Europe is?,15
+64,Jules,Jules,False,False,int. '74 Chevy (moving),morning,What?,1
+65,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"It's the little differences. A lotta the same shit we got here, they got there, but there they're a little different.",21
+66,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Examples?,1
+67,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"Well, in Amsterdam, you can buy beer in a movie theatre. And I don't mean in a paper cup either. They give you a glass of beer, like in a bar. In Paris, you can buy beer at MacDonald's. Also, you know what they call a Quarter Pounder with Cheese in Paris?",52
+68,Jules,Jules,False,False,int. '74 Chevy (moving),morning,They don't call it a Quarter Pounder with Cheese?,9
+69,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"No, they got the metric system there, they wouldn't know what the fuck a Quarter Pounder is.",17
+70,Jules,Jules,False,False,int. '74 Chevy (moving),morning,What'd they call it?,4
+71,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,Royale with Cheese.,3
+72,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Royale with Cheese. What'd they call a Big Mac?,9
+73,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"Big Mac's a Big Mac, but they call it Le Big Mac.",12
+74,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Le Big Mac. What do they call a Whopper?,9
+75,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"I dunno, I didn't go into a Burger King. But you know what they put on french fries in Holland instead of ketchup?",23
+76,Jules,Jules,False,False,int. '74 Chevy (moving),morning,What?,1
+77,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,Mayonnaise.,1
+78,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Goddamn!,1
+79,Vincent,Vincent,False,False,int. '74 Chevy (moving),morning,"I seen 'em do it. And I don't mean a little bit on the side of the plate, they fuckin' drown 'em in it.",24
+80,Jules,Jules,False,False,int. '74 Chevy (moving),morning,Uuccch!,1
+81,Jules,Jules,False,False,int. Chevy (trunk),morning,We should have shotguns for this kind of deal.,9
+82,Vincent,Vincent,False,False,int. Chevy (trunk),morning,How many up there?,4
+83,Jules,Jules,False,False,int. Chevy (trunk),morning,Three or four.,3
+84,Vincent,Vincent,False,False,int. Chevy (trunk),morning,Counting our guy?,3
+85,Jules,Jules,False,False,int. Chevy (trunk),morning,I'm not sure.,3
+86,Vincent,Vincent,False,False,int. Chevy (trunk),morning,So there could be five guys up there?,8
+87,Jules,Jules,False,False,int. Chevy (trunk),morning,It's possible.,2
+88,Vincent,Vincent,False,False,int. Chevy (trunk),morning,We should have fuckin' shotguns.,5
+89,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,What's her name?,3
+90,Jules,Jules,False,False,ext. apartment building courtyard,morning,Mia.,1
+91,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,How did Marsellus and her meet?,6
+92,Jules,Jules,False,False,ext. apartment building courtyard,morning,"I dunno, however people meet people. She usta be an actress.",11
+93,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,She ever do anything I woulda saw?,7
+94,Jules,Jules,False,False,ext. apartment building courtyard,morning,I think her biggest deal was she starred in a pilot.,11
+95,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,What's a pilot?,3
+96,Jules,Jules,False,False,ext. apartment building courtyard,morning,"Well, you know the shows on TV?",7
+97,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,I don't watch TV.,4
+98,Jules,Jules,False,False,ext. apartment building courtyard,morning,"Yes, but you're aware that there's an invention called television, and on that invention they show shows?",17
+99,Vincent,Vincent,False,False,ext. apartment building courtyard,morning,Yeah.,1
+100,Jules,Jules,False,False,ext. apartment building courtyard,morning,"Well, the way they pick the shows on TV is they make one show, and that show's called a pilot. And they show that one show to the people who pick the shows, and on the strength of that one show, they decide if they want to make more shows. Some get accepted and become TV programs, and some don't, and become nothing. She starred in one of the ones that became nothing.",73
+101,Jules,Jules,False,False,int. reception area (apartment building),morning,"You remember Antwan Rockamora? Half- black, half-Samoan, usta call him Tony Rocky Horror.",13
+102,Vincent,Vincent,False,False,int. reception area (apartment building),morning,"Yeah maybe, fat right?",4
+103,Jules,Jules,False,False,int. reception area (apartment building),morning,"I wouldn't go so far as to call the brother fat. He's got a weight problem. What's the nigger gonna do, he's Samoan.",23
+104,Vincent,Vincent,False,False,int. reception area (apartment building),morning,"I think I know who you mean, what about him?",10
+105,Jules,Jules,False,False,int. reception area (apartment building),morning,"Well, Marsellus fucked his ass up good. And word around the campfire, it was on account of Marsellus Wallace's wife.",20
+106,Vincent,Vincent,False,False,int. elevator,morning,"What'd he do, fuck her?",5
+107,Jules,Jules,False,False,int. elevator,morning,"No no no no no no no, nothin' that bad.",10
+108,Vincent,Vincent,False,False,int. elevator,morning,Well what then?,3
+109,Jules,Jules,False,False,int. elevator,morning,He gave her a foot massage.,6
+110,Vincent,Vincent,False,False,int. elevator,morning,A foot massage?,3
+111,Vincent,Vincent,False,False,int. elevator,morning,That's all?,2
+112,Vincent,Vincent,False,False,int. elevator,morning,What did Marsellus do?,4
+113,Jules,Jules,False,False,int. elevator,morning,"Sent a couple of guys over to his place. They took him out on the patio of his apartment, threw his ass over the balcony. Nigger fell four stories. They had this garden at the bottom, enclosed in glass, like one of them greenhouses – nigger fell through that. Since then, he's kinda developed a speech impediment.",56
+114,Vincent,Vincent,False,False,int. elevator,morning,That's a damn shame.,4
+115,Vincent,Vincent,False,False,int. apartment building hallway,morning,"Still I hafta say, play with matches, ya get burned.",10
+116,Jules,Jules,False,False,int. apartment building hallway,morning,Whaddya mean?,2
+117,Vincent,Vincent,False,False,int. apartment building hallway,morning,You don't be givin' Marsellus Wallace's new bride a foot massage.,11
+118,Jules,Jules,False,False,int. apartment building hallway,morning,You don't think he overreacted?,5
+119,Vincent,Vincent,False,False,int. apartment building hallway,morning,"Antwan probably didn't expect Marsellus to react like he did, but he had to expect a reaction.",17
+120,Jules,Jules,False,False,int. apartment building hallway,morning,"It was a foot massage, a foot massage is nothing, I give my mother a foot massage.",17
+121,Vincent,Vincent,False,False,int. apartment building hallway,morning,"It's laying hands on Marsellus Wallace's new wife in a familiar way. Is it as bad as eatin' her out – no, but you're in the same fuckin' ballpark.",28
+122,Jules,Jules,False,False,int. apartment building hallway,morning,"Whoa... whoa... whoa... stop right there. Eatin' a bitch out, and givin' a bitch a foot massage ain't even the same fuckin' thing.",23
+123,Vincent,Vincent,False,False,int. apartment building hallway,morning,"Not the same thing, the same ballpark.",7
+124,Jules,Jules,False,False,int. apartment building hallway,morning,"It ain't no ballpark either. Look maybe your method of massage differs from mine, but touchin' his lady's feet, and stickin' your tongue in her holyiest of holyies, ain't the same ballpark, ain't the same league, ain't even the same fuckin' sport. Foot massages don't mean shit.",47
+125,Vincent,Vincent,False,False,int. apartment building hallway,morning,Have you ever given a foot massage?,7
+126,Jules,Jules,False,False,int. apartment building hallway,morning,Don't be tellin' me about foot massages – I'm the foot fuckin' master.,12
+127,Vincent,Vincent,False,False,int. apartment building hallway,morning,Given a lot of 'em?,5
+128,Jules,Jules,False,False,int. apartment building hallway,morning,"Shit yeah. I got my technique down man, I don't tickle or nothin'.",13
+129,Vincent,Vincent,False,False,int. apartment building hallway,morning,Have you ever given a guy a foot massage?,9
+130,Jules,Jules,False,False,int. apartment building hallway,morning,Fuck you.,2
+131,Vincent,Vincent,False,False,int. apartment building hallway,morning,How many?,2
+132,Jules,Jules,False,False,int. apartment building hallway,morning,Fuck you.,2
+133,Vincent,Vincent,False,False,int. apartment building hallway,morning,Would you give me a foot massage – I'm kinda tired.,10
+134,Jules,Jules,False,False,int. apartment building hallway,morning,"Man, you best back off, I'm gittin' pissed – this is the door.",12
+135,Jules,Jules,False,False,int. apartment building hallway,morning,What time is it?,4
+136,Vincent,Vincent,False,False,int. apartment building hallway,morning,Seven-twenty-two in the morning.,4
+137,Jules,Jules,False,False,int. apartment building hallway,morning,"It ain't quite time, let's hang back.",7
+138,Jules,Jules,False,False,int. apartment building hallway,morning,"Look, just because I wouldn't give no man a foot massage, don't make it right for Marsellus to throw Antwan off a building into a glass- motherfuckin-house, fuckin' up the way the nigger talks. That ain't right, man. Motherfucker do that to me, he better paralyze my ass, 'cause I'd kill'a motherfucker.",52
+139,Vincent,Vincent,False,False,int. apartment building hallway,morning,"I'm not sayin' he was right, but you're sayin' a foot massage don't mean nothing, and I'm sayin' it does. I've given a million ladies a million foot massages and they all meant somethin'. We act like they don't, but they do. That's what's so fuckin' cool about 'em. This sensual thing's goin' on that nobody's talkin about, but you know it and she knows it, fuckin' Marsellus knew it, and Antwan shoulda known fuckin' better. That's his fuckin' wife, man. He ain't gonna have a sense of humor about that shit.",92
+140,Jules,Jules,False,False,int. apartment building hallway,morning,"That's an interesting point, but let's get into character.",9
+141,Vincent,Vincent,False,False,int. apartment building hallway,morning,What's her name again?,4
+142,Jules,Jules,False,False,int. apartment building hallway,morning,Mia. Why you so interested in big man's wife?,9
+143,Vincent,Vincent,False,False,int. apartment building hallway,morning,"Well, Marsellus is leavin' for Florida and when he's gone, he wants me to take care of Mia.",18
+144,Jules,Jules,False,False,int. apartment building hallway,morning,Take care of her?,4
+145,Vincent,Vincent,False,False,int. apartment building hallway,morning,Not that! Take her out. Show her a good time. Don't let her get lonely.,15
+146,Jules,Jules,False,False,int. apartment building hallway,morning,You're gonna be takin' Mia Wallace out on a date?,10
+147,Vincent,Vincent,False,False,int. apartment building hallway,morning,It ain't a date. It's like when you and your buddy's wife go to a movie or somethin'. It's just... you know... good company.,24
+148,Vincent,Vincent,False,False,int. apartment building hallway,morning,It's not a date.,4
+149,Jules,Jules,False,False,int. apartment (room 49),morning,Hey kids.,2
+150,Jules,Jules,False,False,int. apartment (room 49),morning,How you boys doin'?,4
+151,Jules,Jules,False,False,int. apartment (room 49),morning,"Am I trippin', or did I just ask you a question.",11
+152,Brett,Brett,False,False,int. apartment (room 49),morning,We're doin' okay.,3
+153,Jules,Jules,False,False,int. apartment (room 49),morning,Do you know who we are?,6
+154,Jules,Jules,False,False,int. apartment (room 49),morning,"We're associates of your business partner Marsellus Wallace, you remember your business partner dont'ya?",14
+155,Jules,Jules,False,False,int. apartment (room 49),morning,"Now I'm gonna take a wild guess here: you're Brett, right?",11
+156,Brett,Brett,False,False,int. apartment (room 49),morning,I'm Brett.,2
+157,Jules,Jules,False,False,int. apartment (room 49),morning,"I thought so. Well, you remember your business partner Marsellus Wallace, dont'ya Brett?",13
+158,Brett,Brett,False,False,int. apartment (room 49),morning,I remember him.,3
+159,Jules,Jules,False,False,int. apartment (room 49),morning,"Good for you. Looks like me and Vincent caught you at breakfast, sorry 'bout that. What'cha eatin'?",17
+160,Brett,Brett,False,False,int. apartment (room 49),morning,Hamburgers.,1
+161,Jules,Jules,False,False,int. apartment (room 49),morning,Hamburgers. The cornerstone of any nutritious breakfast. What kinda hamburgers?,10
+162,Brett,Brett,False,False,int. apartment (room 49),morning,Cheeseburgers.,1
+163,Jules,Jules,False,False,int. apartment (room 49),morning,"No, I mean where did you get'em? MacDonald's, Wendy's, Jack-in-the- Box, where?",12
+164,Brett,Brett,False,False,int. apartment (room 49),morning,Big Kahuna Burger.,3
+165,Jules,Jules,False,False,int. apartment (room 49),morning,"Big Kahuna Burger. That's that Hawaiian burger joint. I heard they got some tasty burgers. I ain't never had one myself, how are they?",24
+166,Brett,Brett,False,False,int. apartment (room 49),morning,They're good.,2
+167,Jules,Jules,False,False,int. apartment (room 49),morning,Mind if I try one of yours?,7
+168,Brett,Brett,False,False,int. apartment (room 49),morning,No.,1
+169,Jules,Jules,False,False,int. apartment (room 49),morning,"Yours is this one, right?",5
+170,Brett,Brett,False,False,int. apartment (room 49),morning,Yeah.,1
+171,Jules,Jules,False,False,int. apartment (room 49),morning,"Uuummmm, that's a tasty burger. Vince, you ever try a Big Kahuna Burger?",13
+172,Vincent,Vincent,False,False,int. apartment (room 49),morning,No.,1
+173,Jules,Jules,False,False,int. apartment (room 49),morning,"You wanna bite, they're real good.",6
+174,Vincent,Vincent,False,False,int. apartment (room 49),morning,I ain't hungry.,3
+175,Jules,Jules,False,False,int. apartment (room 49),morning,"Well, if you like hamburgers give 'em a try sometime. Me, I can't usually eat 'em 'cause my girlfriend's a vegetarian. Which more or less makes me a vegetarian, but I sure love the taste of a good burger. You know what they call a Quarter Pounder with Cheese in France?",51
+176,Brett,Brett,False,False,int. apartment (room 49),morning,No.,1
+177,Jules,Jules,False,False,int. apartment (room 49),morning,"Tell 'em, Vincent.",3
+178,Vincent,Vincent,False,False,int. apartment (room 49),morning,Royale with Cheese.,3
+179,Jules,Jules,False,False,int. apartment (room 49),morning,"Royale with Cheese, you know why they call it that?",10
+180,Brett,Brett,False,False,int. apartment (room 49),morning,Because of the metric system?,5
+181,Jules,Jules,False,False,int. apartment (room 49),morning,"Check out the big brain on Brett. You'a smart motherfucker, that's right. The metric system. What's in this?",18
+182,Brett,Brett,False,False,int. apartment (room 49),morning,Sprite.,1
+183,Jules,Jules,False,False,int. apartment (room 49),morning,"Sprite, good, mind if I have some of your tasty beverage to wash this down with?",16
+184,Brett,Brett,False,False,int. apartment (room 49),morning,Sure.,1
+185,Jules,Jules,False,False,int. apartment (room 49),morning,"Uuuuummmm, hit's the spot! You, Flock of Seagulls, you know what we're here for?",14
+186,Jules,Jules,False,False,int. apartment (room 49),morning,"Then why don't you tell my boy here Vince, where you got the shit hid.",15
+187,Marvin,Marvin,False,False,int. apartment (room 49),morning,It's under the be –,4
+188,Jules,Jules,False,False,int. apartment (room 49),morning,– I don't remember askin' you a goddamn thing. You were sayin'?,11
+189,Roger,Roger,False,False,int. apartment (room 49),morning,It's under the bed.,4
+190,Vincent,Vincent,False,False,int. apartment (room 49),morning,Got it.,2
+191,Jules,Jules,False,False,int. apartment (room 49),morning,We happy?,2
+192,Jules,Jules,False,False,int. apartment (room 49),morning,Vincent!,1
+193,Jules,Jules,False,False,int. apartment (room 49),morning,We happy?,2
+194,Vincent,Vincent,False,False,int. apartment (room 49),morning,We're happy.,2
+195,Brett,Brett,False,False,int. apartment (room 49),morning,"Look, what's your name? I got his name's Vincent, but what's yours?",12
+196,Jules,Jules,False,False,int. apartment (room 49),morning,"My name's Pitt, and you ain't talkin' your ass outta this shit.",12
+197,Brett,Brett,False,False,int. apartment (room 49),morning,"I just want you to know how sorry we are about how fucked up things got between us and Mr. Wallace. When we entered into this thing, we only had the best intentions –",33
+198,Jules,Jules,False,False,int. apartment (room 49),morning,"Oh, I'm sorry. Did that break your concentration? I didn't mean to do that. Please, continue. I believe you were saying something about ""best intentions.""",25
+199,Jules,Jules,False,False,int. apartment (room 49),morning,"Whatsamatter? Oh, you were through anyway. Well, let me retort. Would you describe for me what Marsellus Wallace looks like?",20
+200,Jules,Jules,False,False,int. apartment (room 49),morning,What country you from!,4
+201,Brett,Brett,False,False,int. apartment (room 49),morning,What?,1
+202,Jules,Jules,False,False,int. apartment (room 49),morning,"""What"" ain't no country I know! Do they speak English in ""What?""",12
+203,Brett,Brett,False,False,int. apartment (room 49),morning,What?,1
+204,Jules,Jules,False,False,int. apartment (room 49),morning,English-motherfucker-can-you-speak- it?,2
+205,Brett,Brett,False,False,int. apartment (room 49),morning,Yes.,1
+206,Jules,Jules,False,False,int. apartment (room 49),morning,Then you understand what I'm sayin'?,6
+207,Brett,Brett,False,False,int. apartment (room 49),morning,Yes.,1
+208,Jules,Jules,False,False,int. apartment (room 49),morning,Now describe what Marsellus Wallace looks like!,7
+209,Brett,Brett,False,False,int. apartment (room 49),morning,What?,1
+210,Jules,Jules,False,False,int. apartment (room 49),morning,"Say ""What"" again! C'mon, say ""What"" again! I dare ya, I double dare ya motherfucker, say ""What"" one more goddamn time!",21
+211,Jules,Jules,False,False,int. apartment (room 49),morning,Now describe to me what Marsellus Wallace looks like!,9
+212,Brett,Brett,False,False,int. apartment (room 49),morning,Well he's... he's... black –,4
+213,Jules,Jules,False,False,int. apartment (room 49),morning,– go on!,2
+214,Brett,Brett,False,False,int. apartment (room 49),morning,...and he's... he's... bald –,4
+215,Jules,Jules,False,False,int. apartment (room 49),morning,– does he look like a bitch?!,6
+216,Brett,Brett,False,False,int. apartment (room 49),morning,What?,1
+217,Jules,Jules,False,False,int. apartment (room 49),morning,Does-he-look-like-a-bitch?!,1
+218,Brett,Brett,False,False,int. apartment (room 49),morning,No.,1
+219,Jules,Jules,False,False,int. apartment (room 49),morning,Then why did you try to fuck 'im like a bitch?!,11
+220,Brett,Brett,False,False,int. apartment (room 49),morning,I didn't.,2
+221,Jules,Jules,False,False,int. apartment (room 49),morning,"Yes ya did Brett. Ya tried ta fuck 'im. You ever read the Bible, Brett?",15
+222,Brett,Brett,False,False,int. apartment (room 49),morning,Yes.,1
+223,Jules,Jules,False,False,int. apartment (room 49),morning,"There's a passage I got memorized, seems appropriate for this situation: Ezekiel 25:17. ""The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know my name is the Lord when I lay my vengeance upon you.""",107
+224,Marsellus,Marsellus,True,False,int. apartment (room 49),morning,"I think you're gonna find – when all this shit is over and done – I think you're gonna find yourself one smilin' motherfucker. Thing is Butch, right now you got ability. But painful as it may be, ability don't last. Now that's a hard motherfuckin' fact of life, but it's a fact of life your ass is gonna hafta git realistic about. This business is filled to the brim with unrealistic motherfuckers who thought their ass aged like wine. Besides, even if you went all the way, what would you be? Feather-weight champion of the world. Who gives a shit? I doubt you can even get a credit card based on that.",111
+225,Marsellus,Marsellus,True,False,int. apartment (room 49),morning,"Now the night of the fight, you may fell a slight sting, that's pride fuckin' wit ya. Fuck pride! Pride only hurts, it never helps. Fight through that shit. 'Cause a year from now, when you're kickin' it in the Caribbean you're gonna say, ""Marsellus Wallace was right.""",48
+226,Butch,Butch,False,False,int. apartment (room 49),morning,I got no problem with that.,6
+227,Marsellus,Marsellus,True,False,int. apartment (room 49),morning,"In the fifth, your ass goes down.",7
+228,Marsellus,Marsellus,True,False,int. apartment (room 49),morning,Say it!,2
+229,Butch,Butch,False,False,int. apartment (room 49),morning,"In the fifth, my ass goes down.",7
+230,English Dave,English Dave,False,False,ext. Sally LeRoy's,day,"Vincent Vega, our man in Amsterdam, git your ass on in here.",12
+231,Vincent,Vincent,False,False,int. Sally LeRoy's,day,Where's the big man?,4
+232,English Dave,English Dave,False,False,int. Sally LeRoy's,day,"He's over there, finishing up some business.",7
+233,English Dave,English Dave,True,False,int. Sally LeRoy's,day,"Hang back for a second or two, and when you see the white boy leave, go on over. In the meanwhile, can I make you an espresso?",27
+234,Vincent,Vincent,False,False,int. Sally LeRoy's,day,How 'bout a cup of just plain lo' American?,9
+235,English Dave,English Dave,False,False,int. Sally LeRoy's,day,Comin' up. I hear you're taking Mia out tomorrow?,9
+236,Vincent,Vincent,False,False,int. Sally LeRoy's,day,At Marsellus' request.,3
+237,English Dave,English Dave,False,False,int. Sally LeRoy's,day,Have you met Mia?,4
+238,Vincent,Vincent,False,False,int. Sally LeRoy's,day,Not yet.,2
+239,Vincent,Vincent,False,False,int. Sally LeRoy's,day,What's so funny?,3
+240,English Dave,English Dave,False,False,int. Sally LeRoy's,day,Not a goddamn thing.,4
+241,Vincent,Vincent,False,False,int. Sally LeRoy's,day,"Look, I'm not a idiot. She's the big man's fuckin' wife. I'm gonna sit across a table, chew my food with my mouth closed, laugh at her jokes and that's all I'm gonna do.",34
+242,English Dave,English Dave,False,False,int. Sally LeRoy's,day,"My name's Paul, and this is between y'all.",8
+243,Butch,Butch,False,False,int. Sally LeRoy's,day,Can I get a pack'a Red Apples?,7
+244,English Dave,English Dave,False,False,int. Sally LeRoy's,day,Filters?,1
+245,Butch,Butch,False,False,int. Sally LeRoy's,day,Non.,1
+246,Butch,Butch,False,False,int. Sally LeRoy's,day,"Lookin' at somethin', friend?",4
+247,Vincent,Vincent,False,False,int. Sally LeRoy's,day,"I ain't your friend, palooka.",5
+248,Butch,Butch,False,False,int. Sally LeRoy's,day,What was that?,3
+249,Vincent,Vincent,False,False,int. Sally LeRoy's,day,"I think ya heard me just fine, punchy.",8
+250,Marsellus,Marsellus,True,False,int. Sally LeRoy's,day,"Vincent Vega has entered the building, git your ass over here!",11
+251,English Dave,English Dave,True,False,int. Sally LeRoy's,day,"Pack of Red Apples, dollar-forty.",5
+252,Jody,Jody,False,False,int. Lance's house (kitchen),night,...I'll lend it to you. It's a great book on body piercing.,12
+253,Trudi,Trudi,False,False,int. Lance's house (kitchen),night,"You know how they use that gun when they pierce your ears? They don't use that when they pierce your nipples, do they?",23
+254,Jody,Jody,False,False,int. Lance's house (kitchen),night,"Forget that gun. That gun goes against the entire idea behind piercing. All of my piercing, sixteen places on my body, every one of 'em done with a needle. Five in each ear. One through the nipple on my left breast. One through my right nostril. One through my left eyebrow. One through my lip. One in my clit. And I wear a stud in my tongue.",67
+255,Vincent,Vincent,False,False,int. Lance's house (kitchen),night,"Excuse me, sorry to interrupt. I'm curious, why would you get a stud in your tongue?",16
+256,Jody,Jody,False,False,int. Lance's house (kitchen),night,It's a sex thing. It helps fellatio.,7
+257,Lance,Lance,True,False,int. Lance's house (kitchen),night,"Vince, you can come in now!",6
+258,Lance,Lance,False,False,int. Lance's bedroom,night,"Now this is Panda, from Mexico. Very good stuff. This is Bava, different, but equally good. And this is Choco from the Hartz Mountains of Germany. Now the first two are the same, forty- five an ounce – those are friend prices – but this one... ...this one's a little more expensive. It's fifty-five. But when you shoot it, you'll know where that extra money went. Nothing wrong with the first two. It's real, real, real, good shit. But this one's a fuckin' madman.",82
+259,Vincent,Vincent,False,False,int. Lance's bedroom,night,"Remember, I just got back from Amsterdam.",7
+260,Lance,Lance,False,False,int. Lance's bedroom,night,"Am I a nigger? Are you in Inglewood? No. You're in my house. White people who know the difference between good shit and bad shit, this is the house they come to. My shit, I'll take the Pepsi Challenge with Amsterdam shit any ol' day of the fuckin' week.",49
+261,Vincent,Vincent,False,False,int. Lance's bedroom,night,That's a bold statement.,4
+262,Lance,Lance,False,False,int. Lance's bedroom,night,"This ain't Amsterdam, Vince. This is a seller's market. Coke is fuckin' dead as disco. Heroin's comin' back in a big fuckin' way. It's this whole seventies retro. Bell bottoms, heroin, they're as hot as hell.",36
+263,Vincent,Vincent,False,False,int. Lance's bedroom,night,"Give me three hundred worth of the madman. If it's as good as you say, I'll be back for a thousand.",21
+264,Lance,Lance,False,False,int. Lance's bedroom,night,"I just hope I still have it. Whaddya think of Trudi? She ain't got a boyfriend, wanna hand out an' get high?",22
+265,Vincent,Vincent,False,False,int. Lance's bedroom,night,Which one's Trudi? The one with all the shit in her face?,12
+266,Lance,Lance,False,False,int. Lance's bedroom,night,"No, that's Jody. That's my wife.",6
+267,Vincent,Vincent,False,False,int. Lance's bedroom,night,I'm on my way somewhere. I got a dinner engagement. Rain check?,12
+268,Lance,Lance,False,False,int. Lance's bedroom,night,No problem?,2
+269,Vincent,Vincent,False,False,int. Lance's bedroom,night,You don't mind if I shoot up here?,8
+270,Lance,Lance,False,False,int. Lance's bedroom,night,"Me casa, su casa.",4
+271,Vincent,Vincent,False,False,int. Lance's bedroom,night,Mucho gracias.,2
+272,Lance,Lance,False,False,int. Lance's bedroom,night,Still got your Malibu?,4
+273,Vincent,Vincent,False,False,int. Lance's bedroom,night,You know what some fucker did to it the other day?,11
+274,Lance,Lance,False,False,int. Lance's bedroom,night,What?,1
+275,Vincent,Vincent,False,False,int. Lance's bedroom,night,Fuckin' keyed it.,3
+276,Lance,Lance,False,False,int. Lance's bedroom,night,"Oh man, that's fucked up.",5
+277,Vincent,Vincent,False,False,int. Lance's bedroom,night,"Tell me about it. I had the goddamn thing in storage three years. It's out five fuckin' days – five days, and some dickless piece of shit fucks with it.",29
+278,Lance,Lance,False,False,int. Lance's bedroom,night,"They should be fuckin' killed. No trial, no jury, straight to execution.",12
+279,Vincent,Vincent,False,False,int. Lance's bedroom,night,"I just wish I caught 'em doin' it, ya know? Oh man, I'd give anything to catch 'em doin' it. It'a been worth his doin' it, if I coulda just caught 'em, you know what I mean?",37
+280,Lance,Lance,False,False,int. Lance's bedroom,night,It's chicken shit. You don't fuck another man's vehicle.,9
+281,Mia,Mia,False,True,ext. Marsellus Wallace's house,night,"Hi, Vincent. I'm getting dressed. The door's open. Come inside and make yourself a drink.",15
+282,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Hello?,1
+283,Mia,Mia,False,False,int. Marsellus' house / dressing room,night,Vincent.,1
+284,Mia,Mia,False,False,int. Marsellus' house / living room,night,Vincent. I'm on the intercom.,5
+285,Mia,Mia,False,False,int. Marsellus' house / dressing room,night,It's on the wall by the two African fellas.,9
+286,Mia,Mia,False,False,int. Marsellus' house / living room,night,To your right.,3
+287,Mia,Mia,False,False,int. Marsellus' house / living room,night,...warm. Warmer. Disco.,3
+288,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Hello.,1
+289,Mia,Mia,False,False,int. Marsellus' house / living room,night,Push the button if you want to talk.,8
+290,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Hello.,1
+291,Mia,Mia,False,False,int. Marsellus' house / dressing room,night,"Go make yourself a drink., and I'll be down in two shakes of a lamb's tail.",16
+292,Mia,Mia,False,False,int. Marsellus' house / living room,night,The bar's by the fireplace.,5
+293,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Okay.,1
+294,Mia,Mia,False,False,int. Marsellus' house / living room,night,Let's go.,2
+295,Vincent,Vincent,False,False,ext. Jackrabbit Slim's,night,What the fuck is this place?,6
+296,Mia,Mia,False,False,ext. Jackrabbit Slim's,night,This is Jackrabbit Slim's. An Elvis man should love it.,10
+297,Vincent,Vincent,False,False,ext. Jackrabbit Slim's,night,"Come on, Mia, let's go get a steak.",8
+298,Mia,Mia,False,False,ext. Jackrabbit Slim's,night,"You can get a steak here, daddy-o. Don't be a...",10
+299,Vincent,Vincent,False,False,ext. Jackrabbit Slim's,night,"After you, kitty-cat.",3
+300,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,"Hi, I'm Buddy, what can I get'cha?",7
+301,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,I'll have the Douglas Sirk steak.,6
+302,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,"How d'ya want it, burnt to a crisp, or bloody as hell?",12
+303,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"Bloody as hell. And to drink, a vanilla coke.",9
+304,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,"How 'bout you, Peggy Sue?",5
+305,Mia,Mia,False,False,int. Jackrabbit Slim's,night,I'll have the Durwood Kirby burger – bloody – and a five-dollar shake.,11
+306,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,"How d'ya want that shake, Martin and Lewis, or Amos and Andy?",12
+307,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Martin and Lewis.,3
+308,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Did you just order a five-dollar shake?,7
+309,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Sure did.,2
+310,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,A shake? Milk and ice cream?,6
+311,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Uh-huh.,1
+312,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,It costs five dollars?,4
+313,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,Yep.,1
+314,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,You don't put bourbon in it or anything?,8
+315,Buddy,Buddy,False,False,int. Jackrabbit Slim's,night,Nope.,1
+316,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Just checking.,2
+317,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Whaddya think?,2
+318,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,It's like a wax museum with a pulse rate.,9
+319,Mia,Mia,False,False,int. Jackrabbit Slim's,night,What are you doing?,4
+320,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Rollin' a smoke.,3
+321,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Here?,1
+322,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,It's just tobacco.,3
+323,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"Oh. Well in that case, will you roll me one, cowboy?",11
+324,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"You can have this one, cowgirl.",6
+325,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Thanks.,1
+326,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Think nothing of it.,4
+327,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Marsellus said you just got back from Amsterdam.,8
+328,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Sure did. I heard you did a pilot.,8
+329,Mia,Mia,False,False,int. Jackrabbit Slim's,night,That was my fifteen minutes.,5
+330,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,What was it?,3
+331,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"It was show about a team of female secret agents called ""Fox Force Five.""",14
+332,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,What?,1
+333,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"""Fox Force Five."" Fox, as in we're a bunch of foxy chicks. Force, as in we're a force to be reckoned with. Five, as in there's one... two ... three... four... five of us. There was a blonde one, Sommerset O'Neal from that show ""Baton Rouge,"" she was the leader. A Japanese one, a black one, a French one and a brunette one, me. We all had special skills. Sommerset had a photographic memory, the Japanese fox was a kung fu master, the black girl was a demolition expert, the French fox' specialty was sex...",95
+334,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,What was your specialty?,4
+335,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"Knives. The character I played, Raven McCoy, her background was she was raised by circus performers. So she grew up doing a knife act. According to the show, she was the deadliest woman in the world with a knife. But because she grew up in a circus, she was also something of an acrobat. She could do illusions, she was a trapeze artist – when you're keeping the world safe from evil, you never know when being a trapeze artist's gonna come in handy. And she knew a zillion old jokes her grandfather, an old vaudevillian, taught her. If we woulda got picked up, they woulda worked in a gimmick where every episode I woulda told and ol joke.",118
+336,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Do you remember any of the jokes?,7
+337,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"Well I only got the chance to say one, 'cause we only did one show.",15
+338,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Tell me.,2
+339,Mia,Mia,False,False,int. Jackrabbit Slim's,night,No. It's really corny.,4
+340,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"C'mon, don't be that way.",5
+341,Mia,Mia,False,False,int. Jackrabbit Slim's,night,No. You won't like it and I'll be embarrassed.,9
+342,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,You told it in front of fifty million people and you can't tell it to me? I promise I won't laugh.,21
+343,Mia,Mia,False,False,int. Jackrabbit Slim's,night,That's what I'm afraid of.,5
+344,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,That's not what I meant and you know it.,9
+345,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"You're quite the silver tongue devil, aren't you?",8
+346,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,I meant I wouldn't laugh at you.,7
+347,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"That's not what you said Vince. Well now I'm definitely not gonna tell ya, 'cause it's been built up too much.",21
+348,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,What a gyp.,3
+349,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Yummy!,1
+350,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Can I have a sip of that? I'd like to know what a five-dollar shake tastes like.,17
+351,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Be my guest.,3
+352,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"You can use my straw, I don't have kooties.",9
+353,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"Yeah, but maybe I do.",5
+354,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Kooties I can handle.,4
+355,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,Goddamn! That's a pretty fuckin' good milk shake.,8
+356,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Told ya.,2
+357,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"I don't know if it's worth five dollars, but it's pretty fuckin' good.",13
+358,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Don't you hate that?,4
+359,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,What?,1
+360,Mia,Mia,False,False,int. Jackrabbit Slim's,night,Uncomfortable silences. Why do we feel it's necessary to yak about bullshit in order to be comfortable?,17
+361,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,I don't know.,3
+362,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"That's when you know you found somebody special. When you can just shit the fuck up for a minute, and comfortably share silence.",23
+363,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,"I don't think we're there yet. But don't feel bad, we just met each other.",15
+364,Mia,Mia,False,False,int. Jackrabbit Slim's,night,"Well I'll tell you what, I'll go to the bathroom and powder my nose, while you sit here and think of something to say.",24
+365,Vincent,Vincent,False,False,int. Jackrabbit Slim's,night,I'll do that.,3
+366,Mia,Mia,False,False,int. Jackrabbit Slim's (ladies room),night,I said goddamn!,3
+367,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Don't you love it when you go to the bathroom and you come back to find your food waiting for you?,21
+368,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,We're lucky we got it at all. Buddy Holly doesn't seem to be much of a waiter. We shoulda sat in Marilyn Monroe's section.,24
+369,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"Which one, there's two Marilyn Monroes.",6
+370,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,No there's not.,3
+371,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,That's Marilyn Monroe...,3
+372,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"... and that's Mamie Van Doren. I don't see Jayne Mansfield, so it must be her night off.",18
+373,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Pretty smart.,2
+374,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,I have moments.,3
+375,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Did ya think of something to say?,7
+376,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"Actually, there's something I've wanted to ask you about, but you seem like a nice person, and I didn't want to offend you.",23
+377,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"Oooohhhh, this doesn't sound like mindless, boring, getting-to-know- you chit-chat. This sounds like you actually have something to say.",19
+378,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,Only if you promise not to get offended.,8
+379,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"You can't promise something like that. I have no idea what you're gonna ask. You could ask me what you're gonna ask me, and my natural response could be to be offended. Then, through no fault of my own, I woulda broken my promise.",44
+380,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,Then let's just forget it.,5
+381,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,That is an impossibility. Trying to forget anything as intriguing as this would be an exercise in futility.,18
+382,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,Is that a fact?,4
+383,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"Besides, it's more exciting when you don't have permission.",9
+384,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,What do you think about what happened to Antwan?,9
+385,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Who's Antwan?,2
+386,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,Tony Rocky Horror.,3
+387,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,He fell out of a window.,6
+388,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"That's one way to say it. Another way is, he was thrown out. Another was is, he was thrown out by Marsellus. And even another way is, he was thrown out of a window by Marsellus because of you.",39
+389,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Is that a fact?,4
+390,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"No it's not, it's just what I heard.",8
+391,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Who told you this?,4
+392,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,They.,1
+393,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"They talk a lot, don't they?",6
+394,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,They certainly do.,3
+395,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"Well don't by shy Vincent, what exactly did they say?",10
+396,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"Let me help you Bashful, did it involve the F-word?",10
+397,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,No. They just said Rocky Horror gave you a foot massage.,11
+398,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,And...?,1
+399,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"No and, that's it.",4
+400,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,You heard Marsellus threw Rocky Horror out of a four-story window because he massaged my feet?,16
+401,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,Yeah.,1
+402,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,And you believed that?,4
+403,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"At the time I was told, it seemed reasonable.",9
+404,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Marsellus throwing Tony out of a four story window for giving me a foot massage seemed reasonable?,17
+405,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"No, it seemed excessive. But that doesn't mean it didn't happen. I heard Marsellus is very protective of you.",19
+406,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,A husband being protective of his wife is one thing. A husband almost killing another man for touching his wife's feet is something else.,24
+407,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,But did it happen?,4
+408,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"The only thing Antwan ever touched of mine was my hand, when he shook it. I met Anwan once – at my wedding – then never again. The truth is, nobody knows why Marsellus tossed Tony Rocky Horror out of that window except Marsellus and Tony Rocky Horror. But when you scamps get together, you're worse than a sewing circle.",58
+409,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,"Ladies and gentlemen, now the moment you've all been waiting for, the worldfamous Jackrabbit Slim's twist contest.",17
+410,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,...One lucky couple will win this handsome trophy that Marilyn here is holding.,13
+411,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,"...Now, who will be our first contestants?",7
+412,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Right here.,2
+413,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,I wanna dance.,3
+414,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"No, no, no no, no, no, no, no.",8
+415,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"No, no, no, no, no, no, no. I do believe Marsellus, my husband, your boss, told you to take me out and do whatever I wanted, Now, I want to dance. I want to win. I want that trophy.",39
+416,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,All right.,2
+417,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,"So, dance good.",3
+418,Vincent,Vincent,False,False,int. Jackrabbit Slim's (dining area),night,"All right, you asked for it.",6
+419,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,Let's hear it for our first contestants.,7
+420,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,"Now let's meet our first contestants here this evening. Young lady, what is your name?",15
+421,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Missus Mia Wallace.,3
+422,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,"And, uh, how 'bout your fella here?",7
+423,Mia,Mia,False,False,int. Jackrabbit Slim's (dining area),night,Vincent Vega.,2
+424,Ed Sullivan,Ed Sullivan,False,False,int. Jackrabbit Slim's (dining area),night,"All right, let's see what you can do. Take it away!",11
+425,Vincent,Vincent,False,False,int. Marsellus Wallace's home,night,Was than an uncomfortable silence?,5
+426,Mia,Mia,False,False,int. Marsellus Wallace's home,night,I don't know what that was. Music and drinks!,9
+427,Vincent,Vincent,False,False,int. Marsellus Wallace's home,night,I'm gonna take a piss.,5
+428,Mia,Mia,False,False,int. Marsellus Wallace's home,night,"That was a little bit more information than I needed to know, but go right ahead.",16
+429,Mia,Mia,False,False,int. Marsellus Wallace's home,night,"Disco! Vince, you little cola nut, you've been holding out on me.",12
+430,Vincent,Vincent,False,False,int. bathroom (Marsellus Wallace's house),night,"One drink and leave. Don't be rude, but drink your drink quickly, say goodbye, walk out the door, get in your car, and go down the road.",27
+431,Vincent,Vincent,False,False,int. bathroom (Marsellus Wallace's house),night,"...It's a moral test of yourself, whether or not you can maintain loyalty. Because when people are loyal to each other, that's very meaningful.",24
+432,Vincent,Vincent,False,False,int. bathroom (Marsellus Wallace's house),night,"So you're gonna go out there, drink your drink, say ""Goodnight, I've had a very lovely evening,"" go home, and jack off. And that's all you're gonna do.",28
+433,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Jesus Christ!,2
+434,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,Mia! MIA! What the hell happened?,6
+435,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,"I'll be a son-of-a-bitch. Mia! MIA! What did you take? Answer me honey, what did you take?",17
+436,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,"Okay honey, we're getting you on your feet.",8
+437,Vincent,Vincent,False,False,int. Marsellus' house / living room,night,"We're on our feet now, and now we're gonna talk out to the car. Here we go, watch us walk.",20
+438,Preacher (Emil Simkus),Preacher (Emil Simkus),False,False,int. Lance's house,night,"Hold hands, you love birds.",5
+439,Jody,Jody,True,False,int. Lance's house,night,Lance! The phone's ringing!,4
+440,Lance,Lance,False,False,int. Lance's house,night,I can hear it!,4
+441,Jody,Jody,True,False,int. Lance's house,night,I thought you told those fuckin' assholes never to call this late!,12
+442,Lance,Lance,False,False,int. Lance's house,night,"I told 'em and that's what I'm gonna tell this fuckin' asshole right now! Hello, do you know how late it is? You're not supposed to be callin' me this fuckin' late.",32
+443,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,"Lance, this is Vincent, I'm in big fuckin' trouble man, I'm on my way to your place.",17
+444,Lance,Lance,False,False,int. Lance's house,night,"Whoa, hold you horses man, what's the problem?",8
+445,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,You still got an adrenaline shot?,6
+446,Lance,Lance,False,False,int. Lance's house,night,Maybe.,1
+447,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,"I need it man, I got a chick she's fuckin' Doing on me.",13
+448,Lance,Lance,False,False,int. Lance's house,night,"Don't bring her here! I'm not even fuckin' joking with you, don't you be bringing some fucked up pooh-butt to my house!",22
+449,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,No choice.,2
+450,Lance,Lance,False,False,int. Lance's house,night,She's ODin'?,2
+451,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,Yeah. She's dyin'.,3
+452,Lance,Lance,False,False,int. Lance's house,night,"Then bite the fuckin' bullet, take 'er to a hospital and call a lawyer!",14
+453,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,Negative.,1
+454,Lance,Lance,False,False,int. Lance's house,night,"She ain't my fuckin' problem, you fucked her up, you deal with it – are you talkin' to me on a cellular phone?",22
+455,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,Sorry.,1
+456,Lance,Lance,False,False,int. Lance's house,night,"I don't know you, who is this, don't come here, I'm hangin' up.",13
+457,Vincent,Vincent,False,False,int. Vincent's malibu (moving),night,"Too late, I'm already here.",5
+458,Jody,Jody,True,False,int. Lance's house,night,What the hell was that?,5
+459,Lance,Lance,False,False,ext. Lance's house,night,Have you lost your mind?! You crashed your car in my fuckin' house! You talk about drug shit on a cellular fuckin' phone –,23
+460,Vincent,Vincent,False,False,ext. Lance's house,night,"If you're through havin' your little hissy fit, this chick is dyin', get your needle and git it now!",19
+461,Lance,Lance,False,False,ext. Lance's house,night,Are you deaf? You're not bringin' that fucked up bitch in my house!,13
+462,Vincent,Vincent,False,False,ext. Lance's house,night,"This fucked up bitch is Marsellus Wallace's wife. Now if she fuckin' croaks on me, I'm a grease spot. But before he turns me into a bar soap, I'm gonna be forced to tell 'im about how you coulda saved her life, but instead you let her die on your front lawn.",52
+463,Jody,Jody,False,False,living room,night,It's only one-thirty in the goddamn mornin'! What the fuck's goin' on out here?,14
+464,Jody,Jody,False,False,living room,night,Who's she?,2
+465,Lance,Lance,False,False,living room,night,Get that black box in the bedroom I have with the adrenaline shot.,13
+466,Jody,Jody,False,False,living room,night,What's wrong with her?,4
+467,Vincent,Vincent,False,False,living room,night,She's ODing on us.,4
+468,Jody,Jody,False,False,living room,night,Well get her the hell outta here!,7
+469,Lance,Lance,False,False,living room,night,Get the fuckin' shot!,4
+470,Vincent,Vincent,False,False,living room,night,Get the fuckin' shot!,4
+471,Jody,Jody,False,False,living room,night,Don't yell and me!,4
+472,Vincent,Vincent,False,False,living room,night,You two are a match made in heaven.,8
+473,Lance,Lance,False,False,living room,night,"Look, just keep talkin' to her, okay? While she's gettin' the shot, I gotta get a medical book.",18
+474,Vincent,Vincent,False,False,living room,night,What do you need a medical book for?,8
+475,Lance,Lance,False,False,living room,night,To tell me how to do it. I've never given an adrenaline shot before.,14
+476,Vincent,Vincent,False,False,living room,night,You've had that thing for six years and you never used it?,12
+477,Lance,Lance,False,False,living room,night,"I never had to use it. I don't go joypoppin' with bubble-gummers, all of my friends can handle their highs!",20
+478,Vincent,Vincent,False,False,living room,night,Well then get it.,4
+479,Lance,Lance,False,False,living room,night,"I am, if you'll let me.",6
+480,Vincent,Vincent,False,False,living room,night,I'm not fuckin' stoppin' you.,5
+481,Lance,Lance,False,False,living room,night,"Stop talkin' to me, and start talkin' to her.",9
+482,Vincent,Vincent,True,False,int. spare room,night,Hurry up man! We're losin' her!,6
+483,Lance,Lance,False,False,int. spare room,night,I'm looking as fast as I can!,7
+484,Jody,Jody,True,False,int. spare room,night,What's he lookin' for?,4
+485,Vincent,Vincent,True,False,int. spare room,night,"I dunno, some medical book.",5
+486,Jody,Jody,True,False,int. spare room,night,What are you lookin' for?,5
+487,Lance,Lance,False,False,int. spare room,night,My black medical book!,4
+488,Jody,Jody,False,False,int. spare room,night,Whata're you looking for?,4
+489,Lance,Lance,False,False,int. spare room,night,My black fuckin' medical book. It's like a text book they give to nurses.,14
+490,Jody,Jody,False,False,int. spare room,night,I never saw a medical book.,6
+491,Lance,Lance,False,False,int. spare room,night,"Trust me, I have one.",5
+492,Jody,Jody,False,False,int. spare room,night,"Well if it's that important, why didn't you keep it with the shot?",13
+493,Lance,Lance,False,False,int. spare room,night,I don't know! Stop bothering me!,6
+494,Jody,Jody,False,False,int. spare room,night,"While you're lookin' for it, that girl's gonna die on our carpet. You're never gonna find it in all this shit. For six months now, I've been telling you to clean this room –",33
+495,Vincent,Vincent,True,False,int. spare room,night,"– get your ass in here, fuck the book!",8
+496,Vincent,Vincent,False,False,living room,night,Quit fuckin' around man and give her the shot!,9
+497,Lance,Lance,False,False,living room,night,"While I'm doing this, take her shirt off and find her heart.",12
+498,Vincent,Vincent,False,False,living room,night,Does it have to be exact?,6
+499,Lance,Lance,False,False,living room,night,"Yeah, it has to be exact! I'm giving her an injection in the heart, so I gotta exactly hit her in the heart.",23
+500,Vincent,Vincent,False,False,living room,night,"Well, I don't know exactly where her heart is, I think it's here.",13
+501,Lance,Lance,False,False,living room,night,That's it.,2
+502,Vincent,Vincent,False,False,living room,night,"I need a big fat magic marker, got one?",9
+503,Jody,Jody,False,False,living room,night,What?,1
+504,Vincent,Vincent,False,False,living room,night,"I need a big fat magic marker, any felt pen'll do, but a magic marker would be great.",18
+505,Jody,Jody,False,False,living room,night,Hold on.,2
+506,Lance,Lance,False,False,living room,night,"It's ready, I'll tell you what to do.",8
+507,Vincent,Vincent,False,False,living room,night,You're gonna give her the shot.,6
+508,Lance,Lance,False,False,living room,night,"No, you're gonna give her the shot.",7
+509,Vincent,Vincent,False,False,living room,night,I've never does this before.,5
+510,Lance,Lance,False,False,living room,night,"I've never done this before either, and I ain't starting now. You brought 'er here, that means you give her the shot. The day I bring an ODing bitch to your place, then I gotta give her the shot.",39
+511,Jody,Jody,False,False,living room,night,Got it.,2
+512,Vincent,Vincent,False,False,living room,night,"Okay, what do I do?",5
+513,Lance,Lance,False,False,living room,night,"Well, you're giving her an injection of adrenaline straight to her heart. But she's got a breast plate in front of her heart, so you gotta pierce through that. So what you gotta do is bring the needle down in a stabbing motion.",43
+514,Vincent,Vincent,False,False,living room,night,I gotta stab her?,4
+515,Lance,Lance,False,False,living room,night,"If you want the needle to pierce through to her heart, you gotta stab her hard. Then once you do, push down on the plunger.",25
+516,Vincent,Vincent,False,False,living room,night,What happens after that?,4
+517,Lance,Lance,False,False,living room,night,I'm curious about that myself.,5
+518,Vincent,Vincent,False,False,living room,night,This ain't a fuckin' joke man!,6
+519,Lance,Lance,False,False,living room,night,She's supposed to come out of it like – – that.,9
+520,Vincent,Vincent,False,False,living room,night,Count to three.,3
+521,Lance,Lance,False,False,living room,night,One...,1
+522,Lance,Lance,True,False,living room,night,...two...,1
+523,Lance,Lance,True,False,living room,night,...three!,1
+524,Lance,Lance,False,False,living room,night,"If you're okay, say something.",5
+525,Mia,Mia,False,False,living room,night,Something.,1
+526,Jody,Jody,False,False,living room,night,Anybody want a beer?,4
+527,Vincent,Vincent,True,False,ext. front of Marsellus Wallace's house,night,Mia!,1
+528,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,What are your thoughts on how to handle this?,9
+529,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,What's yours?,2
+530,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,Well I'm of the opinion that Marsellus can live his whole live and never ever hear of this incident.,19
+531,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"Don't worry about it. If Marsellus ever heard of this, I'd be in as much trouble as you.",18
+532,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,I seriously doubt that.,4
+533,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"If you can keep a secret, so can I.",9
+534,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,Let's shake on it.,4
+535,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,Mum's the word.,3
+536,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,"If you'll excuse me, I gotta go home and have a heart attack.",13
+537,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"You still wanna hear my ""FOX FORCE FIVE"" joke?",9
+538,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,"Sure, but I think I'm still a little too petrified to laugh.",12
+539,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"Uh-huh. You won't laugh because it's not funny. But if you still wanna hear it, I'll tell it.",18
+540,Vincent,Vincent,False,False,ext. front of Marsellus Wallace's house,night,I can't wait.,3
+541,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"Three tomatoes are walking down the street, a poppa tomato, a momma tomato, and a little baby tomato. The baby tomato is lagging behind the poppa and momma tomato. The poppa tomato gets mad, goes over to the momma tomato and stamps on him – – and says: catch up.",48
+542,Mia,Mia,False,False,ext. front of Marsellus Wallace's house,night,"See ya 'round, Vince.",4
+543,Woman's voice,Mother,True,False,ext. front of Marsellus Wallace's house,night,Butch.,1
+544,Mother,Mother,False,False,ext. front of Marsellus Wallace's house,night,"Butch, stop watching TV a second. We got a special visitor. Now do you remember when I told you your daddy dies in a P.O.W. camp?",26
+545,Butch,Butch,True,False,ext. front of Marsellus Wallace's house,night,Uh-huh.,1
+546,Mother,Mother,False,False,ext. front of Marsellus Wallace's house,night,Well this here is Capt. Koons. He was in the P.O.W. camp with Daddy.,14
+547,Capt. Koons,Capt. Koons,False,False,ext. front of Marsellus Wallace's house,night,"Hello, little man. Boy I sure heard a bunch about you. See, I was a good friend of your Daddy's. We were in that Hanoi pit of hell over five years together. Hopefully, you'll never have to experience this yourself, but when two men are in a situation like me and your Daddy were, for as long as we were, you take on certain responsibilities of the other. If it had been me who had not made it, Major Coolidge would be talkin' right now to my son Jim. But the way it worked out is I'm talkin' to you, Butch. I got somethin' for ya.",106
+548,Capt. Koons,Capt. Koons,False,False,ext. front of Marsellus Wallace's house,night,"This watch I got here was first purchased by your great-granddaddy. It was bought during the First World War in a little general store in Knoxville, Tennessee. It was bought by private Doughboy Ernie Coolidge the day he set sail for Paris. It was your great-granddaddy's war watch, made by the first company to ever make wrist watches. You see, up until then, people just carried pocket watches. Your great-granddaddy wore that watch every day he was in the war. Then when he had done his duty, he went home to your great- grandmother, took the watch off his wrist and put it in an ol' coffee can. And in that can it stayed 'til your grandfather Dane Coolidge was called upon by his country to go overseas and fight the Germans once again. This time they called it World War Two. Your great-granddaddy gave it to your granddad for good luck. Unfortunately, Dane's luck wasn't as good as his old man's. Your granddad was a Marine and he was killed with all the other Marines at the battle of Wake Island. Your granddad was facing death and he knew it. None of those boys had any illusions about ever leavin' that island alive. So three days before the Japanese took the island, your 22-year old grandfather asked a gunner on an Air Force transport named Winocki, a man he had never met before in his life, to deliver to his infant son, who he had never seen in the flesh, his gold watch. Three days later, your grandfather was dead. But Winocki kept his word. After the war was over, he paid a visit to your grandmother, delivering to your infant father, his Dad's gold watch. This watch. This watch was on your Daddy's wrist when he was shot down over Hanoi. He was captured and put in a Vietnamese prison camp. Now he knew if the gooks ever saw the watch it'd be confiscated. The way your Daddy looked at it, that watch was your birthright. And he'd be damned if and slopeheads were gonna put their greasy yella hands on his boy's birthright. So he hid it in the one place he knew he could hide somethin'. His ass. Five long years, he wore this watch up his ass. Then when he died of dysentery, he gave me the watch. I hid with uncomfortable hunk of metal up my ass for two years. Then, after seven years, I was sent home to my family. And now, little man, I give the watch to you.",427
+549,Klondike,Klondike,False,False,int. locker room,night,"It's time, Butch.",3
+550,Butch,Butch,False,False,int. locker room,night,I'm ready.,2
+551,Sportscaster #1,Sportscaster #1,True,False,int. locker room,night,"– Well Dan, that had to be the bloodiest and, hands-down, the most brutal fight this city has ever seen.",19
+552,Sportscaster #1,Sportscaster #1,True,False,ext. alley (raining),night,...Coolidge was out of there faster than I've ever seen a victorious boxer vacate the ring. Do you think he knew Willis was dead?,24
+553,Sportscaster #2,Sportscaster #2,True,False,ext. alley (raining),night,"My guess would be yes, Richard. I could see from my position here, the frenzy in his eyes give way to the realization of what he was doing. I think any man would've left the ring that fast.",38
+554,Sportscaster #1,Sportscaster #1,True,False,int. taxi (parked / raining),night,Do you feel this ring death tragedy will have an effect on the world of boxing?,16
+555,Sportscaster #2,Sportscaster #2,True,False,int. taxi (parked / raining),night,"Oh Dan, a tragedy like this can't help but shake the world of boxing to its very foundation. But it's of paramount importance that during the sad weeks ahead, the eyes of the W.B.A. remain firmly fixed on the –",39
+556,Esmarelda,Esmarelda,False,False,int. taxi (parked / raining),night,Are you the man I was supposed to pick up?,10
+557,Butch,Butch,False,False,int. taxi (parked / raining),night,"If you're the cab I called, I'm the guy you're supposed to pick up.",14
+558,Esmarelda,Esmarelda,False,False,int. taxi (parked / raining),night,Where to?,2
+559,Butch,Butch,False,False,int. taxi (parked / raining),night,Outta here.,2
+560,Vincent,Vincent,False,False,int. Willis locker room (auditorium),night,Mia. How you doin'?,4
+561,Mia,Mia,False,False,int. Willis locker room (auditorium),night,Great. I never thanked you for the dinner.,8
+562,Marsellus,Marsellus,True,False,int. Willis locker room (auditorium),night,What'cha got?,2
+563,English Dave,English Dave,False,False,int. Willis locker room (auditorium),night,He booked.,2
+564,Marsellus,Marsellus,True,False,int. Willis locker room (auditorium),night,"I'm prepared to scour the earth for this motherfucker. If Butch goes to Indo China, I want a nigger hidin' in a bowl of rice, ready to pop a cap in his ass.",33
+565,English Dave,English Dave,False,False,int. Willis locker room (auditorium),night,I'll take care of it.,5
+566,Butch,Butch,False,False,int. cab (moving / raining),night,"Hey, how do I open the window back here?",9
+567,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,I have to do it.,5
+568,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,"Hey, mister?",2
+569,Butch,Butch,False,False,int. cab (moving / raining),night,What?,1
+570,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,You were in that fight? The fight on the radio – you're the fighter?,13
+571,Butch,Butch,False,False,int. cab (moving / raining),night,Whatever gave you that idea?,5
+572,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,"No c'mon, you're him, I know you're him, tell me you're him.",12
+573,Butch,Butch,False,False,int. cab (moving / raining),night,I'm him.,2
+574,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,You killed the other boxing man.,6
+575,Butch,Butch,False,False,int. cab (moving / raining),night,He's dead?,2
+576,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,The radio said he was dead.,6
+577,Butch,Butch,False,False,int. cab (moving / raining),night,"Sorry 'bout that, Floyd.",4
+578,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,What does it feel like?,5
+579,Butch,Butch,False,False,int. cab (moving / raining),night,What does what feel like?,5
+580,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,Killing a man. Beating another man to death with your bare hands.,12
+581,Butch,Butch,False,False,int. cab (moving / raining),night,Are you some kinda weirdo?,5
+582,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,"No, it's a subject I have much interest in. You are the first person I ever met who has killed somebody. So, what was it like to kill a man?",30
+583,Butch,Butch,False,False,int. cab (moving / raining),night,"Tell ya what, you give me one of them cigarettes, I'll give you an answer.",15
+584,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,Deal!,1
+585,Butch,Butch,False,False,int. cab (moving / raining),night,So...,1
+586,Butch,Butch,False,False,int. cab (moving / raining),night,...Esmarelda Villalobos – is that Mexican?,5
+587,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,"The name is Spanish, but I'm Columbian.",7
+588,Butch,Butch,False,False,int. cab (moving / raining),night,It's a very pretty name.,5
+589,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,"It mean ""Esmarelda of the wolves.""",6
+590,Butch,Butch,False,False,int. cab (moving / raining),night,"That's one hell of a name you got there, sister.",10
+591,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,Thank you. And what is your name?,7
+592,Butch,Butch,False,False,int. cab (moving / raining),night,Butch.,1
+593,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,Butch. What does it mean?,5
+594,Butch,Butch,False,False,int. cab (moving / raining),night,"I'm an American, our names don't mean shit. Anyway, moving right along, what is it you wanna know, Esmarelda?",19
+595,Esmarelda,Esmarelda,False,False,int. cab (moving / raining),night,I want to know what it feels like to kill a man –,12
+596,Butch,Butch,False,False,int. cab (moving / raining),night,"– I couldn't tell ya. I didn't know he was dead 'til you told me he was dead. Now I know he's dead, do you wanna know how I feel about it?",31
+597,Butch,Butch,False,False,int. cab (moving / raining),night,I don't feel the least little bit bad.,8
+598,Butch,Butch,False,False,ext. phone booth (raining),night,"What'd I tell ya, soon as the word got out a fix was in, the odds would be outta control. Hey, if he was a better fighter he's be alive. If he never laced up his gloves in the first place, which he never shoulda done, he'd be alive. Enough about the poor unfortunate Mr. Floyd, let's talk about the rich and prosperous Mr. Butch. How many bookies you spread it around with? Eight? How long to collect? So by tomorrow evening, you'll have it all? Good news Scotty, real good news – I understand a few stragglers aside. Me an' Fabienne're gonna leave in the morning. It should take us a couple days to get into Knoxville. Next time we see each other, it'll be on Tennessee time.",128
+599,Butch,Butch,False,False,ext. phone booth (raining),night,"Fabienne my love, our adventure begins.",6
+600,Esmarelda,Esmarelda,False,False,ext. motel (stopped / raining),night,Forty-five sixty.,2
+601,Butch,Butch,False,False,ext. motel (stopped / raining),night,Merci beaucoup. And here's a little something for the effort.,10
+602,Butch,Butch,False,False,ext. motel (stopped / raining),night,"Now if anybody should ask you about who your fare was tonight, what're you gonna tell 'em?",17
+603,Esmarelda,Esmarelda,False,False,ext. motel (stopped / raining),night,"The truth. Three well-dressed, slightly toasted, Mexicans.",7
+604,Butch,Butch,False,False,ext. motel (stopped / raining),night,"Bon soir, Esmarelda.",3
+605,Esmarelda,Esmarelda,False,False,ext. motel (stopped / raining),night,"Sleep well, Butch.",3
+606,Fabienne,Fabienne,False,False,int. motel (room six),night,Keep the light off.,4
+607,Butch,Butch,False,False,int. motel (room six),night,"Is that better, sugar pop?",5
+608,Fabienne,Fabienne,False,False,int. motel (room six),night,Oui. Hard day at the office?,6
+609,Butch,Butch,False,False,int. motel (room six),night,Pretty hard. I got into a fight.,7
+610,Fabienne,Fabienne,False,False,int. motel (room six),night,Poor baby. Can we make spoons?,6
+611,Fabienne,Fabienne,False,False,int. motel (room six),night,I was looking at myself in the mirror.,8
+612,Butch,Butch,False,False,int. motel (room six),night,Uh-huh?,1
+613,Fabienne,Fabienne,False,False,int. motel (room six),night,I wish I had a pot.,6
+614,Butch,Butch,False,False,int. motel (room six),night,You were lookin' in the mirror and you wish you had some pot?,13
+615,Fabienne,Fabienne,False,False,int. motel (room six),night,A pot. A pot belly. Pot bellies are sexy.,9
+616,Butch,Butch,False,False,int. motel (room six),night,"Well you should be happy, 'cause you do.",8
+617,Fabienne,Fabienne,False,False,int. motel (room six),night,"Shut up, Fatso! I don't have a pot! I have a bit of a tummy, like Madonna when she did ""Lucky Star,"" it's not the same thing.",27
+618,Butch,Butch,False,False,int. motel (room six),night,I didn't realize there was a difference between a tummy and a pot belly.,14
+619,Fabienne,Fabienne,False,False,int. motel (room six),night,The difference is huge.,4
+620,Butch,Butch,False,False,int. motel (room six),night,You want me to have a pot?,7
+621,Fabienne,Fabienne,False,False,int. motel (room six),night,"No. Pot bellies make a man look either oafish, or like a gorilla. But on a woman, a pot belly is very sexy. The rest of you is normal. Normal face, normal legs, normal hips, normal ass, but with a big, perfectly round pot belly. If I had one, I'd wear a tee-shirt two sizes too small to accentuate it.",60
+622,Butch,Butch,False,False,int. motel (room six),night,You think guys would find that attractive?,7
+623,Fabienne,Fabienne,False,False,int. motel (room six),night,I don't give a damn what men find attractive. It's unfortunate what we find pleasing to the touch and pleasing to the eye is seldom the same.,27
+624,Butch,Butch,False,False,int. motel (room six),night,"If you a pot belly, I'd punch you in it.",10
+625,Fabienne,Fabienne,False,False,int. motel (room six),night,You'd punch me in my belly?,6
+626,Butch,Butch,False,False,int. motel (room six),night,Right in the belly.,4
+627,Fabienne,Fabienne,False,False,int. motel (room six),night,I'd smother you. I'd drop it on your right on your face 'til you couldn't breathe.,16
+628,Butch,Butch,False,False,int. motel (room six),night,You'd do that to me?,5
+629,Fabienne,Fabienne,False,False,int. motel (room six),night,Yes!,1
+630,Butch,Butch,False,False,int. motel (room six),night,"Did you get everything, sugar pop?",6
+631,Fabienne,Fabienne,False,False,int. motel (room six),night,"Yes, I did.",3
+632,Butch,Butch,False,False,int. motel (room six),night,Good job.,2
+633,Fabienne,Fabienne,False,False,int. motel (room six),night,Did everything go as planned?,5
+634,Butch,Butch,False,False,int. motel (room six),night,You didn't listen to the radio?,6
+635,Fabienne,Fabienne,False,False,int. motel (room six),night,I never listen to your fights. Were you the winner?,10
+636,Butch,Butch,False,False,int. motel (room six),night,I won alright.,3
+637,Fabienne,Fabienne,False,False,int. motel (room six),night,Are you still retiring?,4
+638,Butch,Butch,False,False,int. motel (room six),night,Sure am.,2
+639,Fabienne,Fabienne,False,False,int. motel (room six),night,What about the man you fought?,6
+640,Butch,Butch,False,False,int. motel (room six),night,Floyd retired too.,3
+641,Fabienne,Fabienne,False,False,int. motel (room six),night,Really?! He won't be fighting no more?!,7
+642,Butch,Butch,False,False,int. motel (room six),night,Not no more.,3
+643,Fabienne,Fabienne,False,False,int. motel (room six),night,So it all worked out in the finish?,8
+644,Butch,Butch,False,False,int. motel (room six),night,"We ain't at the finish, baby.",6
+645,Fabienne,Fabienne,False,False,int. motel (room six),night,"We're in a lot of danger, aren't we?",8
+646,Fabienne,Fabienne,False,False,int. motel (room six),night,"If they find us, they'll kill us, won't they?",9
+647,Fabienne,Fabienne,False,False,int. motel (room six),night,"But they won't find us, will they?",7
+648,Fabienne,Fabienne,False,False,int. motel (room six),night,Do you still want me to go with you?,9
+649,Fabienne,Fabienne,False,False,int. motel (room six),night,I don't want to be a burden or a nuisance -,10
+650,Fabienne,Fabienne,False,False,int. motel (room six),night,Say it!,2
+651,Butch,Butch,False,False,int. motel (room six),night,"Fabienne, I want you to be with me.",8
+652,Fabienne,Fabienne,False,False,int. motel (room six),night,Forever?,1
+653,Butch,Butch,False,False,int. motel (room six),night,...and ever.,2
+654,Fabienne,Fabienne,False,False,int. motel (room six),night,Do you love me?,4
+655,Butch,Butch,False,False,int. motel (room six),night,Oui.,1
+656,Fabienne,Fabienne,False,False,int. motel (room six),night,Butch? Will you give me oral pleasure?,7
+657,Butch,Butch,False,False,int. motel (room six),night,Will you kiss it?,4
+658,Fabienne,Fabienne,False,False,int. motel (room six),night,But you first.,3
+659,Fabienne,Fabienne,False,False,int. motel (room six),night,"Butch my love, the adventure begins.",6
+660,Butch,Butch,False,False,int. motel (room six),night,I think I cracked a rib.,6
+661,Fabienne,Fabienne,False,False,int. motel (room six),night,Giving me oral pleasure?,4
+662,Butch,Butch,False,False,int. motel (room six),night,"No retard, from the fight.",5
+663,Fabienne,Fabienne,False,False,int. motel (room six),night,Don't call me retard.,4
+664,Butch,Butch,False,False,int. motel (room six),night,My name is Fabby! My name is Fabby!,8
+665,Fabienne,Fabienne,False,False,int. motel (room six),night,Shut up fuck head! I hate that Mongoloid voice.,9
+666,Butch,Butch,False,False,int. motel (room six),night,"Okay, sorry, sorry, sorry, I take it back! Can I have a towel please, Miss Beautiful Tulip.",17
+667,Fabienne,Fabienne,False,False,int. motel (room six),night,"Oh I like that, I like being called a tulip. Tulip is much better than Mongoloid.",16
+668,Butch,Butch,False,False,int. motel (room six),night,"I didn't call you a Mongoloid, I called you a retard, but I took it back.",16
+669,Butch,Butch,False,False,int. motel (room six),night,Merci beaucoup.,2
+670,Fabienne,Fabienne,False,False,int. motel (room six),night,Butch?,1
+671,Butch,Butch,False,False,int. motel (room six),night,"Yes, lemon pie.",3
+672,Fabienne,Fabienne,False,False,int. motel (room six),night,Where are we going to go?,6
+673,Butch,Butch,False,False,int. motel (room six),night,"I'm not sure yet. Wherever you want. We're gonna get a lot of money from this. But it ain't gonna be so much, we can live like hogs in the fat house forever. I was thinking we could go somewhere in the South Pacific. The kinda money we'll have'll carry us a long way down there.",56
+674,Fabienne,Fabienne,False,False,int. motel (room six),night,"So if we wanted, we could live in Bora Bora?",10
+675,Butch,Butch,False,False,int. motel (room six),night,"You betcha. And if after awhile you don't dig Bora Bora, then we can move over to Tahiti or Mexico.",20
+676,Fabienne,Fabienne,False,False,int. motel (room six),night,But I do not speak Spanish.,6
+677,Butch,Butch,False,False,int. motel (room six),night,"You don't speak Bora Boran either. Besides, Mexican is easy: Donde esta el zapataria?",14
+678,Fabienne,Fabienne,False,False,int. motel (room six),night,What does that mean?,4
+679,Butch,Butch,False,False,int. motel (room six),night,Where's the shoe store?,4
+680,Fabienne,Fabienne,False,False,int. motel (room six),night,Donde esta el zapataria?,4
+681,Butch,Butch,False,False,int. motel (room six),night,Excellent pronunciation. You'll be my little mama ceta in no time.,11
+682,Butch,Butch,True,False,int. motel (room six),night,Que hora es?,3
+683,Fabienne,Fabienne,False,False,int. motel (room six),night,Que hora es?,3
+684,Butch,Butch,True,False,int. motel (room six),night,What time is it?,4
+685,Fabienne,Fabienne,False,False,int. motel (room six),night,What time is it?,4
+686,Butch,Butch,True,False,int. motel (room six),night,"Time for bed. Sweet dream, jellybean.",6
+687,Fabienne,Fabienne,False,False,int. motel (room six),night,Butch.,1
+688,Fabienne,Fabienne,False,False,int. motel (room six),night,Forget it.,2
+689,Fabienne,Fabienne,False,False,int. motel (room six),morning,Merde! You startled me. Did you have a bad dream?,10
+690,Butch,Butch,False,False,int. motel (room six),morning,What are you watching?,4
+691,Fabienne,Fabienne,False,False,int. motel (room six),morning,"A motorcycle movie, I'm not sure the name.",8
+692,Butch,Butch,False,False,int. motel (room six),morning,Are you watchin' it?,4
+693,Fabienne,Fabienne,False,False,int. motel (room six),morning,In a way. Why? Would you like for me to switch it off?,13
+694,Butch,Butch,False,False,int. motel (room six),morning,Would you please?,3
+695,Butch,Butch,False,False,int. motel (room six),morning,It's a little too early in the morning for explosions and war.,12
+696,Fabienne,Fabienne,False,False,int. motel (room six),morning,What was it about?,4
+697,Butch,Butch,False,False,int. motel (room six),morning,"How should I know, you were the one watchin' it.",10
+698,Fabienne,Fabienne,False,False,int. motel (room six),morning,"No, imbecile, what was your dream about?",7
+699,Butch,Butch,False,False,int. motel (room six),morning,"Oh, I... don't remember. It's really rare I remember a dream.",11
+700,Fabienne,Fabienne,False,False,int. motel (room six),morning,You just woke up from it.,6
+701,Butch,Butch,False,False,int. motel (room six),morning,"Fabienne, I'm not lying to you, I don't remember.",9
+702,Fabienne,Fabienne,False,False,int. motel (room six),morning,"Well, let's look at the grumpy man in the morning. I didn't say you were lying, it's just odd you don't remember your dreams. I always remember mine. Did you know you talk in your sleep?",36
+703,Butch,Butch,False,False,int. motel (room six),morning,"I don't talk in my sleep, do I talk in my sleep?",12
+704,Fabienne,Fabienne,False,False,int. motel (room six),morning,You did last night.,4
+705,Butch,Butch,False,False,int. motel (room six),morning,What did I say?,4
+706,Fabienne,Fabienne,False,False,int. motel (room six),morning,I don't know. I couldn't understand you.,7
+707,Fabienne,Fabienne,False,False,int. motel (room six),morning,Why don't you get up and we'll get some breakfast at that breakfast place with the pancakes.,17
+708,Butch,Butch,False,False,int. motel (room six),morning,One more kiss and I'll get up.,7
+709,Fabienne,Fabienne,False,False,int. motel (room six),morning,Satisfied?,1
+710,Butch,Butch,False,False,int. motel (room six),morning,Yep.,1
+711,Fabienne,Fabienne,False,False,int. motel (room six),morning,"Then get up, lazy bones.",5
+712,Butch,Butch,False,False,int. motel (room six),morning,What time is it?,4
+713,Fabienne,Fabienne,False,False,int. motel (room six),morning,Almost nine in the morning. What time does our train arrive?,11
+714,Butch,Butch,False,False,int. motel (room six),morning,Eleven.,1
+715,Fabienne,Fabienne,False,False,int. motel (room six),morning,"I'm gonna order a big plate of blueberry pancakes with maple syrup, eggs over easy, and five sausages.",18
+716,Butch,Butch,False,False,int. motel (room six),morning,Anything to drink with that?,5
+717,Fabienne,Fabienne,False,False,int. motel (room six),morning,"Oh yes, that looks nice. To drink, a tall glass or orange juice and a black cup of coffee. After that, I'm going to have a slice of pie.",29
+718,Butch,Butch,False,False,int. motel (room six),morning,Pie for breakfast?,3
+719,Fabienne,Fabienne,False,False,int. motel (room six),morning,"Any time of the day is a good time for pie. Blueberry pie to go with the pancakes. And on top, a thin slice of melted cheese –",27
+720,Butch,Butch,False,False,int. motel (room six),morning,– where's my watch?,3
+721,Fabienne,Fabienne,False,False,int. motel (room six),morning,It's there.,2
+722,Butch,Butch,False,False,int. motel (room six),morning,"No, it's not. It's not here.",6
+723,Fabienne,Fabienne,False,False,int. motel (room six),morning,Have you looked?,3
+724,Butch,Butch,False,False,int. motel (room six),morning,Yes I've fuckin' looked!!,4
+725,Butch,Butch,False,False,int. motel (room six),morning,What the fuck do you think I'm doing?! Are you sure you got it?,14
+726,Fabienne,Fabienne,False,False,int. motel (room six),morning,Uhhh... yes... beside the table drawer –,6
+727,Butch,Butch,False,False,int. motel (room six),morning,– on the little kangaroo.,4
+728,Fabienne,Fabienne,False,False,int. motel (room six),morning,"Yes, it was on your little kangaroo.",7
+729,Butch,Butch,False,False,int. motel (room six),morning,Well it's not here!,4
+730,Fabienne,Fabienne,False,False,int. motel (room six),morning,Well it should be!,4
+731,Butch,Butch,False,False,int. motel (room six),morning,"Oh it most definitely should be here, but it's not. So where is it?",14
+732,Butch,Butch,False,False,int. motel (room six),morning,"Fabienne, that was my father's fuckin' watch. You know what my father went through to git me that watch?... I don't wanna get into it right now... but he went through a lot. Now all this other shit, you coulda set on fire, but I specifically reminded you not to forget my father's watch. Now think, did you get it?",60
+733,Fabienne,Fabienne,False,False,int. motel (room six),morning,I believe so...,3
+734,Butch,Butch,False,False,int. motel (room six),morning,"You believe so? You either did, or you didn't, now which one is it?",14
+735,Fabienne,Fabienne,False,False,int. motel (room six),morning,Then I did.,3
+736,Butch,Butch,False,False,int. motel (room six),morning,Are you sure?,3
+737,Fabienne,Fabienne,False,False,int. motel (room six),morning,No.,1
+738,Butch,Butch,False,False,int. motel (room six),morning,No! It's not your fault. You left it at the apartment.,11
+739,Butch,Butch,False,False,int. motel (room six),morning,"If you did leave it at the apartment, it's not your fault. I had you bring a bunch of stuff. I reminded you about it, but I didn't illustrate how personal the watch was to me. If all I gave a fuck about was my watch, I should've told you. You ain't a mind reader.",55
+740,Fabienne,Fabienne,False,False,int. motel (room six),morning,I'm sorry.,2
+741,Butch,Butch,False,False,int. motel (room six),morning,Don't be. It just means I won't be able to eat breakfast with you.,14
+742,Fabienne,Fabienne,False,False,int. motel (room six),morning,Why does it mean that?,5
+743,Butch,Butch,False,False,int. motel (room six),morning,Because I'm going back to my apartment to get my watch.,11
+744,Fabienne,Fabienne,False,False,int. motel (room six),morning,Won't the gangsters be looking for you there?,8
+745,Butch,Butch,False,False,int. motel (room six),morning,"That's what I'm gonna find out. If they are, and I don't think I can handle it, I'll split.",19
+746,Fabienne,Fabienne,False,False,int. motel (room six),morning,"I was so dreadful. I saw your watch, I thought I brought it. I'm so sorry.",16
+747,Butch,Butch,False,False,int. motel (room six),morning,"Don't feel bad, sugar pop. Nothing you could ever do would make me permanently angry at you. I love you, remember? Now here's some money, order those pancakes and have a great breakfast.",33
+748,Fabienne,Fabienne,False,False,int. motel (room six),morning,Don't go.,2
+749,Butch,Butch,False,False,int. motel (room six),morning,"I'll be back before you can say, blueberry pie.",9
+750,Fabienne,Fabienne,False,False,int. motel (room six),morning,Blueberry pie.,2
+751,Butch,Butch,False,False,int. motel (room six),morning,"Well maybe not that fast, but fast. Okay? Okay?",9
+752,Fabienne,Fabienne,False,False,int. motel (room six),morning,Okay.,1
+753,Butch,Butch,False,False,int. motel (room six),morning,"Bye-bye, sugar pop.",3
+754,Fabienne,Fabienne,False,False,int. motel (room six),morning,Bye.,1
+755,Butch,Butch,False,False,int. motel (room six),morning,I'm gonna take your Honda.,5
+756,Fabienne,Fabienne,False,False,int. motel (room six),morning,Okay.,1
+757,Butch,Butch,False,False,int. Honda (moving),day,"Of all the fuckin' things she coulda forgot, she forgets my father's watch. I specifically reminded her not to forget it. ""Bedside table – on the kangaroo."" I said the words: ""Don't forget my father's watch.""",35
+758,Butch,Butch,False,False,int. Butch's apartment,day,Holy shit.,2
+759,Butch,Butch,False,False,int. Honda,day,"That's how you're gonna beat 'em, Butch. They keep underestimatin' ya.",11
+760,Pedestrian,Pedestrian,False,False,int. Honda,day,"Jesus, are you okay?",4
+761,Butch,Butch,False,False,int. Honda,day,I guess.,2
+762,Gawker #1,Gawker #1,False,False,int. Honda,day,He's dead! He's dead!,4
+763,Gawker #2,Gawker #2,False,False,int. Honda,day,"If you need a witness in court, I'll be glad to help. He was a drunken maniac. He hit you and crashed into that car.",25
+764,Marsellus,Marsellus,False,False,int. Honda,day,Who?,1
+765,Gawker #2,Gawker #2,False,False,int. Honda,day,Him.,1
+766,Marsellus,Marsellus,False,False,int. Honda,day,"Well, I'll be damned.",4
+767,Butch,Butch,False,False,int. Honda,day,Sacre bleu.,2
+768,Looky-loo woman,Looky-loo woman,False,False,int. Honda,day,"Oh my God, I've been shot!",6
+769,Maynard,Maynard,False,False,int. Mason-Dixie pawnshop,day,Can I help you wit' somethin'?,6
+770,Butch,Butch,False,False,int. Mason-Dixie pawnshop,day,Shut up!,2
+771,Maynard,Maynard,False,False,int. Mason-Dixie pawnshop,day,Now you just wait one goddamn minute –,7
+772,Butch,Butch,False,False,int. Mason-Dixie pawnshop,day,"So you like chasing people, huh?",6
+773,Butch,Butch,False,False,int. Mason-Dixie pawnshop,day,"Well guess what, big man, you caught me –",8
+774,Maynard,Maynard,True,False,int. Mason-Dixie pawnshop,day,"– hold it right there, godammit!",5
+775,Butch,Butch,False,False,int. Mason-Dixie pawnshop,day,"Look mister, this ain't any of your business –",8
+776,Maynard,Maynard,False,False,int. Mason-Dixie pawnshop,day,– I'm makin' it my business! Now toss that gun!,9
+777,Maynard,Maynard,False,False,int. Mason-Dixie pawnshop,day,"Now you on top, stand up and come to the counter.",11
+778,Maynard,Maynard,False,False,int. Mason-Dixie pawnshop,day,Zed? It's Maynard. The spider just caught a coupl'a flies.,10
+779,Maynard,Maynard,False,False,int. pawnshop back room,day,Nobody kills anybody in my place of business except me or Zed.,12
+780,Maynard,Maynard,False,False,int. pawnshop back room,day,That's Zed.,2
+781,Zed,Zed,False,False,int. pawnshop back room,day,You said you waited for me?,6
+782,Maynard,Maynard,False,False,int. pawnshop back room,day,I did.,2
+783,Zed,Zed,False,False,int. pawnshop back room,day,Then how come they're all beat up?,7
+784,Maynard,Maynard,False,False,int. pawnshop back room,day,They did that to each other. They was fightin' when they came in. This one was gonna shoot that one.,20
+785,Zed,Zed,False,False,int. pawnshop back room,day,You were gonna shoot him?,5
+786,Zed,Zed,False,False,int. pawnshop back room,day,"Hey, is Grace gonna be okay in front of this place?",11
+787,Maynard,Maynard,False,False,int. pawnshop back room,day,"Yeah, it ain't Tuesday is it?",6
+788,Zed,Zed,False,False,int. pawnshop back room,day,"No, it's Thursday.",3
+789,Maynard,Maynard,False,False,int. pawnshop back room,day,Then she'll be fine.,4
+790,Zed,Zed,False,False,int. pawnshop back room,day,Bring out The Gimp.,4
+791,Maynard,Maynard,False,False,int. pawnshop back room,day,I think The Gimp's sleepin'.,5
+792,Zed,Zed,False,False,int. pawnshop back room,day,"Well, I guess you'll just wake 'em up then, won't you?",11
+793,Maynard,Maynard,False,False,int. pawnshop back room,day,Wake up!,2
+794,Maynard,Maynard,False,False,int. pawnshop back room,day,Down!,1
+795,Maynard,Maynard,False,False,int. pawnshop back room,day,Who's first?,2
+796,Zed,Zed,False,False,int. pawnshop back room,day,I ain't fer sure yet.,5
+797,Zed,Zed,False,False,int. pawnshop back room,day,Wanna do it here?,4
+798,Maynard,Maynard,False,False,int. pawnshop back room,day,"Naw, drag big boy to Russell's old room.",8
+799,Maynard,Maynard,False,False,int. pawnshop back room,day,Up!,1
+800,Maynard,Maynard,False,False,int. pawnshop back room,day,Keep an eye on this one.,6
+801,Maynard,Maynard,True,False,int. pawnshop back room,day,"Whoa, this boy's got a bit of fight in 'em!",10
+802,Zed,Zed,True,False,int. pawnshop back room,day,"You wanna fight? You wanna fight? Good, I like to fight!",11
+803,Maynard,Maynard,True,False,int. pawnshop back room,day,"That's it... that's it boy, you're goin' fine. Oooooooh, just like that... that's good. Stay still... stay still goddamn ya! Zed goddammit, git over here and hold 'em!",28
+804,The Gimp,The Gimp,False,False,int. pawnshop back room,day,Huhng?,1
+805,Butch,Butch,False,False,int. Russell's old room,day,Hey hillbilly.,2
+806,Butch,Butch,False,False,int. Russell's old room,day,"You want that gun, Zed? Pick it up.",8
+807,Marsellus,Marsellus,True,False,int. Russell's old room,day,"Step aside, Butch.",3
+808,Butch,Butch,False,False,int. Russell's old room,day,You okay?,2
+809,Marsellus,Marsellus,False,False,int. Russell's old room,day,Naw man. I'm pretty fuckin' far from okay!,8
+810,Butch,Butch,False,False,int. Russell's old room,day,What now?,2
+811,Marsellus,Marsellus,False,False,int. Russell's old room,day,"What now? Well let me tell you what now. I'm gonna call a couple pipe- hittin' niggers, who'll go to work on homes here with a pair of pliers and a blow torch. Hear me talkin' hillbilly boy?! I ain't through with you by a damn sight. I'm gonna git Medieval on your ass.",54
+812,Butch,Butch,False,False,int. Russell's old room,day,"I meant what now, between me and you?",8
+813,Marsellus,Marsellus,False,False,int. Russell's old room,day,"Oh, that what now? Well, let me tell ya what now between me an' you. There is no me an' you. Not no more.",24
+814,Butch,Butch,False,False,int. Russell's old room,day,So we're cool?,3
+815,Marsellus,Marsellus,False,False,int. Russell's old room,day,"Yeah man, we're cool. One thing I ask – two things I ask: Don't tell nobody about this. This shit's between me and you and the soon-to-be-livin'- the-rest-of-his-short-ass-life-in- agonizing-pain, Mr. Rapist here. It ain't nobody else's business. Two: leave town. Tonight. Right now. And when you're gone, stay gone. You've lost your Los Angeles privileges. Deal?",55
+816,Butch,Butch,False,False,int. Russell's old room,day,Deal.,1
+817,Marsellus,Marsellus,False,False,int. Russell's old room,day,"Go on now, get your ass outta here.",8
+818,Marsellus,Marsellus,False,False,int. Russell's old room,day,"Hello Mr. Wolf, it's Marsellus. Gotta bit of a situation.",10
+819,Fabienne,Fabienne,True,False,ext. motel room,day,"Butch, I was so worried!",5
+820,Butch,Butch,False,False,ext. motel room,day,"Honey, grab your radio and your purse and let's go!",10
+821,Fabienne,Fabienne,True,False,ext. motel room,day,But what about all our bags?,6
+822,Butch,Butch,False,False,ext. motel room,day,Fuck the bags. We'll miss our train if we don't split now.,12
+823,Fabienne,Fabienne,True,False,ext. motel room,day,Is everything well? Are we in danger?,7
+824,Butch,Butch,False,False,ext. motel room,day,"We're cool. In fact, we're super- cool. But we gots to go. I'll wait for you outside.",17
+825,Fabienne,Fabienne,False,False,ext. motel room,day,Where did you get this motorcycle?,6
+826,Butch,Butch,False,False,ext. motel room,day,"It's a chopper, baby, hop on.",6
+827,Fabienne,Fabienne,False,False,ext. motel room,day,What happened to my Honda?,5
+828,Butch,Butch,False,False,ext. motel room,day,"Sorry baby, I crashed the Honda.",6
+829,Fabienne,Fabienne,False,False,ext. motel room,day,You're hurt?,2
+830,Butch,Butch,False,False,ext. motel room,day,"I might've broke my nose, no biggie. Hop on.",9
+831,Butch,Butch,False,False,ext. motel room,day,"Honey, we gotta hit the fuckin' road!",7
+832,Butch,Butch,False,False,ext. motel room,day,"I'm sorry, baby-love.",3
+833,Fabienne,Fabienne,False,False,ext. motel room,day,"You were gone so long, I started to think dreadful thoughts.",11
+834,Butch,Butch,False,False,ext. motel room,day,"I'm sorry I worried you, sweetie. Everything's fine. Hey, how was breakfast?",12
+835,Fabienne,Fabienne,False,False,ext. motel room,day,It was good –,3
+836,Butch,Butch,False,False,ext. motel room,day,– did you get the blueberry pancakes?,6
+837,Fabienne,Fabienne,False,False,ext. motel room,day,"No, they didn't have blueberry pancakes, I had to get buttermilk – are you sure you're okay?",16
+838,Butch,Butch,False,False,ext. motel room,day,"Baby-love, from the moment I left you, this has been without a doubt the single weirdest day of my entire life. Climb on an' I'll tell ya about it.",29
+839,Fabienne,Fabienne,False,False,ext. motel room,day,"Butch, whose motorcycle is this?",5
+840,Butch,Butch,False,False,ext. motel room,day,It's a chopper.,3
+841,Fabienne,Fabienne,False,False,ext. motel room,day,Whose chopper is this?,4
+842,Butch,Butch,False,False,ext. motel room,day,Zed's.,1
+843,Fabienne,Fabienne,False,False,ext. motel room,day,Who's Zed?,2
+844,Butch,Butch,False,False,ext. motel room,day,"Zed's dead, baby, Zed's dead.",5
+845,Jules,Jules,True,False,int. bathroom,morning,"You ever read the Bible, Brett?",6
+846,Brett,Brett,True,False,int. bathroom,morning,Yes!,1
+847,Jules,Jules,True,False,int. bathroom,morning,"There's a passage I got memorized, seems appropriate for this situation: Ezekiel 25:17. ""The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men...""",36
+848,Jules,Jules,True,False,int. bathroom,morning,"""...blessed is he who, in the name of charity and good will, shepherded the weak through the valley of darkness. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know I am the Lord when I lay my vengeance upon you.""",57
+849,Vincent,Vincent,True,False,int. bathroom,morning,Friend of yours?,3
+850,Jules,Jules,True,False,int. bathroom,morning,"Yeah, Marvin-Vincent-Vincent-Marvin.",2
+851,Fourth man,Fourth man,False,False,int. bathroom,morning,Die... die... die... die...!,4
+852,Fourth man,Fourth man,False,False,int. bathroom,morning,I don't understand –,3
+853,Vincent,Vincent,False,False,int. bathroom,morning,Why the fuck didn't you tell us about that guy in the bathroom? Slip your mind? Forget he was in there with a goddamn hand cannon?,26
+854,Jules,Jules,False,False,int. bathroom,morning,We should be fuckin' dead right now. Did you see that gun he fired at us? It was bigger than him.,21
+855,Vincent,Vincent,False,False,int. bathroom,morning,.357.,1
+856,Jules,Jules,False,False,int. bathroom,morning,We should be fuckin' dead!,5
+857,Vincent,Vincent,False,False,int. bathroom,morning,"Yeah, we were lucky.",4
+858,Jules,Jules,False,False,int. bathroom,morning,That shit wasn't luck. That shit was somethin' else.,9
+859,Vincent,Vincent,False,False,int. bathroom,morning,"Yeah, maybe.",2
+860,Jules,Jules,False,False,int. bathroom,morning,That was... divine intervention. You know what divine intervention is?,10
+861,Vincent,Vincent,False,False,int. bathroom,morning,"Yeah, I think so. That means God came down from Heaven and stopped the bullets.",15
+862,Jules,Jules,False,False,int. bathroom,morning,"Yeah, man, that's what is means. That's exactly what it means! God came down from Heaven and stopped the bullets.",20
+863,Vincent,Vincent,False,False,int. bathroom,morning,I think we should be going now.,7
+864,Jules,Jules,False,False,int. bathroom,morning,Don't do that! Don't you fuckin' do that! Don't blow this shit off! What just happened was a fuckin' miracle!,20
+865,Vincent,Vincent,False,False,int. bathroom,morning,"Chill the fuck out, Jules, this shit happens.",8
+866,Jules,Jules,False,False,int. bathroom,morning,"Wrong, wrong, this shit doesn't just happen.",7
+867,Vincent,Vincent,False,False,int. bathroom,morning,"Do you wanna continue this theological discussion in the car, or at the jailhouse with the cops?",17
+868,Jules,Jules,False,False,int. bathroom,morning,"We should be fuckin' dead now, my friend! We just witnessed a miracle, and I want you to fuckin' acknowledge it!",21
+869,Vincent,Vincent,False,False,int. bathroom,morning,"Okay man, it was a miracle, can we leave now?",10
+870,Vincent,Vincent,False,False,int. Nova (moving),morning,"...Ever seen that show ""COPS?"" I was watchin' it once and this cop was on it who was talkin' about this time he got into this gun fight with a guy in a hallway. He unloads on this guy and he doesn't hit anything. And these guys were in a hallway. It's a freak, but it happens.",57
+871,Jules,Jules,False,False,int. Nova (moving),morning,"If you wanna play blind man, then go walk with a Shepherd. But me, my eyes are wide fuckin' open.",20
+872,Vincent,Vincent,False,False,int. Nova (moving),morning,What the fuck does that mean?,6
+873,Jules,Jules,False,False,int. Nova (moving),morning,"That's it for me. For here on in, you can consider my ass retired.",14
+874,Vincent,Vincent,False,False,int. Nova (moving),morning,Jesus Christ!,2
+875,Jules,Jules,False,False,int. Nova (moving),morning,Don't blaspheme!,2
+876,Vincent,Vincent,False,False,int. Nova (moving),morning,"Goddammit, Jules –",2
+877,Jules,Jules,False,False,int. Nova (moving),morning,– I said don't do that –,5
+878,Vincent,Vincent,False,False,int. Nova (moving),morning,– you're fuckin' freakin' out!,4
+879,Jules,Jules,False,False,int. Nova (moving),morning,I'm tellin' Marsellus today I'm through.,6
+880,Vincent,Vincent,False,False,int. Nova (moving),morning,"While you're at it, be sure to tell 'im why.",10
+881,Jules,Jules,False,False,int. Nova (moving),morning,"Don't worry, I will.",4
+882,Vincent,Vincent,False,False,int. Nova (moving),morning,"I'll bet ya ten thousand dollars, he laughs his ass off.",11
+883,Jules,Jules,False,False,int. Nova (moving),morning,I don't give a damn if he does.,8
+884,Vincent,Vincent,False,False,int. Nova (moving),morning,"Marvin, what do you make of all this?",8
+885,Marvin,Marvin,False,False,int. Nova (moving),morning,I don't even have an opinion.,6
+886,Vincent,Vincent,False,False,int. Nova (moving),morning,"C'mon, Marvin. Do you think God came down from Heaven and stopped the bullets?",14
+887,Jules,Jules,False,False,int. Nova (moving),morning,What the fuck's happening?,4
+888,Vincent,Vincent,False,False,int. Nova (moving),morning,I just accidentally shot Marvin in the throat.,8
+889,Jules,Jules,False,False,int. Nova (moving),morning,Why the fuck did you do that?,7
+890,Vincent,Vincent,False,False,int. Nova (moving),morning,I didn't mean to do it. I said it was an accident.,12
+891,Jules,Jules,False,False,int. Nova (moving),morning,I've seen a lot of crazy-ass shit in my time –,10
+892,Vincent,Vincent,False,False,int. Nova (moving),morning,"– chill out, man, it was an accident, okay? You hit a bump or somethin' and the gun went off.",19
+893,Jules,Jules,False,False,int. Nova (moving),morning,The car didn't hit no motherfuckin' bump!,7
+894,Vincent,Vincent,False,False,int. Nova (moving),morning,"Look! I didn't mean to shoot this son-ofa-bitch, the gun just went off, don't ask me how!",17
+895,Jules,Jules,False,False,int. Nova (moving),morning,Look at this mess! We're drivin' around on a city street in broad daylight –,14
+896,Vincent,Vincent,False,False,int. Nova (moving),morning,"– I know, I know, I wasn't thinkin' about the splatter.",10
+897,Jules,Jules,False,False,int. Nova (moving),morning,"Well you better be thinkin' about it now, motherfucker! We gotta get this car off the road. Cops tend to notice shit like you're driving a car drenched in fuckin' blood.",31
+898,Vincent,Vincent,False,False,int. Nova (moving),morning,Can't we just take it to a friendly place?,9
+899,Jules,Jules,False,False,int. Nova (moving),morning,"This is the Valley, Vincent. Marsellus don't got no friendly places in the Valley.",14
+900,Vincent,Vincent,False,False,int. Nova (moving),morning,"Well, don't look at me, this is your town, Jules.",10
+901,Vincent,Vincent,False,False,int. Nova (moving),morning,Who ya callin'?,3
+902,Jules,Jules,False,False,int. Nova (moving),morning,A buddy of mine in Toluca Lake.,7
+903,Vincent,Vincent,False,False,int. Nova (moving),morning,Where's Toluca Lake.,3
+904,Jules,Jules,False,False,int. Nova (moving),morning,"On the other side of the hill, by Burbank Studios. If Jimmie's ass ain't home, I don't know what the fuck we're gonna go. I ain't got any other partners in 818. Jimmie! How you doin' man, it's Jules. Listen up man, me an' my homeboy are in some serious shit. We're in a car we gotta get off the road, pronto! I need to use your garage for a couple hours.",72
+905,Jules,Jules,False,False,int. Nova (moving),morning,We gotta be real fuckin' delicate with this Jimmie's situation. He's one remark away from kickin' our asses out the door.,21
+906,Vincent,Vincent,False,False,int. Nova (moving),morning,"If he kicks us out, whadda we do?",8
+907,Jules,Jules,False,False,int. Nova (moving),morning,"Well, we ain't leavin' 'til we made a couple phone calls. But I never want it to reach that pitch. Jimmie's my friend and you don't bust in your friend's house and start tellin' 'im what's what.",37
+908,Vincent,Vincent,False,False,int. Nova (moving),morning,Just tell 'im not to be abusive. He kinda freaked out back there when he saw Marvin.,17
+909,Jules,Jules,False,False,int. Nova (moving),morning,"Put yourself in his position. It's eight o'clock in the morning. He just woke up, he wasn't prepared for this shit. Don't forget who's doin' who a favor.",28
+910,Vincent,Vincent,False,False,int. Nova (moving),morning,"If the price of that favor is I gotta take shit, he can stick his favor straight up his ass.",20
+911,Jules,Jules,False,False,int. Nova (moving),morning,What the fuck did you just do to his towel?,10
+912,Vincent,Vincent,False,False,int. Nova (moving),morning,I was just dryin' my hands.,6
+913,Jules,Jules,False,False,int. Nova (moving),morning,You're supposed to wash 'em first.,6
+914,Vincent,Vincent,False,False,int. Nova (moving),morning,You watched me wash 'em.,5
+915,Jules,Jules,False,False,int. Nova (moving),morning,I watched you get 'em wet.,6
+916,Vincent,Vincent,False,False,int. Nova (moving),morning,"I washed 'em. Blood's real hard to get off. Maybe if he had some Lava, I coulda done a better job.",21
+917,Jules,Jules,False,False,int. Nova (moving),morning,"I used the same soap you did and when I dried my hands, the towel didn't look like a fuckin' Maxie pad. Look, fuck it, alright. Who cares? But it's shit like this that's gonna bring this situation to a boil. If he were to come in here and see that towel like that... I'm tellin' you Vincent, you best be cool. 'Cause if I gotta get in to it with Jimmie on account of you... Look, I ain't threatenin' you, I respect you an' all, just don't put me in that position.",93
+918,Jules,Jules,False,False,int. Nova (moving),morning,"Jules, you ask me nice like that, no problem. He's your friend, you handle him.",15
+919,Jules,Jules,False,False,int. Jimmie's kitchen,morning,"Goddamn Jimmie, this is some serious gourmet shit. Me an' Vincent woulda been satisfied with freeze-dried Tasters Choice. You spring this gourmet fuckin' shit on us. What flavor is this?",30
+920,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"Knock it off, Julie.",4
+921,Jules,Jules,False,False,int. Jimmie's kitchen,morning,What?,1
+922,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"I'm not a cobb or corn, so you can stop butterin' me up. I don't need you to tell me how good my coffee is. I'm the one who buys it, I know how fuckin' good it is. When Bonnie goes shoppin;, she buys shit. I buy the gourmet expensive stuff 'cause when I drink it, I wanna taste it. But what's on my mind at this moment isn't the coffee in my kitchen, it's the dead nigger in my garage.",81
+923,Jules,Jules,False,False,int. Jimmie's kitchen,morning,Jimmie –,1
+924,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"– I'm talkin'. Now let me ask you a question, Jules. When you drove in here, did you notice a sign out front that said, ""Dead nigger storage?""",27
+925,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"– answer to question. Did you see a sign out in front of my house that said, ""Dead nigger storage?""",19
+926,Jules,Jules,False,False,int. Jimmie's kitchen,morning,"Naw man, I didn't.",4
+927,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,You know why you didn't see that sign?,8
+928,Jules,Jules,False,False,int. Jimmie's kitchen,morning,Why?,1
+929,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,'Cause storin' dead niggers ain't my fuckin' business!,8
+930,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"– I ain't through! Now don't you understand that if Bonnie comes home and finds a dead body in her house, I'm gonna get divorced. No marriage counselor, no trial separation – fuckin' divorced. And I don't wanna get fuckin' divorced. The last time me an' Bonnie talked about this shit was gonna be the last time me an' Bonnie talked about this shit. Now I wanna help ya out Julie, I really do. But I ain't gonna lose my wife doin' it.",81
+931,Jules,Jules,False,False,int. Jimmie's kitchen,morning,Jimmie –,1
+932,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,"– don't fuckin' Jimmie me, man, I can't be Jimmied. There's nothin' you can say that's gonna make me forget I love my wife. Now she's workin' the graveyard shift at the hospital. She'll be comin' home in less than an hour and a half. Make your phone calls, talk to your people, than get the fuck out of my house.",60
+933,Jules,Jules,False,False,int. Jimmie's kitchen,morning,That's all we want. We don't wanna fuck up your shit. We just need to call our people to bring us in.,22
+934,Jimmie,Jimmie,False,False,int. Jimmie's kitchen,morning,Then I suggest you get to it. Phone's in my bedroom.,11
+935,Marsellus,Marsellus,False,False,int. Marsellus Wallace's dining room,morning,"...well, say she comes home. Whaddya think she'll do? No fuckin' shit she'll freak. That ain't no kinda answer. You know 'er, I don't. How bad, a lot or a little?",31
+936,Jules,Jules,False,False,int. Jimmie's bedroom,morning,"You got to appreciate what an explosive element this Bonnie situation is. If she comes home from a hard day's work and finds a bunch of gangsters doin' a bunch of gangsta' shit in her kitchen, ain't no tellin' what she's apt to do.",44
+937,Marsellus,Marsellus,False,False,int. Jimmie's bedroom,morning,"I've grasped that, Jules. All I'm doin' is contemplating the ""ifs.""",11
+938,Jules,Jules,False,False,int. Jimmie's bedroom,morning,"I don't wanna hear about no motherfuckin' ""ifs.""What I wanna hear from your ass is: ""you ain't got no problems, Jules. I'm on the motherfucker. Go back in there, chill them niggers out and wait for the cavalry, which should be comin' directly.""",43
+939,Marsellus,Marsellus,False,False,int. Jimmie's bedroom,morning,"You ain't got no problems, Jules. I'm on the motherfucker. Go back in there, chill them niggers out and wait for The Wolf, who should be comin' directly.",28
+940,Jules,Jules,False,False,int. Jimmie's bedroom,morning,You sendin' The Wolf?,4
+941,Marsellus,Marsellus,False,False,int. Jimmie's bedroom,morning,Feel better?,2
+942,Jules,Jules,False,False,int. Jimmie's bedroom,morning,"Shit Negro, that's all you had to say.",8
+943,The Wolf,The Wolf,False,False,int. hotel suite,morning,Is she the hysterical type? When she due? Give me the principals' names again? Jules...,15
+944,The Wolf,The Wolf,False,False,int. hotel suite,morning,...Vincent... Jimmie... Bonnie...,3
+945,The Wolf,The Wolf,False,False,int. hotel suite,morning,Expect a call around 10:30. It's about thirty minutes away. I'll be there in ten.,15
+946,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"You're Jimmie, right? This is your house?",7
+947,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,Yeah.,1
+948,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"I'm Winston Wolf, I solve problems.",6
+949,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,"Good, 'cause we got one.",5
+950,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,So I heard. May I come in?,7
+951,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,Please do.,2
+952,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"You must be Jules, which would make you Vincent. Let's get down to brass tacks, gentlemen. If I was informed correctly, the clock is ticking, is that right, Jimmie?",29
+953,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,100%.,1
+954,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"Your wife, Bonnie... ...comes home at 9:30 in the AM, is that correct?",13
+955,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,Uh-huh.,1
+956,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"I was led to believe if she comes home and finds us here, she wouldn't appreciate it none too much.",20
+957,Jimmie,Jimmie,False,False,int. Jimmie's house,morning,She won't at that.,4
+958,The Wolf,The Wolf,False,False,int. Jimmie's house,morning,"That gives us forty minutes to get the fuck outta Dodge, which, if you do what I say when I say it, should by plenty. Now you got a corpse in a car, minus a head, in a garage. Take me to it.",43
+959,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,Jimmie?,1
+960,Jimmie,Jimmie,False,False,int. Jimmie's garage,morning,Yes.,1
+961,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Do me a favor, will ya? Thought I smelled some coffee in there. Would you make me a cup?",19
+962,Jimmie,Jimmie,False,False,int. Jimmie's garage,morning,"Sure, how do you take it?",6
+963,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Lotsa cream, lotsa sugar.",4
+964,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"About the car, is there anything I need to know? Does it stall, does it make a lot of noise, does it smoke, is there gas in it, anything?",29
+965,Jules,Jules,False,False,int. Jimmie's garage,morning,"Aside from how it looks, the car's cool.",8
+966,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,Positive? Don't get me out on the road and I find out the brake lights don't work.,17
+967,Jules,Jules,False,False,int. Jimmie's garage,morning,"Hey man, as far as I know, the motherfucker's tip-top.",10
+968,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Good enough, let's go back to the kitchen.",8
+969,The Wolf,The Wolf,False,False,int. kitchen,morning,"Thank you, Jimmie.",3
+970,The Wolf,The Wolf,False,False,int. kitchen,morning,"Okay first thing, you two. Take the body, stick it in the trunk. Now Jimmie, this looks to be a pretty domesticated house. That would lead me to believe that in the garage or under the sink, you got a bunch of cleansers and cleaners and shit like that, am I correct?",52
+971,Jimmie,Jimmie,False,False,int. kitchen,morning,Yeah. Exactly. Under the sink.,5
+972,The Wolf,The Wolf,False,False,int. kitchen,morning,"Good. What I need you two fellas to do is take those cleaning products and clean the inside of the car. And I'm talkin' fast, fast, fast. You need to go in the backseat, scoop up all those little pieces of brain and skull. Get it out of there. Wipe down the upholstery – now when it comes to upholstery, it don't need to be spic and span, you don't need to eat off it. Give it a good once over. What you need to take care of are the really messy parts. The pools of blood that have collected, you gotta soak that shit up. But the windows are a different story. Them you really clean. Get the Windex, do a good job. Now Jimmie, we need to raid your linen closet. I need blankets, I need comforters, I need quilts, I need bedspreads. The thicker the better, the darker the better. No whites, can't use 'em. We need to camouflage the interior of the car. We're gonna line the front seat and the backseat and the floor boards with quilts and blankets. If a cop stops us and starts stickin' his big snout in the car, the subterfuge won't last. But at a glance, the car will appear to be normal. Jimmie – lead the way, boys – get to work.",220
+973,Vincent,Vincent,False,False,int. kitchen,morning,"A ""please"" would be nice.",5
+974,The Wolf,The Wolf,False,False,int. kitchen,morning,Come again?,2
+975,Vincent,Vincent,False,False,int. kitchen,morning,"I said a ""please"" would be nice.",7
+976,The Wolf,The Wolf,False,False,int. kitchen,morning,"Set is straight, Buster. I'm not here to say ""please.""I'm here to tell you want to do. And if self- preservation is an instinct you possess, you better fuckin' do it and do it quick. I'm here to help. If my help's not appreciated, lotsa luck gentlemen.",47
+977,Jules,Jules,False,False,int. kitchen,morning,"It ain't that way, Mr. Wolf. Your help is definitely appreciated.",11
+978,Vincent,Vincent,False,False,int. kitchen,morning,I don't mean any disrespect. I just don't like people barkin' orders at me.,14
+979,The Wolf,The Wolf,False,False,int. kitchen,morning,"If I'm curt with you, it's because time is a factor. I think fast, I talk fast, and I need you guys to act fast if you want to get out of this. So pretty please, with sugar on top, clean the fuckin' car.",44
+980,The Wolf,The Wolf,False,False,int. Jimmie's bedroom,morning,"It's a 1974 Chevy Nova. White. Nothin', except for the mess inside. About twenty minutes. Nobody who'll be missed. You're a good man, Joe. See ya soon. How we comin', Jimmie?",31
+981,Jimmie,Jimmie,False,False,int. Jimmie's bedroom,morning,"Mr. Wolf, you gotta understand somethin' –",6
+982,The Wolf,The Wolf,False,False,int. Jimmie's bedroom,morning,"– Winston, Jimmie – please, Winston.",4
+983,Jimmie,Jimmie,False,False,int. Jimmie's bedroom,morning,"You gotta understand something, Winston. I want to help you guys out and all, but that's my best linen. It was a wedding present from my Uncle Conrad and Aunt Ginny, and they ain't with us anymore –",37
+984,The Wolf,The Wolf,False,False,int. Jimmie's bedroom,morning,"– let me ask you a question, if you don't mind?",10
+985,Jimmie,Jimmie,False,False,int. Jimmie's bedroom,morning,Sure.,1
+986,The Wolf,The Wolf,False,False,int. Jimmie's bedroom,morning,Were you Uncle Conrad and Aunt Ginny millionaires?,8
+987,Jimmie,Jimmie,False,False,int. Jimmie's bedroom,morning,No.,1
+988,The Wolf,The Wolf,False,False,int. Jimmie's bedroom,morning,"Well, your Uncle Marsellus is. And I'm positive if Uncle Conrad and Aunt Ginny were millionaires, they would've furnished you with a whole bedroom set, which your Uncle Marsellus is more than happy to do. I like oak myself, that's what's in my bedroom. How 'bout you Jimmie, you an oak man?",52
+989,Jimmie,Jimmie,False,False,int. Jimmie's bedroom,morning,Oak's nice.,2
+990,Jules,Jules,False,False,int. garage,morning,I will never forgive your ass for this shit. This is some fucked-up repugnant shit!,15
+991,Vincent,Vincent,False,False,int. garage,morning,"Did you ever hear the philosophy that once a man admits he's wrong, he's immediately forgiven for all wrong-doings?",19
+992,Jules,Jules,False,False,int. garage,morning,"Man, get outta my face with that shit! The motherfucker who said that never had to pick up itty-bitty pieces of skull with his fingers on account of your dumb ass.",31
+993,Vincent,Vincent,False,False,int. garage,morning,"I got a threshold, Jules. I got a threshold for the abuse I'll take. And you're crossin' it. I'm a race car and you got me in the red. Redline 7000, that's where you are. Just know, it's fuckin' dangerous to be drivin' a race car when it's in the red. It could blow.",54
+994,Jules,Jules,False,False,int. garage,morning,"You're gettin' ready to blow? I'm a mushroom-cloud-layin' motherfucker! Every time my fingers touch brain I'm ""SUPERFLY T.N.T,"" I'm the ""GUNS OF NAVARONE."" I'm what Jimmie Walker usta talk about. In fact, what the fuck am I doin' in the back? You're the motherfucker should be on brain detail. We're tradin'. I'm washin' windows and you're pickin' up this nigger's skull.",61
+995,The Wolf,The Wolf,False,False,int. Chevy Nova,morning,"Fine job, gentlemen. We may get out of this yet.",10
+996,Jimmie,Jimmie,False,False,int. Chevy Nova,morning,I can't believe that's the same car.,7
+997,The Wolf,The Wolf,False,False,int. Chevy Nova,morning,"Well, let's not start suckin' each other's dicks quite yet. Phase one is complete, clean the car, which moves us right along to phase two, clean you two.",28
+998,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,Strip.,1
+999,Vincent,Vincent,False,False,ext. Jimmie's backyard,morning,All the way?,3
+1000,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,To your bare ass.,4
+1001,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Quickly gentlemen, we got about fifteen minutes before Jimmie's better- half comes pulling into the driveway.",16
+1002,Jules,Jules,False,False,ext. Jimmie's backyard,morning,This morning air is some chilly shit.,7
+1003,Vincent,Vincent,False,False,ext. Jimmie's backyard,morning,Are you sure this is absolutely necessary?,7
+1004,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,You know what you two look like?,7
+1005,Vincent,Vincent,False,False,ext. Jimmie's backyard,morning,What?,1
+1006,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Like a couple of guys who just blew off somebody's head. Yes, strippin' off those bloody rags is absolutely necessary. Toss the clothes in Jim's garbage bag.",27
+1007,Jules,Jules,False,False,ext. Jimmie's backyard,morning,"Now Jimmie, don't do nothin' stupid like puttin' that out in front of your house for Elmo the garbage man to take away.",23
+1008,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Don't worry, we're takin' it with us. Jim, the soap.",10
+1009,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Okay gentlemen, you're both been to County before, I'm sure. Here it comes.",13
+1010,Jules,Jules,False,False,ext. Jimmie's backyard,morning,"Goddamn, that water's fuckin' cold!",5
+1011,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Better you than me, gentlemen.",5
+1012,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Don't be afraid of the soap, spread it around.",9
+1013,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,Towel 'em.,2
+1014,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"You're dry enough, give 'em their clothes.",7
+1015,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"Perfect. Perfect. We couldn't've planned this better. You guys look like... what do they look like, Jimmie?",17
+1016,Jimmie,Jimmie,False,False,ext. Jimmie's backyard,morning,Dorks. They look like a couple of dorks.,8
+1017,Jules,Jules,False,False,ext. Jimmie's backyard,morning,"Ha ha ha. They're your clothes, motherfucker.",7
+1018,Jimmie,Jimmie,False,False,ext. Jimmie's backyard,morning,I guess you just gotta know how to wear them.,10
+1019,Jules,Jules,False,False,ext. Jimmie's backyard,morning,"Yeah, well, our asses ain't the expert on wearin' dorky shit that your is.",14
+1020,The Wolf,The Wolf,False,False,ext. Jimmie's backyard,morning,"C'mon, gentlemen, we're laughin' and jokin' our way into prison. Don't make me beg.",14
+1021,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Gentlemen, let's get our rules of the road straight. We're going to a place called Monster Joe's Truck and Tow. Monster Joe and his daughter Raquel are sympathetic to out dilemma. The place is North Hollywood, so a few twist and turns aside, we'll be goin' up Hollywood Way. Now I'll drive the tainted car. Jules, you ride with me. Vincent, you follow in my Porsche. Now if we cross the path of any John Q. Laws, nobody does a fuckin' thing 'til I do something. What did I say?",90
+1022,Jules,Jules,False,False,int. Jimmie's garage,morning,Don't do shit unless –,4
+1023,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,– unless what?,2
+1024,Jules,Jules,False,False,int. Jimmie's garage,morning,Unless you do it first.,5
+1025,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Spoken like a true prodigy. How 'bout you, Lash Larue? Can you keep your spurs from jingling and jangling?",19
+1026,Vincent,Vincent,False,False,int. Jimmie's garage,morning,"I'm cool, Mr. Wolf. My gun just went off, I dunno how.",12
+1027,The Wolf,The Wolf,False,False,int. Jimmie's garage,morning,"Fair enough. I drive real fuckin' fast, so keep up. If I get my car back any different than I gave it, Monster Joe's gonna be disposing of two bodies.",30
+1028,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,We cool?,2
+1029,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,Like it never happened.,4
+1030,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,"Boys, this is Raquel. Someday, all this will be hers.",10
+1031,Raquel,Raquel,False,False,ext. Monster Joe's Truck and Tow,morning,"Hi. You know, if they ever do ""I SPY: THE MOTION PICTURE,"" you guys, I'd be great. What's with the outfits. You guys going to a volleyball game?",28
+1032,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,I'm takin' m'lady out to breakfast. Maybe I can drop you two off. Where do you live?,17
+1033,Vincent,Vincent,False,False,ext. Monster Joe's Truck and Tow,morning,Redondo Beach.,2
+1034,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,Inglewood.,1
+1035,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,"It's your future: I see... a cab ride. Sorry guys, move out of the sticks. Say goodbye, Raquel.",18
+1036,Raquel,Raquel,False,False,ext. Monster Joe's Truck and Tow,morning,"Goodbye, Raquel.",2
+1037,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,"I'll see you two around, and stay outta trouble, you crazy kids.",12
+1038,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,Mr. Wolf.,2
+1039,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,I was a pleasure watchin' you work.,7
+1040,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,Call me Winston.,3
+1041,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,"You hear that, young lady? Respect. You could lean a lot from those two fine specimens. Respect for one's elders shows character.",22
+1042,Raquel,Raquel,False,False,ext. Monster Joe's Truck and Tow,morning,I have character.,3
+1043,Winston,The Wolf,False,False,ext. Monster Joe's Truck and Tow,morning,Just because you are a character doesn't mean you have character.,11
+1044,Raquel,Raquel,False,False,ext. Monster Joe's Truck and Tow,morning,"Oh you're so funny, oh you're so funny.",8
+1045,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,Wanna share a cab?,4
+1046,Vincent,Vincent,False,False,ext. Monster Joe's Truck and Tow,morning,You know I could go for some breakfast. Want to have breakfast with me?,14
+1047,Jules,Jules,False,False,ext. Monster Joe's Truck and Tow,morning,Sure.,1
+1048,Vincent,Vincent,False,False,int. coffee shop,morning,Thanks a bunch. Want a sausage?,6
+1049,Jules,Jules,False,False,int. coffee shop,morning,"Naw, I don't eat pork.",5
+1050,Vincent,Vincent,False,False,int. coffee shop,morning,Are you Jewish?,3
+1051,Jules,Jules,False,False,int. coffee shop,morning,"I ain't Jewish man, I just don't dig on swine.",10
+1052,Vincent,Vincent,False,False,int. coffee shop,morning,Why not?,2
+1053,Jules,Jules,False,False,int. coffee shop,morning,They're filthy animals. I don't eat filthy animals.,8
+1054,Vincent,Vincent,False,False,int. coffee shop,morning,Sausages taste good. Pork chops taste good.,7
+1055,Jules,Jules,False,False,int. coffee shop,morning,"A sewer rat may taste like pumpkin pie. I'll never know 'cause even if it did, I wouldn't eat the filthy motherfucker. Pigs sleep and root in shit. That's a filthy animal. I don't wanna eat nothin' that ain't got enough sense to disregard its own feces.",47
+1056,Vincent,Vincent,False,False,int. coffee shop,morning,How about dogs? Dogs eat their own feces.,8
+1057,Jules,Jules,False,False,int. coffee shop,morning,I don't eat dog either.,5
+1058,Vincent,Vincent,False,False,int. coffee shop,morning,"Yes, but do you consider a dog to be a filthy animal?",12
+1059,Jules,Jules,False,False,int. coffee shop,morning,"I wouldn't go so far as to call a dog filthy, but they're definitely dirty. But a dog's got personality. And personality goes a long way.",26
+1060,Vincent,Vincent,False,False,int. coffee shop,morning,"So by that rationale, if a pig had a better personality, he's cease to be a filthy animal?",18
+1061,Jules,Jules,False,False,int. coffee shop,morning,We'd have to be talkin' 'bout one motherfuckin' charmin' pig. It'd have to be the Cary Grant of pigs.,19
+1062,Vincent,Vincent,False,False,int. coffee shop,morning,Good for you. Lighten up a little. You been sittin' there all quiet.,13
+1063,Jules,Jules,False,False,int. coffee shop,morning,I just been sittin' here thinkin'.,6
+1064,Vincent,Vincent,False,False,int. coffee shop,morning,About what?,2
+1065,Jules,Jules,False,False,int. coffee shop,morning,The miracle we witnessed.,4
+1066,Vincent,Vincent,False,False,int. coffee shop,morning,The miracle you witnessed. I witnessed a freak occurrence.,9
+1067,Jules,Jules,False,False,int. coffee shop,morning,Do you know that a miracle is?,7
+1068,Vincent,Vincent,False,False,int. coffee shop,morning,An act of God.,4
+1069,Jules,Jules,False,False,int. coffee shop,morning,What's an act of God?,5
+1070,Vincent,Vincent,False,False,int. coffee shop,morning,"I guess it's when God makes the impossible possible. And I'm sorry Jules, but I don't think what happened this morning qualifies.",22
+1071,Jules,Jules,False,False,int. coffee shop,morning,"Don't you see, Vince, that shit don't matter. You're judging this thing the wrong way. It's not about what. It could be God stopped the bullets, he changed Coke into Pepsi, he found my fuckin' car keys. You don't judge shit like this based on merit. Whether or not what we experienced was an according-to-Hoyle miracle is insignificant. What is significant is I felt God's touch, God got involved.",69
+1072,Vincent,Vincent,False,False,int. coffee shop,morning,But why?,2
+1073,Jules,Jules,False,False,int. coffee shop,morning,That's what's fuckin' wit' me! I don't know why. But I can't go back to sleep.,16
+1074,Vincent,Vincent,False,False,int. coffee shop,morning,"So you're serious, you're really gonna quit?",7
+1075,Jules,Jules,False,False,int. coffee shop,morning,"The life, most definitely.",4
+1076,Patron,Pumpkin,False,False,int. coffee shop,morning,Garcon! Coffee!,2
+1077,Vincent,Vincent,False,False,int. coffee shop,morning,"So if you're quitting the life, what'll you do?",9
+1078,Jules,Jules,False,False,int. coffee shop,morning,"That's what I've been sitting here contemplating. First, I'm gonna deliver this case to Marsellus. Then, basically, I'm gonna walk the earth.",22
+1079,Vincent,Vincent,False,False,int. coffee shop,morning,"What do you mean, walk the earth?",7
+1080,Jules,Jules,False,False,int. coffee shop,morning,"You know, like Caine in ""KUNG FU."" Just walk from town to town, meet people, get in adventures.",18
+1081,Vincent,Vincent,False,False,int. coffee shop,morning,How long do you intend to walk the earth?,9
+1082,Jules,Jules,False,False,int. coffee shop,morning,Until God puts me where he want me to be.,10
+1083,Vincent,Vincent,False,False,int. coffee shop,morning,What if he never does?,5
+1084,Jules,Jules,False,False,int. coffee shop,morning,"If it takes forever, I'll wait forever.",7
+1085,Vincent,Vincent,False,False,int. coffee shop,morning,So you decided to be a bum?,7
+1086,Jules,Jules,False,False,int. coffee shop,morning,"I'll just be Jules, Vincent – no more, no less.",9
+1087,Vincent,Vincent,False,False,int. coffee shop,morning,"No Jules, you're gonna be like those pieces of shit out there who beg for change. They walk around like a bunch of fuckin' zombies, they sleep in garbage bins, they eat what I throw away, and dogs piss on 'em. They got a word for 'em, they're called bums. And without a job, residence, or legal tender, that's what you're gonna be – a fuckin' bum!",66
+1088,Jules,Jules,False,False,int. coffee shop,morning,"Look my friend, this is just where me and you differ –",11
+1089,Vincent,Vincent,False,False,int. coffee shop,morning,– what happened was peculiar – no doubt about it – but it wasn't water into wine.,14
+1090,Jules,Jules,False,False,int. coffee shop,morning,"All shapes and sizes, Vince.",5
+1091,Vincent,Vincent,False,False,int. coffee shop,morning,Stop fuckin' talkin' like that!,5
+1092,Jules,Jules,False,False,int. coffee shop,morning,"If you find my answers frightening, Vincent, you should cease askin' scary questions.",13
+1093,Vincent,Vincent,False,False,int. coffee shop,morning,I gotta take a shit. To be continued.,8
+1094,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"Everybody be cool, this is a robbery!",7
+1095,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,Any of you fuckin' pricks move and I'll execute every one of you motherfuckers! Got that?!,16
+1096,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"Customers stay seated, waitresses on the floor.",7
+1097,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,"Now mean fuckin' now! Do it or die, do it or fucking die!",13
+1098,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"You Mexicans in the kitchen, get out here! Asta luego!",10
+1099,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"On the floor or I'll cook you ass, comprende?",9
+1100,Manager,Manager,False,False,int. coffee shop,morning,"I'm the manager here, there's no problem, no problem at all –",11
+1101,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,You're gonna give me a problem?,6
+1102,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,What? You said you're gonna give me a problem?,9
+1103,Manager,Manager,False,False,int. coffee shop,morning,"No, I'm not. I'm not gonna give you any problem!",10
+1104,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"I don't know, Honey Bunny. He looks like the hero type to me!",13
+1105,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,Don't take any chances. Execute him!,6
+1106,Manager,Manager,False,False,int. coffee shop,morning,Please don't! I'm not a hero. I'm just a coffee shop manager. Take anything you want.,16
+1107,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Tell everyone to cooperate and it'll be all over.,9
+1108,Manager,Manager,False,False,int. coffee shop,morning,Everybody just be calm and cooperate with them and this will be all over soon!,15
+1109,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"Well done, now git your fuckin' ass on the ground.",10
+1110,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"Okay people, I'm going to go 'round and collect your wallets. Don't talk, just toss 'em in the bag. We clear?",21
+1111,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,In the bag.,3
+1112,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,What's in that?,3
+1113,Jules,Jules,False,False,int. coffee shop,morning,My boss' dirty laundry.,4
+1114,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,You boss makes you do his laundry?,7
+1115,Jules,Jules,False,False,int. coffee shop,morning,When he wants it clean.,5
+1116,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Sounds like a shit job.,5
+1117,Jules,Jules,False,False,int. coffee shop,morning,"Funny, I've been thinkin' the same thing.",7
+1118,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Open it up.,3
+1119,Jules,Jules,False,False,int. coffee shop,morning,'Fraid I can't do that.,5
+1120,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,I didn't hear you.,4
+1121,Jules,Jules,False,False,int. coffee shop,morning,"Yes, you did.",3
+1122,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,What's goin' on?,3
+1123,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Looks like we got a vigilante in our midst.,9
+1124,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,Shoot 'em in the face!,5
+1125,Jules,Jules,False,False,int. coffee shop,morning,"I don't mean to shatter your ego, but this ain't the first time I've had gun pointed at me.",19
+1126,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"You don't open up that case, it's gonna be the last.",11
+1127,Manager,Manager,False,False,int. coffee shop,morning,"Quit causing problems, you'll get us all killed! Give 'em what you got and get 'em out of here.",19
+1128,Jules,Jules,False,False,int. coffee shop,morning,"Keep your fuckin' mouth closed, fat man, this ain't any of your goddamn business!",14
+1129,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"I'm countin' to three, and if your hand ain't off that case, I'm gonna unload right in your fuckin' face. Clear? One...",22
+1130,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,...two... three.,2
+1131,Jules,Jules,False,False,int. coffee shop,morning,You win.,2
+1132,Jules,Jules,False,False,int. coffee shop,morning,"It's all yours, Ringo.",4
+1133,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Open it.,2
+1134,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,What is it? What is it?,6
+1135,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Is that what I think it is?,7
+1136,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,It's beautiful.,2
+1137,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,"Goddammit, what is it?",4
+1138,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,"Let him go! Let him go! I'll blow your fuckin' head off! I'll kill ya! I'll kill ya! You're gonna die, you're gonna fuckin' die bad!",26
+1139,Jules,Jules,False,False,int. coffee shop,morning,"Tell that bitch to be cool! Say, bitch be cool! Say, bitch be cool!",14
+1140,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"Chill out, honey!",3
+1141,Honey Bunny,Honey Bunny,False,False,int. coffee shop,morning,Let him go!,3
+1142,Jules,Jules,False,False,int. coffee shop,morning,Tell her it's gonna be okay.,6
+1143,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,I'm gonna be okay.,4
+1144,Jules,Jules,False,False,int. coffee shop,morning,Promise her.,2
+1145,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,I promise.,2
+1146,Jules,Jules,False,False,int. coffee shop,morning,Tell her to chill.,4
+1147,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Just chill out.,3
+1148,Jules,Jules,False,False,int. coffee shop,morning,What's her name?,3
+1149,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Yolanda.,1
+1150,Jules,Jules,False,False,int. coffee shop,morning,"So, we cool Yolanda? We ain't gonna do anything stupid, are we?",12
+1151,Yolanda,Honey Bunny,False,False,int. coffee shop,morning,Don't you hurt him.,4
+1152,Jules,Jules,False,False,int. coffee shop,morning,Nobody's gonna hurt anybody. We're gonna be like three Fonzies. And what' Fonzie like?,14
+1153,Jules,Jules,False,False,int. coffee shop,morning,"C'mon Yolanda, what's Fonzie like?",5
+1154,Yolanda,Honey Bunny,False,False,int. coffee shop,morning,He's cool?,2
+1155,Jules,Jules,False,False,int. coffee shop,morning,"Correct-amundo! And that's what we're gonna be, we're gonna be cool. Now Ringo, I'm gonna count to three and I want you to let go your gun and lay your palms flat on the table. But when you do it, do it cool. Ready?",44
+1156,Jules,Jules,False,False,int. coffee shop,morning,One... two... three.,3
+1157,Yolanda,Honey Bunny,False,False,int. coffee shop,morning,"Okay, now let him go!",5
+1158,Jules,Jules,False,False,int. coffee shop,morning,"Yolanda, I thought you were gonna be cool. When you yell at me, it makes me nervous. When I get nervous, I get scared. And when motherfuckers get scared, that's when motherfuckers get accidentally shot.",35
+1159,Yolanda,Honey Bunny,False,False,int. coffee shop,morning,"Just know: you hurt him, you die.",7
+1160,Jules,Jules,False,False,int. coffee shop,morning,"That seems to be the situation. Now I don't want that and you don't want that and Ringo here don't want that. So let's see what we can do. Now this is the situation. Normally both of your asses would be dead as fuckin' fried chicken. But you happened to pull this shit while I'm in a transitional period. I don't wanna kill ya, I want to help ya. But I'm afraid I can't give you the case. It don't belong to me. Besides, I went through too much shit this morning on account of this case to just hand it over to your ass.",105
+1161,Vincent,Vincent,True,False,int. coffee shop,morning,What the fuck's goin' on here?,6
+1162,Jules,Jules,False,False,int. coffee shop,morning,"It's cool, Vincent! It's cool! Don't do a goddamn thing. Yolanda, it's cool baby, nothin's changed. We're still just talkin'. Tell her we're still cool.",25
+1163,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,"It's cool, Honey Bunny, we're still cool.",7
+1164,Vincent,Vincent,False,False,int. coffee shop,morning,"What the hell's goin' on, Jules?",6
+1165,Jules,Jules,False,False,int. coffee shop,morning,Nothin' I can't handle. I want you to just hang back and don't do shit unless it's absolutely necessary.,19
+1166,Vincent,Vincent,False,False,int. coffee shop,morning,Check.,1
+1167,Jules,Jules,False,False,int. coffee shop,morning,"Yolanda, how we doin, baby?",5
+1168,Yolanda,Honey Bunny,False,False,int. coffee shop,morning,I gotta go pee! I want to go home.,9
+1169,Jules,Jules,False,False,int. coffee shop,morning,"Just hang in there, baby, you're doing' great, Ringo's proud of you and so am I. It's almost over. Now I want you to go in that bag and find my wallet.",32
+1170,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Which one is it?,4
+1171,Jules,Jules,False,False,int. coffee shop,morning,It's the one that says Bad Motherfucker on it.,9
+1172,Jules,Jules,False,False,int. coffee shop,morning,That's my bad motherfucker. Now open it up and take out the cash. How much is there?,17
+1173,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,About fifteen hundred dollars.,4
+1174,Jules,Jules,False,False,int. coffee shop,morning,"Put it in your pocket, it's yours. Now with the rest of them wallets and the register, that makes this a pretty successful little score.",25
+1175,Vincent,Vincent,False,False,int. coffee shop,morning,"Jules, if you give this nimrod fifteen hundred buck, I'm gonna shoot 'em on general principle.",16
+1176,Jules,Jules,False,False,int. coffee shop,morning,"You ain't gonna do a goddamn thing, now hang back and shut the fuck up. Besides, I ain't givin' it to him. I'm buyin' somethin' for my money. Wanna know what I'm buyin' Ringo?",34
+1177,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,What?,1
+1178,Jules,Jules,False,False,int. coffee shop,morning,Your life. I'm givin' you that money so I don't hafta kill your ass. You read the Bible?,18
+1179,Pumpkin,Pumpkin,False,False,int. coffee shop,morning,Not regularly.,2
+1180,Jules,Jules,False,False,int. coffee shop,morning,"There's a passage I got memorized. Ezekiel 25:17. ""The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness. For he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know I am the Lord when I lay my vengeance upon you."" I been sayin' that shit for years. And if you ever heard it, it meant your ass. I never really questioned what it meant. I thought it was just a coldblooded thing to say to a motherfucker 'fore you popped a cap in his ass. But I saw some shit this mornin' made me think twice. Now I'm thinkin', it could mean you're the evil man. And I'm the righteous man. And Mr. .45 here, he's the shepherd protecting my righteous ass in the valley of darkness. Or is could by you're the righteous man and I'm the shepherd and it's the world that's evil and selfish. I'd like that. But that shit ain't the truth. The truth is you're the weak. And I'm the tyranny of evil men. But I'm tryin'. I'm tryin' real hard to be a shepherd.",242
+1181,Jules,Jules,False,False,int. coffee shop,morning,It's cold.,2
+1182,Vincent,Vincent,False,False,int. coffee shop,morning,I think we oughta leave now.,6
+1183,Jules,Jules,False,False,int. coffee shop,morning,That's probably a good idea.,5
+
