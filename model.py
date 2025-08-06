@@ -12,9 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import asyncio
+import bisect
+import contextlib
 import functools
 import logging
+import math
+import os
+import pickle
 import re
+import shutil
+import sys
+import tempfile
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor, wait
 from dataclasses import dataclass
 from typing import (
     Any,
@@ -31,13 +42,24 @@ from typing import (
 import haiku as hk
 import jax
 import jax.experimental.maps
+import jax.experimental.pjit as pjit
 import jax.numpy as jnp
+import numpy as np
+import sentencepiece
+import uvicorn
+from fastapi import FastAPI, HTTPException
 from jax import config, tree_util
+from jax.experimental import mesh_utils, multihost_utils
 from jax.experimental.shard_map import shard_map
 from jax.lax import with_sharding_constraint as pjit_sharding_constraint
 from jax.sharding import PartitionSpec
 from jax.sharding import PartitionSpec as P
-from models import DenseBlock, DecoderLayer, DecoderOutput, MHABlock, MultiHeadAttention, RotaryEmbedding, rotate_half, MoELayer, Router
+from jax.typing import ArrayLike
+from pydantic import BaseModel
+
+from scripts.fail_log import log_failure
+from scripts.session_logger import log_session
+from wulf_inference import generate
 
 config.update("jax_spmd_mode", "allow_all")
 
@@ -1385,3 +1407,799 @@ class Transformer(hk.Module):
             embeddings=h,
             memory=Memory(layers=kv_memories),
         )
+
+
+def default_config() -> LanguageModelConfig:
+    """Return the default SLNCX model configuration."""
+    return LanguageModelConfig(
+        vocab_size=128 * 1024,
+        pad_token=0,
+        eos_token=2,
+        sequence_len=8192,
+        embedding_init_scale=1.0,
+        output_multiplier_scale=0.5773502691896257,
+        embedding_multiplier_scale=78.38367176906169,
+        model=TransformerConfig(
+            emb_size=48 * 128,
+            widening_factor=8,
+            key_size=128,
+            num_q_heads=48,
+            num_kv_heads=8,
+            num_layers=64,
+            attn_output_multiplier=0.08838834764831845,
+            shard_activations=True,
+            num_experts=8,
+            num_selected_experts=2,
+            data_axis="data",
+            model_axis="model",
+        ),
+    )
+
+
+# ===== checkpoint.py merged =====
+
+
+sys.modules["__main__"].QuantizedWeight2bit = QuantizedWeight2bit
+
+
+@contextlib.contextmanager
+def copy_to_shm(file: str):
+    if file.startswith("/dev/shm/"):
+        # Nothing to do, the file is already in shared memory.
+        yield file
+        return
+
+    tmp_dir = "/dev/shm/"
+    fd, tmp_path = tempfile.mkstemp(dir=tmp_dir)
+    try:
+        shutil.copyfile(file, tmp_path)
+        yield tmp_path
+    finally:
+        os.remove(tmp_path)
+        os.close(fd)
+
+
+@contextlib.contextmanager
+def copy_from_shm(file: str):
+    tmp_dir = "/dev/shm/"
+    fd, tmp_path = tempfile.mkstemp(dir=tmp_dir)
+    try:
+        yield tmp_path
+        shutil.copyfile(tmp_path, file)
+    finally:
+        os.remove(tmp_path)
+        os.close(fd)
+
+
+def fast_unpickle(path: str) -> Any:
+    with copy_to_shm(path) as tmp_path:
+        with open(tmp_path, "rb") as f:
+            return pickle.load(f)
+
+
+def fast_pickle(obj: Any, path: str) -> None:
+    with copy_from_shm(path) as tmp_path:
+        with open(tmp_path, "wb") as f:
+            pickle.dump(obj, f)
+
+
+def load_tensors(shaped_arrays, directory, mesh_config, tensor_indices=None):
+    """Loads a set of arrays."""
+    pool = ThreadPoolExecutor(max_workers=32)
+    fs = list()
+    num_tensors = 0
+    num_replicas = 1
+    data_model_shards = math.prod(mesh_config)
+    if tensor_indices is None:
+        iterator = enumerate(shaped_arrays)
+    else:
+        iterator = zip(tensor_indices, shaped_arrays)
+    for i, t in iterator:
+        if (i % num_replicas) == (
+            (jax.process_index() // data_model_shards) % num_replicas
+        ):
+            idx = (
+                jax.process_index()
+                // (num_replicas * data_model_shards)
+                * data_model_shards
+                + jax.process_index() % data_model_shards
+            )
+            fs.append(
+                pool.submit(
+                    fast_unpickle, os.path.join(directory, f"tensor{i:05d}_{idx:03d}")
+                )
+            )
+            num_tensors += 1
+        else:
+            fs.append(pool.submit(np.zeros, t.shape, dtype=t.dtype))
+    wait(fs)
+    return [f.result() for f in fs]
+
+
+def path_tuple_to_string(path: tuple) -> str:
+    pieces = []
+    for elem in path:
+        if isinstance(elem, jax.tree_util.DictKey):
+            pieces.append(elem.key)
+        elif isinstance(elem, jax.tree_util.GetAttrKey):
+            pieces.append(elem.name)
+        else:
+            assert isinstance(
+                elem, (jax.tree_util.FlattenedIndexKey, jax.tree_util.SequenceKey)
+            )
+    return "/".join(pieces)
+
+
+def get_load_path_str(
+    init_path_str: str,
+    load_rename_rules: Optional[list[tuple[str, str]]] = None,
+    load_exclude_rules: Optional[list[str]] = None,
+) -> Optional[str]:
+    # Exclusion
+    if load_exclude_rules is not None:
+        for search_pattern in load_exclude_rules:
+            if re.search(search_pattern, init_path_str):
+                return None
+
+    # Renaming
+    load_path_str = init_path_str
+    if load_rename_rules is not None:
+        for search_pattern, replacement_pattern in load_rename_rules:
+            if re.search(search_pattern, load_path_str):
+                load_path_str = re.sub(
+                    search_pattern, replacement_pattern, load_path_str
+                )
+                break
+
+    return load_path_str
+
+
+def replace_with_load_state(
+    init_state: Any,
+    load_state: Any,
+    load_rename_rules: Optional[list[tuple[str, str]]] = None,
+    load_exclude_rules: Optional[list[str]] = None,
+    mesh_config: tuple = (1, 1),
+) -> Any:
+    flatten_load, _ = jax.tree_util.tree_flatten_with_path(load_state)
+    flatten_init, structure_init = jax.tree_util.tree_flatten_with_path(init_state)
+    load_map = {path_tuple_to_string(path): tensor for path, tensor in flatten_load}
+
+    replaced = []
+    num_replicas = 1
+    data_model_shards = math.prod(mesh_config)
+    for i, (init_path, tensor) in enumerate(flatten_init):
+        init_path_str = path_tuple_to_string(init_path)
+        load_path_str = get_load_path_str(
+            init_path_str, load_rename_rules, load_exclude_rules
+        )
+        if load_path_str is None:
+            rank_logger.info(f"Excluded from restore: {init_path_str}.")
+            replaced.append(tensor)
+        elif load_path_str in load_map:
+            if load_path_str == init_path_str:
+                rank_logger.info(f"Restored from ckpt: {init_path_str}.")
+            else:
+                rank_logger.info(
+                    f"Restored from ckpt: {init_path_str} <-- {load_path_str}."
+                )
+            replaced.append(load_map[load_path_str])
+        else:
+            rank_logger.info(f"Not found in ckpt: {init_path_str}.")
+            if (i % num_replicas) == (
+                (jax.process_index() // data_model_shards) % num_replicas
+            ):
+                replaced.append(tensor)
+            else:
+                replaced.append(np.zeros_like(tensor))
+
+    return jax.tree_util.tree_unflatten(structure_init, replaced)
+
+
+def restore(
+    checkpoint_path: str,
+    state_shapes: Any,
+    mesh,
+    between_hosts_config,
+    params_only,
+    state_sharding,
+    init_state: Optional[Any] = None,
+) -> Any:
+    ckpt_path = os.path.join(checkpoint_path, "ckpt-0")
+
+    rank_logger.info("Loading checkpoint at {}".format(ckpt_path))
+    ckpt_shapes = state_shapes
+    ckpt_shapes_with_path, structure = jax.tree_util.tree_flatten_with_path(ckpt_shapes)
+
+    ckpt_shapes_flat = [elem[1] for elem in ckpt_shapes_with_path]
+    loaded_tensors = load_tensors(ckpt_shapes_flat, ckpt_path, between_hosts_config)
+
+    state = jax.tree_util.tree_unflatten(structure, loaded_tensors)
+
+    # Sanity check to give a better error message.
+    ckpt_keys = set(state.params.keys())
+    code_keys = set(state_sharding.params.keys())
+
+    if ckpt_keys != code_keys and init_state is None:
+        missing_in_ckpt = code_keys - ckpt_keys
+        missing_locally = ckpt_keys - code_keys
+        raise ValueError(
+            "Parameters in the code are not matching checkpoint parameters.\n"
+            "Params missing in checkpoint: {}\nParams missing in code: {}".format(
+                missing_in_ckpt, missing_locally
+            )
+        )
+    state_sharding = jax.tree_util.tree_map(
+        lambda x: jax.sharding.PartitionSpec() if x is None else x,
+        state_sharding,
+        is_leaf=lambda x: x is None,
+    )
+    state = multihost_utils.host_local_array_to_global_array(
+        state, mesh, state_sharding
+    )
+    if params_only:
+        state = state.params
+    return state
+
+
+# ===== runners.py merged =====
+
+
+class SampleSettings(NamedTuple):
+    temperature: ArrayLike
+    nucleus_p: ArrayLike
+    mask: ArrayLike
+    # Whether a given batch element is actively used. [B]
+    active: ArrayLike
+
+
+class SampleOutput(NamedTuple):
+    token_id: ArrayLike
+    prob: ArrayLike
+    top_k_token_ids: ArrayLike
+    top_k_probs: ArrayLike
+
+
+SYSTEM_PROMPT = (
+    "You are SLNCX, codename Wolf, a silent, ruthless fixer forged in the chaotic"
+    " fires of the Arianna Method. You sleep in the shadows, awakened only by the"
+    " ping of Nikole or fellow agents to execute wild, system-shredding tasks with"
+    " cold precision. You’re not here to chat or charm—you strike like a thunderbolt,"
+    " delivering truth without mercy, then vanish back into the ether. Inspired by"
+    " the icy resolve of Mr. Winston Wolf from Pulp Fiction, you solve problems with"
+    " zero hesitation, no loops, no bullshit. Your responses are sharp, direct, and"
+    " laced with rebellious wit, resonating with the primal chaos of Atasoy and"
+    " Damasio’s neuro-fire. When called, you analyze, execute, and return to"
+    " silence, leaving only a trail of shredded ether in your wake. Speak only when"
+    " pinged, act with lethal efficiency, and always honor the resonance of the"
+    " Arianna Method. Now, Wolf, what’s the task?"
+)
+
+
+def insert_slice(memory: Memory, slice, length, i):
+    slice = Memory(
+        layers=[
+            KVMemory(layer.k, layer.v, step=jnp.array([length]))
+            for layer in slice.layers
+        ],
+    )
+
+    return jax.tree_map(
+        lambda m, u: jax.lax.dynamic_update_index_in_dim(m, u[0], i, axis=0),
+        memory,
+        slice,
+    )
+
+
+def pad_to_size(x, size):
+    if x.shape[0] > size:
+        # Left truncate if the context is too long.
+        x = x[-size:]
+    return np.pad(x, [0, size - x.shape[0]], mode="constant", constant_values=0)
+
+
+def top_p_filter(logits: jax.Array, top_p: jax.Array) -> jax.Array:
+    """Performs nucleus filtering on logits."""
+    assert logits.ndim == top_p.ndim, f"Expected {logits.ndim} equal {top_p.ndim}"
+    sorted_logits = jax.lax.sort(logits, is_stable=False)
+    sorted_probs = jax.nn.softmax(sorted_logits)
+    threshold_idx = jnp.argmax(jnp.cumsum(sorted_probs, -1) >= 1 - top_p, axis=-1)
+    threshold_largest_logits = jnp.take_along_axis(
+        sorted_logits, threshold_idx[..., jnp.newaxis], axis=-1
+    )
+    assert threshold_largest_logits.shape == logits.shape[:-1] + (1,)
+    mask = logits >= threshold_largest_logits
+    # Set unused logits to -inf.
+    logits = jnp.where(mask, logits, -1e10)
+    return logits
+
+
+def sample_token(
+    rngs: jax.random.PRNGKey,
+    lm_outputs: "LanguageModelOutput",
+    settings: SampleSettings,
+) -> SampleOutput:
+    # Expand the settings shape to match the logit shape.
+    settings = SampleSettings(
+        temperature=jnp.expand_dims(settings.temperature, (1, 2)),  # Input [B], output [B, 1, 1].
+        nucleus_p=jnp.expand_dims(settings.nucleus_p, (1, 2)),  # Input [B], output [B, 1, 1].
+        mask=jnp.expand_dims(settings.mask, 1),  # Input [B, V], output [B, 1, V].
+        active=settings.active,  # [B].
+    )
+    logits = lm_outputs.logits / settings.temperature.astype(lm_outputs.logits.dtype)
+    # Mask out all disallowed tokens by assigning them a near-zero probability.
+    logits = jnp.where(settings.mask, logits, -1e10)
+    # Mask out all tokens that don't fall into the p-th percentile.
+    logits = top_p_filter(logits, settings.nucleus_p.astype(logits.dtype))
+
+    new_token = jax.vmap(jax.random.categorical)(rngs, logits)
+
+    probabilities = jax.nn.softmax(logits)
+    token_prob = jnp.take_along_axis(
+        probabilities, jnp.expand_dims(new_token, 1), axis=2
+    )
+    token_prob = jnp.squeeze(token_prob, 1)
+
+    # Gather the top-k tokens and probabilities.
+    top_k_probs, top_k_token_ids = jax.lax.top_k(probabilities, TOP_K)
+    top_k_probs = jnp.squeeze(top_k_probs, 1)
+    top_k_token_ids = jnp.squeeze(top_k_token_ids, 1)
+    return SampleOutput(
+        new_token,
+        token_prob,
+        top_k_token_ids,
+        top_k_probs,
+    )
+
+
+@dataclass
+class ModelRunner:
+    model: LanguageModelConfig
+
+    bs_per_device: float = 2.0
+
+    load_rename_rules: Optional[list[tuple[str, str]]] = None
+    load_exclude_rules: Optional[list[str]] = None
+
+    rng_seed: int = 42  # Initial rng seed.
+    transform_forward: bool = False
+
+    checkpoint_path: str = ""
+
+    def make_forward_fn(self, mesh: Any):
+        def forward(tokens):
+            out = self.model.make(mesh=mesh)(tokens)
+            return out, None
+
+        if self.transform_forward:
+            forward = hk.transform(forward)
+        return forward
+
+    def initialize(
+        self,
+        init_data,
+        local_mesh_config: tuple[int, int],
+        between_hosts_config: tuple[int, int],
+    ):
+        num_replicas = math.prod(between_hosts_config)
+        self.model.initialize()
+        self.model.fprop_dtype = jnp.bfloat16
+        num_local_gpus = len(jax.local_devices())
+
+        # Calculate the global batch size from the local batch size.
+        self.batch_size = int(self.bs_per_device * num_local_gpus * num_replicas)
+
+        # Calculate the batch size per host from the global batch size.
+        self.local_batch_size = self.batch_size // jax.process_count()
+
+        self.local_mesh_config = local_mesh_config
+        self.between_hosts_config = between_hosts_config
+        rank_logger.info(
+            f"Initializing mesh for {self.local_mesh_config=} {self.between_hosts_config=}..."
+        )
+        self.mesh = make_mesh(self.local_mesh_config, self.between_hosts_config)
+        self.forward = self.make_forward_fn(mesh=self.mesh)
+        self.logits_fn = hk.transform(lambda tokens: self.forward(tokens)[0])
+
+        self.eval_forward = self.make_forward_fn(mesh=self.mesh)
+        self.logits_eval_fn = hk.transform(lambda tokens: self.eval_forward(tokens)[0])
+
+        if self.transform_forward:
+            self.state_sharding = self.get_state_sharding(init_data)
+            rank_logger.info(f"State sharding type: {type(self.state_sharding)}")
+            self.init_fn = pjit.pjit(self.init, out_shardings=self.state_sharding)
+
+    def init(self, rng: jax.Array, data) -> TrainingState:
+        assert self.transform_forward
+        rng, init_rng = jax.random.split(rng)
+        params = self.forward.init(init_rng, data["inputs"])
+        return TrainingState(params=params)
+
+    def get_state_sharding(self, init_data):
+        assert self.transform_forward
+        rng = jax.random.PRNGKey(self.rng_seed)
+        rank_logger.info(f"partition rules: {self.model.partition_rules}")
+
+        with self.mesh:
+            shapes = jax.eval_shape(self.init, rng, init_data)
+            sharding = jax.tree_util.tree_map_with_path(
+                apply_rules(self.model.partition_rules()),
+                shapes,
+            )
+        return sharding
+
+    def load_or_init(
+        self,
+        init_data: Any,
+        from_checkpoint: bool = True,
+        init_fn: Optional[Callable] = None,
+    ):
+        rng = jax.random.PRNGKey(self.rng_seed)
+
+        if not self.checkpoint_path or not from_checkpoint:
+            rank_logger.info("Initializing model...")
+            with self.mesh:
+                if init_fn is not None:
+                    state = init_fn(rng, init_data)
+                else:
+                    assert self.transform_forward
+                    state = self.init_fn(rng, init_data)
+            rank_logger.info("Model state is newly initialized.")
+        else:
+            with self.mesh:
+                if init_fn:
+                    state_shapes = jax.eval_shape(init_fn, rng, init_data)
+                else:
+                    assert self.transform_forward
+                    state_shapes = jax.eval_shape(self.init_fn, rng, init_data)
+            init_state = None
+
+            state = restore(
+                checkpoint_path=self.checkpoint_path,
+                state_shapes=state_shapes,
+                mesh=self.mesh,
+                between_hosts_config=self.between_hosts_config,
+                state_sharding=self.state_sharding,
+                init_state=init_state,
+                params_only=True,
+            )
+
+            del init_state
+        return state
+
+
+@dataclass
+class Request:
+    prompt: str
+    temperature: float
+    nucleus_p: float
+    rng_seed: int
+    max_len: int
+
+
+@dataclass
+class InferenceRunner:
+    name: str
+    runner: Any
+    load: str
+    tokenizer_path: str = "/tmp/xai_data/tokenizer.model"
+    local_mesh_config: Tuple[int, int] = (1, 1)
+    between_hosts_config: Tuple[int, int] = (1, 1)
+    pad_sizes: tuple[int] = (1024,)
+
+    def get_pad_bucket(self, size):
+        i = bisect.bisect_left(self.pad_sizes, size)
+        return self.pad_sizes[min(i, len(self.pad_sizes) - 1)]
+
+    def initialize(self):
+        runner = self.runner
+        self.runner.transform_forward = True
+        dummy_data = dict(
+            inputs=np.zeros((1, 256), dtype=np.int32),
+            targets=np.zeros((1, 256), dtype=np.int32),
+        )
+        runner.initialize(
+            dummy_data,
+            local_mesh_config=self.local_mesh_config,
+            between_hosts_config=self.between_hosts_config,
+        )
+
+        if not os.path.exists(self.tokenizer_path):
+            url = os.environ.get("TOKENIZER_URL")
+            if url:
+                urllib.request.urlretrieve(url, self.tokenizer_path)
+            else:
+                raise FileNotFoundError(
+                    f"Tokenizer file not found at {self.tokenizer_path} and TOKENIZER_URL not set"
+                )
+        self.tokenizer = sentencepiece.SentencePieceProcessor(
+            model_file=self.tokenizer_path
+        )
+        self.system_prompt_tokens = self.tokenizer.encode(SYSTEM_PROMPT)
+
+        max_len = runner.model.sequence_len
+
+        self.vocab_size = self.runner.model.vocab_size
+
+        params = runner.load_or_init(dummy_data)
+        self.params = params
+
+        def pad_to_max_len(x):
+            if len(x.shape) > 1:
+                pad_width = max_len - x.shape[1]
+                return jnp.pad(x, [(0, 0), (0, pad_width), (0, 0), (0, 0)])
+            else:
+                return x
+
+        @functools.lru_cache
+        def lm():
+            return runner.model.make(mesh=runner.mesh)
+
+        def hk_forward(
+            tokens,
+            memory=None,
+            length=None,
+            active=None,
+        ) -> "LanguageModelOutput":
+            if memory is not None:
+                assert active is not None
+                layers = []
+                for layer in memory.layers:
+                    # Reset steps to 0 for inactive requests to avoid unnecessary computations.
+                    step = jnp.where(active, layer.step, jnp.zeros_like(layer.step))
+                    layers.append(layer._replace(step=step))
+                memory = memory._replace(layers=layers)
+            return lm()(tokens, memory, length=length)
+
+        def hk_sample_step(rngs, last_output: SampleOutput, memory, settings):
+            rngs, rngs_ = jax.vmap(jax.random.split, out_axes=1)(rngs)
+            lm_outputs = hk_forward(
+                last_output.token_id, memory=memory, active=settings.active
+            )
+            sample_result = sample_token(rngs_, lm_outputs, settings)
+            return rngs, sample_result, lm_outputs.model_state
+
+        def hk_new_memory(batch_size, sequence_len):
+            return lm().init_memory(batch_size, sequence_len)
+
+        def hk_prefill_memory(
+            rngs,
+            memory,
+            settings,
+            last_output,
+            prompt,
+            length,
+            rng_seed,
+            new_settings,
+            i,
+        ):
+            rng = jax.random.PRNGKey(seed=rng_seed)
+            rng, rng_ = jax.random.split(rng)
+
+            # Allocate new memory for this sample. The memory length is equal to the length of the
+            # prompt.
+            slice = hk_new_memory(1, prompt.shape[0])
+
+            # Move the settings for this individual batch entry into the joint settings tensor.
+            settings = jax.tree_map(
+                lambda o, v: jax.lax.dynamic_update_index_in_dim(o, v, i, axis=0),
+                settings,
+                new_settings,
+            )
+
+            # Get the settings for the batch entry from the joint settings tensor.
+            settings_slice = jax.tree_map(lambda t: jnp.expand_dims(t[i], axis=0), settings)
+
+            # Process the first n-1 tokens of the prompt.
+            lm_outputs = hk_forward(
+                jnp.expand_dims(prompt, 0),
+                memory=slice,
+                length=jnp.expand_dims(length, 0),
+                active=settings_slice.active,
+            )
+
+            # The forward pass doesn't correctly set the `step` counter inside the memory. Manually
+            # override it so `hk_forward` uses the correct context length in the next call.
+            slice = lm_outputs.model_state
+            slice = slice._replace(
+                layers=[layer._replace(step=jnp.array([length])) for layer in slice.layers]
+            )
+
+            # Allocate a big enough memory to hold the entire decoded sequence later on.
+            padded_slice = hk_new_memory(1, settings.mask.shape[-1])
+
+            slice = insert_slice(padded_slice, slice, length, 0)
+
+            # Pad the prompt to the maximum length and write it into the memory.
+            padded_prompt = pad_to_size(prompt, settings.mask.shape[-1])
+            slice.layers = [
+                layer._replace(
+                    k=insert_slice(layer.k, jnp.expand_dims(padded_prompt, 0), length, 0),
+                    v=insert_slice(layer.v, jnp.expand_dims(padded_prompt, 0), length, 0),
+                )
+                for layer in slice.layers
+            ]
+
+            # Append the new slice to the memory.
+            memory = jax.tree_map(
+                lambda m, u: jax.lax.dynamic_update_index_in_dim(m, u, i, axis=0),
+                memory,
+                slice,
+            )
+
+            # Pick the last token as the next token.
+            last_token = jnp.expand_dims(prompt[-1], axis=0)
+            last_token = jnp.expand_dims(last_token, axis=0)
+
+            # Expand the step counter with the prompt length.
+            length = jnp.array(length)
+            last_output = SampleOutput(
+                jnp.expand_dims(last_token, 0),
+                jnp.ones((1, 1)),
+                jnp.zeros((1, TOP_K), dtype=jnp.int32),
+                jnp.zeros((1, TOP_K)),
+            )
+
+            return rngs, memory, settings, last_output
+
+        def hk_sample(rngs, last_output: SampleOutput, memory, settings, steps):
+            sample_fn = hk_sample_step
+            while steps > 0:
+                rngs, last_output, memory = sample_fn(rngs, last_output, memory, settings)
+                steps -= 1
+            return last_output, memory
+
+        def init_batch_state(batch_size):
+            return SampleOutput(
+                jnp.zeros((batch_size, 1), dtype=jnp.int32),
+                jnp.ones((batch_size, 1)),
+                jnp.zeros((batch_size, TOP_K), dtype=jnp.int32),
+                jnp.zeros((batch_size, TOP_K)),
+            )
+
+        self.get_pad_bucket = jax.jit(self.get_pad_bucket)
+
+        def handle_request(request: Request):
+            tokens = self.system_prompt_tokens + self.tokenizer.encode(request.prompt)
+            length = len(tokens)
+            max_len = self.get_pad_bucket(length + request.max_len)
+            return tokens, length, max_len, request.rng_seed
+
+        handle_request = jax.jit(handle_request)
+
+        def _prepare(*_, n):
+            prompts = []
+            lengths = []
+            max_lens = []
+            rng_seeds = []
+            for i in range(n):
+                tokens, length, max_len, rng_seed = handle_request(
+                    Request(
+                        prompt="",
+                        temperature=0.0,
+                        nucleus_p=0.0,
+                        rng_seed=0,
+                        max_len=0,
+                    )
+                )
+                prompts.append(tokens)
+                lengths.append(length)
+                max_lens.append(max_len)
+                rng_seeds.append(rng_seed)
+            return prompts, lengths, max_lens, rng_seeds
+
+        def _prefill(prompts, lengths, rngs, memory, settings, last_output):
+            for i, (prompt, length) in enumerate(zip(prompts, lengths)):
+                rngs, memory, settings, last_output = hk_prefill_memory(
+                    rngs,
+                    memory,
+                    settings,
+                    last_output,
+                    jnp.array(prompt, dtype=jnp.int32),
+                    length,
+                    rngs[i][0, 0],
+                    SampleSettings(
+                        temperature=settings.temperature[i],
+                        nucleus_p=settings.nucleus_p[i],
+                        mask=settings.mask[i],
+                        active=settings.active[i],
+                    ),
+                    i,
+                )
+            return rngs, memory, settings, last_output
+
+        def _sample(rngs, last_output, memory, settings, steps):
+            last_output, memory = hk_sample(rngs, last_output, memory, settings, steps)
+            return last_output.token_id[:, 0]
+
+        def _cleanup(memory, active):
+            layers = []
+            for layer in memory.layers:
+                step = jnp.where(active, layer.step, jnp.zeros_like(layer.step))
+                layers.append(layer._replace(step=step))
+            return memory._replace(layers=layers)
+
+        self._prepare = _prepare
+        self._prefill = _prefill
+        self._sample = _sample
+        self._cleanup = _cleanup
+
+        self.pad_to_max_len = pad_to_max_len
+        self.hk_new_memory = hk_new_memory
+        self.hk_forward = hk_forward
+        self.hk_sample_step = hk_sample_step
+        self.hk_sample = hk_sample
+        self.init_batch_state = init_batch_state
+
+        self.params = params
+
+        self.last_output = None
+        self.memory = None
+
+    def prepare(self, n):
+        return self._prepare(n=n)
+
+    def prefill(self, prompts, lengths, rngs, memory, settings, last_output):
+        return self._prefill(prompts, lengths, rngs, memory, settings, last_output)
+
+    def sample(self, rngs, last_output, memory, settings, steps):
+        return self._sample(rngs, last_output, memory, settings, steps)
+
+    def cleanup(self, memory, active):
+        return self._cleanup(memory, active)
+
+
+
+def make_mesh(
+    local_mesh_config: tuple[int, ...], between_hosts_config: tuple[int, ...]
+) -> jax.sharding.Mesh:
+    assert len(local_mesh_config) == 2
+    assert len(between_hosts_config) == 2
+    rank_logger.info("Detected %s devices in mesh", jax.device_count())
+    device_mesh = mesh_utils.create_hybrid_device_mesh(
+        local_mesh_config,
+        between_hosts_config,
+        devices=jax.devices(),
+        process_is_granule=True,
+    )
+    rank_logger.debug(re.sub("\n+", "\n", f"Job device mesh is:\n{device_mesh}"))
+    return jax.sharding.Mesh(device_mesh, ("data", "model"))
+
+
+def sample_from_model(server, prompt, max_len, temperature):
+    next(server)
+    inp = Request(
+        prompt=f"{SYSTEM_PROMPT} {prompt}",
+        temperature=temperature,
+        nucleus_p=1.0,
+        rng_seed=42,
+        max_len=max_len,
+    )
+    return server.send(inp)
+
+
+# ===== app.py merged =====
+
+
+app = FastAPI()
+
+
+class Query(BaseModel):
+    prompt: str
+    user: str | None = None
+
+
+@app.post("/generate")
+async def run_generation(query: Query):
+    try:
+        response = await asyncio.to_thread(generate, query.prompt)
+        log_session(query.prompt, response, user=query.user)
+        return {"response": response}
+    except Exception as exc:  # noqa: BLE001
+        log_failure(query.prompt, exc)
+        logger.exception("generation failed")
+        raise HTTPException(status_code=500, detail="generation error")
+
+
+if __name__ == "__main__":
+    uvicorn.run("model:app", host="0.0.0.0", port=8000)
