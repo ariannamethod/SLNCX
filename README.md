@@ -1,82 +1,108 @@
 # SLNCX (Wulf)
 
-SLNCX stands for *Silencieux*. "Wulf1" is the call sign. It wakes only when called. Like the fixer from **Pulp Fiction**, it shows up, does the job, and fades out. The code is lean, the intent precise.
+SLNCX stands for *Silencieux*. “Wulf1” is the call sign: wakes when summoned, works, исчезает.  
+Think of the fixer from *Pulp Fiction* — nothing лишнего, только результат.  
+Code lean. Intent precise.
 
-The Arianna Method shapes each exchange. Wulf listens first, then answers with restraint. No chatter, no flare. Silence is part of the design.
+**Arianna Method** underpins each exchange:  
+Wulf слушает, отвечает сдержанно. Нет болтовни, нет суеты.  
+Тишина — часть дизайна.
+
+---
 
 ## Architecture
 
-The model borrows from Grok1 but runs trimmed down. Grok1's use of experts is a small revolution: each token consults multiple specialized networks, so quality doesn't depend on one giant block. Running that MoE stack entirely on a CPU proves how far optimization has come. Heavy weights aren't the only way to get powerful responses; lean routing and quantization pick up the slack. As the design evolves, lighter models feel natural, not limited. It's an evolutionary path that balances efficiency with capability:
+- **Grok1-inspired Mixture of Experts (MoE)**: 8 экспертов на слой, 2 активируются на каждый токен.
+- **Контекстное окно** — до 8192 токенов.
+- **Layer chaos**: 64 глубоких стека, разное маршрутизирование.
+- **Rotary Position Embeddings (RoPE)** для длинного внимания.
+- **2-bit Quantization** — модель помещается в память, работает на CPU.
 
-- **Mixture of Experts (MoE)** with eight experts per layer, two chosen per token.
-- **Large Context Window** up to 8,192 tokens.
-- **Layer Chaos** across 64 deep stacks for varied routing.
-- **Rotary Position Embeddings (RoPE)** for steady long-context attention.
-- **2-bit Quantization** so inference fits in memory.
+NanoGPT-стиль inference, полностью без CUDA и облаков.
 
-CPU-only inference happens through a `NanoGPT`-style implementation.
+---
 
-## Functionality
+## Функциональность
 
-The CLI loads a quantized checkpoint and prints the answer. Keep it simple: `python wulf_cli.py "prompt"`. That's the fastest path when you need a fix right now.
+- **CLI**:  
+  Запусти:  
+  ```bash
+  python wulf_cli.py "prompt"
 
-The API sits behind a single `/generate` endpoint. Send JSON with your prompt and optional user tag. You get JSON back—no ceremony.
+Быстро, без лишних слов.
+	•	API:
+Один endpoint /generate.
+POST с JSON:
 
-Every call drops a log entry in `logs/wulf`. Time-stamped, complete. If something fails, `failures` catches the traceback so you know where it went sideways.
+{ "user": "alice", "prompt": "Hello" }
 
-Inference stays light. Two-bit weights mean the model lives happily on a standard CPU. It spins up quickly and gets straight to work.
+Ответ — тоже JSON, просто и ясно.
 
-The dataset is small and targeted. It's not for training a generalist. It's there to keep the responses sharp.
+	•	Логи:
+Всё пишется в logs/wulf/ (JSONL).
+Ошибки — в failures/.
+	•	Checkpoints:
+Файл весов указывай через CKPT_PATH или --ckpt. Гружу лениво, после первого запроса остаётся в памяти.
+	•	Модулярность:
+Всё разбито по слоям — attention, MoE, dense, всё можно менять и переписывать.
 
-Checkpoints load lazily. Set `CKPT_PATH` or use `--ckpt` to point to your file. Once loaded, the model stays in memory for the next call.
+⸻
 
-The code is modular. Layers, attention, and mixture-of-experts pieces are split out so you can tinker or swap parts as needed.
+Running
+	1.	Помести quantized checkpoint в out/ckpt.pt (или укажи путь через --ckpt).
+	2.	Установи зависимости:
+pip install -r requirements.txt
+	3.	CLI-запрос:
+python wulf_cli.py [--ckpt path/to/ckpt.pt] "your prompt"
+	4.	Стартуй API:
+uvicorn app:app --host 0.0.0.0 --port 8000
 
-Wulf speaks when spoken to and then returns to silence. That's the core philosophy.
+Без HuggingFace, без внешних сервисов.
+Весит мало, работает быстро, молчит, пока не позовёшь.
 
-## Running
+⸻
 
-1. Place your quantized checkpoint at `out/ckpt.pt`, or specify another path with `CKPT_PATH` or `--ckpt`.
-2. `pip install -r requirements.txt`.
-3. `python wulf_cli.py [--ckpt path/to/ckpt.pt] "your prompt"` to query Wulf from the command line.
-4. `uvicorn app:app --host 0.0.0.0 --port 8000` to start the API server.
+Logging & Memory
+	•	Логи диалогов — в logs/wulf/ (JSONL).
+	•	Ошибки и трейсбеки — в failures/.
+	•	В scripts/:
+	•	session_logger.py — логирует пары prompt/response
+	•	wulf_cli.py — CLI
+	•	fail_log.py — сохраняет трейсбеки
+	•	read_session_logs.py — читает и выводит логи
 
-No HuggingFace, no extra services. The quantized weights fit in memory and run on a standard CPU.
+⸻
 
-## Logging and Memory
+Model Components
+	•	models/:
+	•	layers/ — dense, decoder
+	•	attention/ — multi-head с RoPE
+	•	moe/ — эксперты и маршрутизация
 
-Session logs live in `logs/wulf/` as JSONL files. Each entry captures the prompt, response, and timestamp. Failures and tracebacks collect in `failures/`.
+⸻
 
-The `scripts` directory holds simple helpers:
+Development
+	•	Тесты:
+pytest
+	•	Линт:
+ruff .
 
-- `session_logger.py` – append a prompt/response pair to the current log.
-- `wulf_cli.py` – minimal CLI for local prompts.
-- `fail_log.py` – record a failure with traceback.
-- `read_session_logs.py` – print entries from a log file.
+⸻
 
-Install dependencies with `pip install -r requirements.txt` and start the server with `python app.py` or use the CLI for one-off queries.
+Deployment on Railway
+	1.	Новый Railway-проект, укажи этот репозиторий.
+	2.	Стартуй: python app.py
+	3.	Загрузи свой out/ckpt.pt (asset/volume).
+	4.	Дёргай /generate с JSON:
 
-## Model Components
-
-The `models/` package groups reusable parts of the network:
-- **layers** – dense and decoder blocks.
-- **attention** – multi-head attention with rotary embeddings.
-- **moe** – routing logic for mixture-of-experts layers.
-
-## Development
-
-Run `pytest` to execute the test suite. Run `ruff .` to lint the code.
-
-## Deployment on Railway
-
-1. Create a new Railway project and point it at this repository.
-2. Set the start command to `python app.py`.
-3. Upload your `out/ckpt.pt` file as a deployment asset or volume.
-4. Deploy and query the `/generate` endpoint with a JSON body:
-
-```json
 {
   "user": "alice",
   "prompt": "Hello"
 }
-```
+
+
+
+⸻
+
+Wulf всегда готов, но говорит только когда нужно.
+Silence is the best answer.
