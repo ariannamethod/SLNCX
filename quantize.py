@@ -2,13 +2,16 @@
 # Usage: python quantize.py <checkpoint_dir> <output_dir>
 
 import argparse
-import jax.numpy as jnp
 import jax
+import jax.numpy as jnp
 
-from checkpoint import restore, fast_pickle
-from model import QuantizedWeight2bit
-from runners import ModelRunner
-from config import default_config
+from model import (
+    ModelRunner,
+    QuantizedWeight2bit,
+    default_config,
+    fast_pickle,
+    restore,
+)
 
 
 def quantize_tensor(tensor: jax.Array) -> QuantizedWeight2bit:
